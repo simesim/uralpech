@@ -1,0 +1,331 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>УКС ГРУП</title>
+    <link rel="stylesheet" href="styles.css">
+    <script src="script.js" defer></script>
+</head>
+<body class="body main2025__body">
+    <header class="header">
+        <div class="header__logo">
+            <img class="logo-img" src="img/header/logo.webp" alt="УКС ГРУП">
+        </div>
+        <nav class="header__nav">
+            <ul class="header__links">
+                <li class="header__link">
+                    <a href="#aboutus" class="header__link-a">О НАС <div class="header__link-triangle"></div></a>
+                    <div class="header__link-dropdown">
+                        Информация о компании
+                    </div>
+                </li>
+                <li class="header__link">
+                    <a href="#products" class="header__link-a">НАША ПРОДУКЦИЯ <div class="header__link-triangle"></div></a>
+                    <div class="header__link-dropdown">
+                        Список продукции
+                    </div>
+                </li>
+                <li class="header__link">
+                    <a href="#projects" class="header__link-a">ПРОЕКТЫ <div class="header__link-triangle"></div></a>
+                    <div class="header__link-dropdown">
+                        Наши проекты
+                    </div>
+                </li>
+                <li class="header__link">
+                    <a href="#contacts" class="header__link-a">КОНТАКТЫ <div class="header__link-triangle"></div></a>
+                    <div class="header__link-dropdown">
+                        Контактная информация
+                    </div>
+                </li>
+            </ul>
+            <select class="header__nav-mobile" id="headerNavSelect">
+                <option value="#aboutus">О нас</option>
+                <option value="#products">Наша продукция</option>
+                <option value="#projects">Проекты</option>
+                <option value="#contacts">Контакты</option>
+            </select>
+        </nav>
+        <div class="header__contact">
+            <a class="header__contact-link" href="tel:+73433850951">+7 (343) 385-09-51</a>
+            <a class="header__contact-link" href="mailto:sales@uksgroup.ru">sales@uksgroup.ru</a>
+            <!-- переделать на ссылку -->
+            <button class="header__whatsapp-btn">
+                <img src="img/header/w.webp" alt="WhatsApp" style="width: 30px; height: 30px;">
+            </button>
+        </div>
+    </header>
+
+    <section class="slider section">
+        <h1 class="slider__text">
+            "ЗАВОД"<br><span class="orange__text">ОГНЕСТОЙКИХ</span><br>СВЕТОПРОЗРАЧНЫХ<br>КОНСТРУКЦИЙ
+        </h1>
+        <div class="slider__slides slider__slides--width">
+            <div class="slider__slide slider__slide--bg-1 slider__slide--active"></div>
+            <div class="slider__slide slider__slide--bg-2"></div>
+        </div>
+        <img src="img/prev.png" alt="Previous" class="slider__btn slider__btn--prev">
+        <img src="img/next.png" alt="Next" class="slider__btn slider__btn--next">
+        <button class="slider__cta-btn">Оставить заявку на расчёт</button>
+    </section>
+
+    <section class="black-strip section">
+        <p class="black-strip__text">ПРОЕКТИРОВАНИЕ</p>
+        <div class="black-strip__arrow"></div>
+        <p class="black-strip__text">ПРОИЗВОДСТВО</p>
+        <div class="black-strip__arrow"></div>
+        <p class="black-strip__text">ДОСТАВКА</p>
+        <div class="black-strip__arrow"></div>
+        <p class="black-strip__text">МОНТАЖ</p>
+    </section>
+
+    <section class="section products" id="products">
+        <div class="products__header">
+            <div class="products__rectangle"></div>
+            <h2 class="products__title"><span class="gray">НАША</span><br>ПРОДУКЦИЯ</h2>
+        </div>
+        <div class="products__content">
+            <div class="products__grid">
+                <div class="products__item" style="background-image: url('img/products/photo1.webp');">
+                    <span class="products__item-text">Двери</span>
+                </div>
+                <div class="products__item" style="background-image: url('img/products/photo2.webp');">
+                    <span class="products__item-text">Фасады</span>
+                </div>
+                <div class="products__item" style="background-image: url('img/products/photo3.webp');">
+                    <span class="products__item-text">Перегородки</span>
+                </div>
+                <div class="products__item" style="background-image: url('img/products/photo4.webp');">
+                    <span class="products__item-text">Фасадные решения</span>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section class="section projects" id="projects">
+        <div class="projects__header">
+            <div class="projects__rectangle"></div>
+            <h2 class="projects__title">ПРОЕКТЫ</h2>
+        </div>
+        <div class="projects__content">
+            <div class="projects__button-group">
+                <div class="projects__button-group-desktop">
+                    <button class="projects__button" data-section="dveri">Двери</button>
+                    <button class="projects__button" data-section="peregorodki">Перегородки</button>
+                    <button class="projects__button" data-section="okna">Окна</button>
+                    <button class="projects__button projects__button--last" data-section="vitrazhi">Витражи</button>
+                </div>
+                <select class="projects__button-group-mobile" id="projectsSelect">
+                    <option value="dveri">Двери</option>
+                    <option value="peregorodki">Перегородки</option>
+                    <option value="okna">Окна</option>
+                    <option value="vitrazhi">Витражи</option>
+                </select>
+            </div>
+            <div class="projects__content-block">
+                <div class="projects__photo projects__photo--bg" id="photoContainer">
+                    <img src="img/prev.png" alt="Previous" class="projects__nav-btn projects__nav-btn--left" onclick="prevImage()">
+                    <img src="img/next.png" alt="Next" class="projects__nav-btn projects__nav-btn--right" onclick="nextImage()">
+                </div>
+                <div class="projects__text">
+                    <div>
+                        <h3 class="projects__text-title" id="textTitle">СТУДЕНЧЕСКИЙ КАМПУС УРФУ, ЕКАТЕРИНБУРГ</h3>
+                        <p class="projects__text-description" id="textDescription">
+                            Комплекс работ по проектированию, изготовлению и монтажу противопожарных конструкций
+                            «УКБ ФГУП», в состав противопожарных конструкций входят противопожарные двери и коммерческая изоляция продуктов Alutech и стекла в Румольт.
+                        </p>
+                    </div>
+                    <div class="projects__action-buttons">
+                        <button class="projects__action-btn projects__action-btn--outline">Оставить заявку</button>
+                        <button class="projects__action-btn projects__action-btn--filled">Узнать больше</button>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section class="section aboutus" id="aboutus">
+        <div class="aboutus__container">
+            <div class="aboutus__photo aboutus__photo--bg" id="photoBlock">
+                <img src="img/prev.png" alt="Previous" class="aboutus__arrow-btn aboutus__arrow-btn--left" id="prevBtn">
+                <img src="img/next.png" alt="Next" class="aboutus__arrow-btn aboutus__arrow-btn--right" id="nextBtn">
+            </div>
+            <div class="aboutus__text">
+                <div class="aboutus__header">
+                    <h2 class="aboutus__title">О НАС</h2>
+                    <div class="aboutus__orange-line"></div>
+                </div>
+                <p class="aboutus__bold-text">
+                    Предприятие, специализирующееся на изготовлении огнестойких светопрозрачных конструкций, применяемых для противопожарного оборудования зданий и сооружений любого назначения, включая коммерческие, жилые, производственные и промышленные объекты.
+                </p>
+                <p class="aboutus__regular-text">
+                    ООО «УКС ГРУП» осуществляет полный цикл работ, связанных с разработкой технического задания, проектированием, изготовлением, организацией поставок, монтажом и обслуживанием огнестойких светопрозрачных конструкций с применением высококачественного противопожарного стального или алюминиевого профиля и огнеупорного стекла.
+                </p>
+                <button class="aboutus__btn">Узнать больше</button>
+            </div>
+        </div>
+    </section>
+
+    <section class="section stats">
+        <ul class="stats__list">
+            <li class="stats__item">
+                <span class="stats__number">25</span>
+                <p class="stats__text">ЛЕТ НА<br>РЫНКЕ</p>
+            </li>
+            <span class="stats__dot"></span>
+            <li class="stats__item">
+                <span class="stats__number">200</span>
+                <p class="stats__text">ТЫС. КВ. М<br>СДАННЫХ ОБЪЕКТОВ</p>
+            </li>
+            <span class="stats__dot"></span>
+            <li class="stats__item">
+                <span class="stats__number">65</span>
+                <p class="stats__text">РЕГИОНОВ В<br>РФ И СНГ</p>
+            </li>
+            <span class="stats__dot"></span>
+            <li class="stats__item">
+                <span class="stats__number">65</span>
+                <p class="stats__text">СЕРТИФИКАТОВ<br>СООТВЕТСТВИЯ</p>
+            </li>
+        </ul>
+    </section>
+
+    <section class="section project-form project-form--centered">
+        <div class="project-form__wrapper">
+            <h2 class="project-form__title">
+                Получите информацию о проектировании, изготовлении и доставке продукции прямо сейчас
+            </h2>
+            <div class="project-form__input-row">
+                <input type="text" class="project-form__input project-form__input--short" placeholder="Имя">
+                <input type="text" class="project-form__input project-form__input--short" placeholder="Телефон">
+            </div>
+            <input type="text" class="project-form__input" placeholder="Эл. почта">
+            <input type="file" class="project-form__file" placeholder="Прикрепить файл">
+            <button class="project-form__submit">Оставить заявку</button>
+        </div>
+        <div class="project-form__man"></div>
+        <div class="project-form__signature">
+            <div class="project-form__circle"></div>
+            <p class="project-form__signature-text">ФИО Вакансия ответит на Ваши вопросы</p>
+        </div>
+    </section>
+
+    <section class="section">
+        <div class="certificates__header">
+            <div class="certificates__rectangle"></div>
+            <h2 class="certificates__title">СЕРТИФИКАТЫ</h2>
+        </div>
+        <div class="certificates__content">
+            <div class="certificates__slider">
+                <!-- завернуть в button -->
+                <img src="img/prev.png" alt="Previous" class="certificates__btn certificates__btn--prev">
+                
+                <div class="certificates__slider-track-container">
+                    <div class="certificates__slider-track">
+                        <div class="certificates__slide">
+                            <img class="certificates__slide-img" src="img/cert/cert1.jpg" alt="Certificate 1">
+                            <p class="certificates__slide-text">Действует до 09.08.2023 г.</p>
+                        </div>
+                        <div class="certificates__slide">
+                            <img class="certificates__slide-img" src="img/cert/cert2.webp" alt="Certificate 2">
+                            <p class="certificates__slide-text">Однопольные огнестойкие двери Alutech ALT W62. До 16.02.2026 г.</p>
+                        </div>
+                        <div class="certificates__slide">
+                            <img class="certificates__slide-img" src="img/cert/cert3.webp" alt="Certificate 3">
+                            <p class="certificates__slide-text">Двупольные двери VoestAlpine VA-FORM 6050. До 31.01.2027 г.</p>
+                        </div>
+                        <div class="certificates__slide">
+                            <img class="certificates__slide-img" src="img/cert/cert4.webp" alt="Certificate 4">
+                            <p class="certificates__slide-text">Перегородка VISS FIRE с Pyrobel 21. До 17.11.2025 г.</p>
+                        </div>
+                        <div class="certificates__slide">
+                            <img class="certificates__slide-img" src="img/cert/cert5.webp" alt="Certificate 5">
+                            <p class="certificates__slide-text">Окно Alutech W62 с Pyropane 100. До 02.07.2024 г.</p>
+                        </div>
+                    </div>
+                </div>
+                <img src="img/next.png" alt="Next" class="certificates__btn certificates__btn--next">
+            </div>
+        </div>
+    </section>
+
+    <section class="section contact" id="contacts">
+        <div class="contact__container">
+            <div class="contact__overlay">
+                <div class="contact__left">
+                    <div class="contact__logo">
+                        <img class="contact__logo-img" src="img/contact/logo.png" alt="УКС ГРУП">
+                    </div>
+                    <p class="contact__phone">+7 (343) 385-09-51</p>
+                    <p class="contact__address">
+                        620063, г. Екатеринбург,<br>ул. Чапаева, 1а, 3 этаж
+                    </p>
+                </div>
+                <div class="contact__right">
+                    <div class="contact__nav">
+                        <a href="#" class="contact__nav-link">Главная</a>
+                        <a href="#aboutus" class="contact__nav-link">О нас</a>
+                        <a href="#projects" class="contact__nav-link">Проекты</a>
+                        <a href="#products" class="contact__nav-link">Продукция</a>
+                        <a href="#certificates" class="contact__nav-link">Сертификаты</a>
+                    </div>
+                    <button class="contact__call-btn">Позвонить</button>
+                    <p class="contact__hours">Пн–Пт / 09:00–18:00</p>
+                    <div class="contact__icons">
+                        <a href="#" class="contact__icon"><img class="contact__icon-img" src="img/contact/w.png" alt="Telegram"></a>
+                        <a href="#" class="contact__icon"><img class="contact__icon-img" src="img/contact/mail.png" alt="WhatsApp"></a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section class="section news">
+        <div class="news__container">
+            <h2 class="news__title">Наши новости</h2>
+            <div class="news__cards">
+                <div class="news__card">
+                    <img src="img/news/n1.jpg" class="news__image" alt="News 1">
+                    <h3 class="news__heading">НОВОСТЬ ОДИН</h3>
+                    <p class="news__description">
+                        A text for a new post. Add text here as a discription. It will be shown only in the description of a news card.
+                    </p>
+                    <p class="news__date">05.03.2025</p>
+                </div>
+                <div class="news__card">
+                    <img src="img/news/n2.jpg" class="news__image" alt="News 2">
+                    <h3 class="news__heading">НОВОСТЬ ДВА</h3>
+                    <p class="news__description">
+                        This is a field to be filled it with a description right under the headline. Use a short text to expand the meaning of your title
+                    </p>
+                    <p class="news__date">05.03.2025</p>
+                </div>
+                <div class="news__card">
+                    <img src="img/news/n3.jpg" class="news__image" alt="News 3">
+                    <h3 class="news__heading">НОВОСТЬ ТРИ</h3>
+                    <p class="news__description">
+                        Fill in description field and start your stories. This text will be shown as a description in a blog card in the newsfeed
+                    </p>
+                    <p class="news__date">05.03.2025</p>
+                </div>
+                <div class="news__card">
+                    <img src="img/news/n4.jpg" class="news__image" alt="News 4">
+                    <h3 class="news__heading">НОВОСТЬ ЧЕТЫРЕ</h3>
+                    <p class="news__description"></p>
+                    <p class="news__date">05.03.2025</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <div class="news-modal" id="NewsModal">
+        <div class="news-modal__content">
+            <button class="news-modal__close" onclick="closeNewsModal()">×</button>
+            <h2 class="news-modal__title" id="NewsModalTitle"></h2>
+            <img class="news-modal__img" id="NewsModalImage" src="" alt="News Image">
+            <p class="news-modal__text" id="NewsModalText"></p>
+            <p class="news-modal__date">05.03.2025</p>
+        </div>
+    </div>
+</body>
+</html>
