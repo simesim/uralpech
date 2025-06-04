@@ -212,7 +212,7 @@ li {
 }
 
 .orange__text {
-    color: #FF6C00;
+    color: #E3644B;
 }
 
 .slider__btn {
@@ -341,7 +341,7 @@ li {
     width: 182px;
     height: 10px;
     border-radius: 10px;
-    background: #FC500B;
+    background: #E3644B;
     flex-shrink: 0;
     /* Убеждаемся, что прямоугольник не сжимается */
 }
@@ -427,7 +427,7 @@ li {
     right: 200px;
     width: 402px;
     height: 100%;
-    background-color: #FC500B;
+    background-color: #E3644B;
     z-index: 0;
     /* позади карточек */
 }
@@ -508,7 +508,7 @@ li {
 }
 
 .projects__button--active {
-    background: #FC500B;
+    background: #E3644B;
     color: #FFF;
     font-weight: 700;
 }
@@ -580,7 +580,7 @@ li {
     width: 294px;
     height: 54px;
     border-radius: 50px;
-    border: 1px solid #FC500B;
+    border: 1px solid #E3644B;
     font-size: 15px;
     font-weight: 600;
     cursor: pointer;
@@ -592,7 +592,7 @@ li {
 }
 
 .projects__action-btn--filled {
-    background: #FC500B;
+    background: #E3644B;
     color: #FFF;
 }
 
@@ -600,7 +600,7 @@ li {
     position: absolute;
     width: 398px;
     height: 1000px;
-    background-color: #FC500B;
+    background-color: #E3644B;
     left: 350px;
     top: 500px;
     z-index: -1;
@@ -697,7 +697,7 @@ li {
     height: 10px;
     flex-shrink: 0;
     border-radius: 10px;
-    background: #FC500B;
+    background: #E3644B;
     position: static;
     bottom: -15px;
     left: 0;
@@ -722,7 +722,7 @@ li {
     height: 62px;
     border-radius: 30px;
     border: none;
-    background: #FC500B;
+    background: #E3644B;
     color: #FFF;
     font-size: 17px;
     font-weight: 700;
@@ -774,7 +774,7 @@ li {
 .stats__dot {
     width: 30px;
     height: 30px;
-    background-color: #FC500B;
+    background-color: #E3644B;
     border-radius: 50%;
     flex-shrink: 0;
     align-self: center;
@@ -926,7 +926,7 @@ li {
     content: 'Обзор';
     position: absolute;
     right: 15px;
-    color: #FC500B;
+    color: #E3644B;
     font-weight: 700;
 }
 
@@ -938,7 +938,7 @@ li {
     width: 100%;
     height: 50px;
     border-radius: 20px;
-    background: #FC500B;
+    background: #E3644B;
     border: none;
     color: #FFF;
     font-family: 'Montserrat', sans-serif;
@@ -1438,7 +1438,7 @@ li {
     width: 182px;
     height: 10px;
     border-radius: 10px;
-    background: #FC500B;
+    background: #E3644B;
     flex-shrink: 0;
 }
 
@@ -1676,7 +1676,7 @@ li {
     .products__rectangle {
         width: 90px;
         height: 4px;
-        background: #FC500B;
+        background: #E3644B;
         margin-top: 10px;
         border-radius: 0;
     }
@@ -1724,7 +1724,7 @@ li {
         right: 0;
         width: 80px;
         height: 100%;
-        background-color: #FC500B;
+        background-color: #E3644B;
         z-index: 0;
         border-radius: 0;
     }
@@ -2113,7 +2113,7 @@ li {
 }
 
 .orange__text {
-    color: #FC500B;
+    color: #E3644B;
 }
 
 .gray {
