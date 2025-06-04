@@ -10,57 +10,57 @@
 </head>
 
 <body class="body">
-    <header class="header">
-        <div class="header__logo">
-            <img src="img/header/logo.webp" alt="Logo" class="logo-img">
-        </div>
-        <nav class="header__nav">
-            <ul class="header__links">
-                <li class="header__link">
-                    <a href="#aboutus" class="header__link-a">О НАС <span class="header__link-triangle"></span></a>
-                    <div class="header__link-dropdown">
-                        <a href="#aboutus">Информация о компании</a>
-                    </div>
-                </li>
-                <li class="header__link">
-                    <a href="#products" class="header__link-a">НАША ПРОДУКЦИЯ <span
-                            class="header__link-triangle"></span></a>
-                    <div class="header__link-dropdown">
-                        <a href="#products">Список продукции</a>
-                    </div>
-                </li>
-                <li class="header__link">
-                    <a href="#projects" class="header__link-a">ПРОЕКТЫ <span class="header__link-triangle"></span></a>
-                    <div class="header__link-dropdown">
-                        <a href="#projects">Наши проекты</a>
-                    </div>
-                </li>
-                <li class="header__link">
-                    <a href="#contact" class="header__link-a">КОНТАКТЫ <span class="header__link-triangle"></span></a>
-                    <div class="header__link-dropdown">
-                        <a href="#contact">Контактная информация</a>
-                    </div>
-                </li>
-            </ul>
-            <select class="header__nav-mobile" id="headerNavSelect">
-                <option value="">Меню</option>
-                <option value="#aboutus">О нас</option>
-                <option value="#products">Наша продукция</option>
-                <option value="#projects">Проекты</option>
-                <option value="#contact">Контакты</option>
-            </select>
-        </nav>
-        <div class="header__contact">
-            <a href="tel:+73433850951" class="header__contact-link">+7 (343) 385-09-51</a>
-            <a href="mailto:info@uksgroup.ru" class="header__contact-link">info@uksgroup.ru</a>
-            <a href="https://wa.me/73433850951" class="header__whatsapp-btn">
-                <img src="img/header/w.webp" alt="WhatsApp">
-            </a>
-        </div>
-    </header>
-
     <section class="slider">
+        <header class="header">
+            <div class="header__logo">
+                <img src="img/header/logo.webp" alt="Logo">
+            </div>
+            <nav class="header__nav">
+                <ul class="header__links">
+                    <li class="header__link">
+                        <a href="#aboutus" class="header__link-a">О НАС <span class="header__link-triangle"></span></a>
+                        <div class="header__link-dropdown">
+                            <a href="#aboutus" class="header__link-a-mobile">О НАС</a>
+                        </div>
+                    </li>
+                    <li class="header__link">
+                        <a href="#products" class="header__link-a">НАША ПРОДУКЦИЯ <span
+                                class="header__link-triangle"></span></a>
+                        <div class="header__link-dropdown">
+                            <a href="#products" class="header__link-a-mobile">НАША ПРОДУКЦИЯ</a>
+                        </div>
+                    </li>
+                    <li class="header__link">
+                        <a href="#projects" class="header__link-a">ПРОЕКТЫ <span
+                                class="header__link-triangle"></span></a>
+                        <div class="header__link-dropdown">
+                            <a href="#projects" class="header__link-a-mobile">ПРОЕКТЫ</a>
+                        </div>
+                    </li>
+                    <li class="header__link">
+                        <a href="#contact" class="header__link-a">КОНТАКТЫ <span
+                                class="header__link-triangle"></span></a>
+                        <div class="header__link-dropdown">
+                            <a href="#contact" class="header__link-a-mobile">КОНТАКТЫ</a>
+                        </div>
+                    </li>
+                </ul>
+                <button class="header__nav-mobile" id="headerNavBtn">
+                    <img src="img/header/menu-icon.png" alt="Menu" style="width: 24px; height: 24px;">
+                </button>
+                <button class="header__close-btn" id="headerCloseBtn">✖</button>
+            </nav>
+            <div class="header__contact">
+                <a href="tel:+73433850951" class="header__contact-link phone">+7 (343) 385-09-51</a>
+                <a href="mailto:info@uksgroup.ru" class="header__contact-link email">info@uksgroup.ru</a>
+                <a href="https://wa.me/73433850951" class="header__whatsapp-btn">
+                    <img src="img/header/w.webp" alt="WhatsApp">
+                </a>
+            </div>
+        </header>
+
         <div class="slider__slides">
+            <div class="slider__overlay"></div>
             <div class="slider__slide slider__slide--bg-1 slider__slide--active"></div>
             <div class="slider__slide slider__slide--bg-2"></div>
         </div>
@@ -70,47 +70,63 @@
             СВЕТОПРОЗРАЧНЫХ<br>
             КОНСТРУКЦИЙ
         </div>
-        <img src="img/prev.png" alt="Previous" class="slider__btn slider__btn--prev">
-        <img src="img/next.png" alt="Next" class="slider__btn slider__btn--next">
+        <div class="slider__btn slider__btn--prev">
+            <img src="img/prev.png" alt="Previous">
+        </div>
+        <div class="slider__btn slider__btn--next">
+            <img src="img/next.png" alt="Next">
+        </div>
         <button class="slider__cta-btn">Оставить заявку на расчёт</button>
+        <div class="slider__contact-mobile">
+            <a href="tel:+73433850951" class="header__contact-link phone">+7 (343) 385-09-51</a>
+            <a href="mailto:info@uksgroup.ru" class="header__contact-link email">sales@uksgroup.ru</a>
+            <a href="https://wa.me/73433850951" class="header__whatsapp-btn">
+                <img src="img/header/w.webp" alt="WhatsApp">
+            </a>
+        </div>
     </section>
 
     <div class="black-strip">
-        <div class="black-strip__text">ПРОЕКТИРОВАНИЕ</div>
-        <div class="black-strip__text">ПРОИЗВОДСТВО</div>
-        <div class="black-strip__text">ДОСТАВКА</div>
-        <div class="black-strip__text">МОНТАЖ</div>
+        <div class="black-strip__container">
+            <div class="black-strip__text first">ПРОЕКТИРОВАНИЕ</div>
+            <div class="black-strip__text">ПРОИЗВОДСТВО</div>
+            <div class="black-strip__text">ДОСТАВКА</div>
+            <div class="black-strip__text">МОНТАЖ</div>
+        </div>
     </div>
 
     <section class="products section" style="min-height: 700px;">
         <div class="container">
             <div class="products__header">
                 <div class="products__rectangle"></div>
-                <h2 class="products__title">НАША ПРОДУКЦИЯ</h2>
+                <h2 class="products__title">НАША <br> ПРОДУКЦИЯ</h2>
             </div>
             <div class="products__content">
                 <div class="products__grid">
-                    <div class="products__item"
-                        style="background: url('img/products/photo1.webp') center/cover no-repeat;">
-                        <div class="products__item-text">Двери</div>
+                    <div class="products__column">
+                        <div class="products__item"
+                            style="background: url('img/products/photo1.webp') center/cover no-repeat;">
+                            <div class="products__item-text">Двери</div>
+                        </div>
+                        <div class="products__item"
+                            style="background: url('img/products/photo3.webp') center/cover no-repeat;">
+                            <div class="products__item-text">Перегородки</div>
+                        </div>
                     </div>
-                    <div class="products__item"
-                        style="background: url('img/products/photo2.webp') center/cover no-repeat;">
-                        <div class="products__item-text">Фасады</div>
-                    </div>
-                    <div class="products__item"
-                        style="background: url('img/products/photo3.webp') center/cover no-repeat;">
-                        <div class="products__item-text">Перегородки</div>
-                    </div>
-                    <div class="products__item"
-                        style="background: url('img/products/photo4.webp') center/cover no-repeat;">
-                        <div class="products__item-text">Фасадные решения</div>
+                    <div class="products__column">
+                        <div class="products__item"
+                            style="background: url('img/products/photo2.webp') center/cover no-repeat;">
+                            <div class="products__item-text">Фасады</div>
+                        </div>
+                        <div class="products__item"
+                            style="background: url('img/products/photo4.webp') center/cover no-repeat;">
+                            <div class="products__item-text">Фасадные решения</div>
+                        </div>
                     </div>
                 </div>
             </div>
+            <div class="global-products"></div>
         </div>
-        <!-- Прямоугольник внутри секции -->
-        <div class="global-products"></div>
     </section>
 
     <section class="projects section">
@@ -118,21 +134,20 @@
             <div class="projects__header">
                 <div class="projects__rectangle"></div>
                 <h2 class="projects__title">ПРОЕКТЫ</h2>
+                
 
             </div>
-            <div class="projects__button-group">
-                <div class="projects__button-group-desktop">
-                    <button class="projects__button" data-section="dveri">Двери</button>
-                    <button class="projects__button" data-section="peregorodki">Перегородки</button>
-                    <button class="projects__button" data-section="okna">Окна</button>
-                    <button class="projects__button projects__button--last" data-section="vitrazhi">Витражи</button>
-                </div>
-                <select class="projects__button-group-mobile" id="projectsSelect">
+            <select class="projects__button-group-mobile" id="projectsSelect">
                     <option value="dveri">Двери</option>
                     <option value="peregorodki">Перегородки</option>
                     <option value="okna">Окна</option>
                     <option value="vitrazhi">Витражи</option>
                 </select>
+            <div class="projects__button-group">
+                <button class="projects__button" data-section="dveri">Двери</button>
+                <button class="projects__button" data-section="peregorodki">Перегородки</button>
+                <button class="projects__button" data-section="okna">Окна</button>
+                <button class="projects__button projects__button--last" data-section="vitrazhi">Витражи</button>
             </div>
             <div class="projects__content-block">
                 <div class="projects__photo" id="photoContainer">
@@ -160,36 +175,30 @@
     </section>
 
 
-    <section class="aboutus section" id="aboutus">
-        <div class="container">
-            <div class="aboutus__container">
-                <!-- Заголовок слева -->
-                <div class="aboutus__title-wrapper">
+
+    <section class="aboutus" id="aboutus">
+        <div class="aboutus__container">
+            <div class="aboutus__photo aboutus__photo--bg" id="photoBlock">
+                <button class="aboutus__arrow-btn aboutus__arrow-btn--left" id="prevBtn">‹</button>
+                <button class="aboutus__arrow-btn aboutus__arrow-btn--right" id="nextBtn">›</button>
+            </div>
+            <div class="aboutus__text">
+                <div class="aboutus__header">
                     <h2 class="aboutus__title">О НАС</h2>
                     <div class="aboutus__orange-line"></div>
                 </div>
-
-                <!-- Контент: фото и текст -->
-                <div class="aboutus__content">
-                    <div class="aboutus__photo" id="photoBlock">
-                        <img src="img/prev.png" alt="Left Arrow" class="aboutus__arrow-btn aboutus__arrow-btn--left"
-                            id="prevBtn">
-                        <img src="img/next.png" alt="Right Arrow" class="aboutus__arrow-btn aboutus__arrow-btn--right"
-                            id="nextBtn">
-                    </div>
-                    <div class="aboutus__text">
-                        <p class="aboutus__bold-text">Предприятие, специализирующееся на изготовлении огнестойких
-                            светопрозрачных конструкций, применяемых для противопожарного оборудования зданий и
-                            сооружений
-                            любого назначения, включая коммерческие, жилые, производственные и промышленные объекты.</p>
-                        <p class="aboutus__regular-text">ООО «УКС ГРУП» осуществляет полный цикл работ, связанных с
-                            разработкой
-                            технического задания, проектированием, изготовлением, организацией поставок, монтажом и
-                            обслуживанием огнестойких светопрозрачных конструкций с применением высококачественного
-                            противопожарного стального или алюминиевого профиля и огнеупорного стекла.</p>
-                        <button class="aboutus__btn">Узнать больше</button>
-                    </div>
-                </div>
+                <p class="aboutus__bold-text">
+                    Предприятие, специализирующееся на изготовлении огнестойких светопрозрачных конструкций, применяемых
+                    для противопожарного оборудования зданий и сооружений любого назначения, включая коммерческие,
+                    жилые, производственные и промышленные объекты.
+                </p>
+                <p class="aboutus__regular-text">
+                    ООО «УКС ГРУП» осуществляет полный цикл работ, связанных с разработкой технического задания,
+                    проектированием, изготовлением, организацией поставок, монтажом и обслуживанием огнестойких
+                    светопрозрачных конструкций с применением высококачественного противопожарного стального или
+                    алюминиевого профиля и огнеупорного стекла.
+                </p>
+                <button class="aboutus__btn">Узнать больше</button>
             </div>
         </div>
     </section>
@@ -221,29 +230,63 @@
         </div>
     </section>
 
+    <section id="video-container">
+        <div class="video-wrapper">
+            <iframe id="rutube-video" src="https://rutube.ru/play/embed/3be6647fcb0df250f8bf444121b116ae?autoplay=0"
+                frameborder="0" allow="autoplay; fullscreen" allowfullscreen>
+            </iframe>
+        </div>
+    </section>
     <section class="project-form section">
         <div class="container">
-            <div class="project-form project-form--centered">
-                <div class="project-form__wrapper">
-                    <h2 class="project-form__title">Получите информацию о проектировании, изготовлении и доставке
-                        продукции
-                        прямо сейчас</h2>
-                    <div class="project-form__input-row">
-                        <input type="text" class="project-form__input project-form__input--short" placeholder="Имя">
-                        <input type="text" class="project-form__input project-form__input--short" placeholder="Телефон">
+            <div class="project-form">
+                <div class="project-form__left">
+                    <h2 class="project-form__title">
+                        Получите информацию о проектировании, изготовлении и доставке продукции прямо сейчас
+                    </h2>
+
+                    <div class="form-container">
+                        <div class="form-row">
+                            <div class="form-column form-column--medium">
+                                <label class="form-label">Название компании</label>
+                                <input type="text" class="form-input" placeholder="Введите название компании">
+                            </div>
+                            <div class="form-column form-column--medium">
+                                <label class="form-label">Ваша почта</label>
+                                <input type="email" class="form-input" placeholder="Введите ваш email">
+                            </div>
+                        </div>
+
+                        <div class="form-row">
+                            <div class="form-column">
+                                <label class="form-label">Номер телефона</label>
+                                <input type="tel" class="form-input" placeholder="+7 (999) 999-99-99">
+                            </div>
+                        </div>
+
+                        <div class="form-row">
+                            <div class="form-column form-column--medium">
+                                <label class="form-label">Напишите Ваш город</label>
+                                <input type="text" class="form-input" placeholder="Введите ваш город">
+                            </div>
+                            <div class="form-column form-column--medium">
+                                <label class="form-label">Прикрепить файл</label>
+                                <div class="file-input-container">
+                                    <input type="file" id="file-upload" class="file-input">
+                                    <label for="file-upload" class="file-input-label">Прикрепить файл</label>
+                                </div>
+                            </div>
+                        </div>
+
+                        <button class="form-submit">Оставить заявку</button>
                     </div>
-                    <input type="text" class="project-form__input" placeholder="Электронная почта">
-                    <input type="file" class="project-form__file" placeholder="Прикрепить файл">
-                    <button class="project-form__submit">Оставить заявку</button>
                 </div>
-                <div class="project-form__man"></div>
-                <div class="project-form__signature">
-                    <p class="project-form__signature-text">Вакансия ответит на Ваши вопросы</p>
-                </div>
-                <div class="project-form__circle"></div>
+
+                <div class="project-form__right"></div>
             </div>
         </div>
     </section>
+
 
     <section class="certificates section">
         <div class="container">
