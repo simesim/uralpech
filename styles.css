@@ -80,15 +80,6 @@ li {
 }
 
 .header__link-triangle {
-    width: 0;
-    height: 0;
-    border-left: 5px solid transparent;
-    border-right: 5px solid transparent;
-    border-top: 5px solid #fff;
-    transition: transform 0.5s;
-}
-
-.header__link-triangle {
     width: 6px;
     height: 4px;
     border-left: 5px solid transparent;
@@ -206,7 +197,7 @@ li {
 }
 
 .orange__text {
-    color: #E3644B;
+    color: #e3644b;
 }
 
 .slider__btn {
@@ -275,13 +266,10 @@ li {
 .black-strip {
     background-color: #000;
     height: 131px;
-    /* фиксированная черная полоска */
     width: 100%;
     display: flex;
     justify-content: center;
-    /* по центру экрана по горизонтали */
     align-items: center;
-    /* выравнивание текста по центру внутри полоски */
 }
 
 .black-strip__container {
@@ -302,7 +290,6 @@ li {
     align-items: center;
     white-space: nowrap;
     padding: 0 42px;
-    /* расстояние между словом и стрелкой увеличено */
 }
 
 .black-strip__text:not(.first)::before {
@@ -335,9 +322,8 @@ li {
     width: 182px;
     height: 10px;
     border-radius: 10px;
-    background: #E3644B;
+    background: #e3644b;
     flex-shrink: 0;
-    /* Убеждаемся, что прямоугольник не сжимается */
 }
 
 .products__title,
@@ -421,16 +407,14 @@ li {
     right: 200px;
     width: 402px;
     height: 100%;
-    background-color: #E3644B;
+    background-color: #e3644b;
     z-index: 0;
-    /* позади карточек */
 }
 
 .container {
     max-width: 1440px;
     margin: 0 auto;
     padding: 0 80px;
-    /* добавлены отступы слева и справа */
     box-sizing: border-box;
 }
 
@@ -502,7 +486,7 @@ li {
 }
 
 .projects__button--active {
-    background: #E3644B;
+    background: #e3644b;
     color: #FFF;
     font-weight: 700;
 }
@@ -520,7 +504,7 @@ li {
 }
 
 .projects__photo--bg {
-    background: url('photo1.webp') lightgray 50% / cover no-repeat;
+    background: url('photo1.png') lightgray 50% / cover no-repeat;
 }
 
 .projects__nav-btn {
@@ -574,7 +558,7 @@ li {
     width: 294px;
     height: 54px;
     border-radius: 50px;
-    border: 1px solid #E3644B;
+    border: 1px solid #e3644b;
     font-size: 15px;
     font-weight: 600;
     cursor: pointer;
@@ -586,7 +570,7 @@ li {
 }
 
 .projects__action-btn--filled {
-    background: #E3644B;
+    background: #e3644b;
     color: #FFF;
 }
 
@@ -594,7 +578,7 @@ li {
     position: absolute;
     width: 398px;
     height: 1000px;
-    background-color: #E3644B;
+    background-color: #e3644b;
     left: 350px;
     top: 500px;
     z-index: -1;
@@ -630,7 +614,7 @@ li {
 }
 
 .aboutus__photo--bg {
-    background: url('photo1.webp') center/cover no-repeat;
+    background: url('photo1.png') center/cover no-repeat;
 }
 
 .aboutus__arrow-btn {
@@ -691,7 +675,7 @@ li {
     height: 10px;
     flex-shrink: 0;
     border-radius: 10px;
-    background: #E3644B;
+    background: #e3644b;
     position: static;
     bottom: -15px;
     left: 0;
@@ -716,7 +700,7 @@ li {
     height: 62px;
     border-radius: 30px;
     border: none;
-    background: #E3644B;
+    background: #e3644b;
     color: #FFF;
     font-size: 17px;
     font-weight: 700;
@@ -768,7 +752,7 @@ li {
 .stats__dot {
     width: 30px;
     height: 30px;
-    background-color: #E3644B;
+    background-color: #e3644b;
     border-radius: 50%;
     flex-shrink: 0;
     align-self: center;
@@ -788,7 +772,7 @@ li {
     position: relative;
     width: 100%;
     padding-bottom: 56.25%;
-    /* 16:9 */
+
     height: 0;
     border-radius: 25px;
     overflow: hidden;
@@ -920,7 +904,7 @@ li {
     content: 'Обзор';
     position: absolute;
     right: 15px;
-    color: #E3644B;
+    color: #e3644b;
     font-weight: 700;
 }
 
@@ -932,7 +916,7 @@ li {
     width: 100%;
     height: 50px;
     border-radius: 20px;
-    background: #E3644B;
+    background: #e3644b;
     border: none;
     color: #FFF;
     font-family: 'Montserrat', sans-serif;
@@ -1109,11 +1093,11 @@ li {
 }
 
 .contact__nav-link:hover {
-    color: #FF4500;
+    color: #e3644b;
 }
 
 .contact__call-btn {
-    background-color: #FF4500;
+    background-color: #e3644b;
     color: white;
     padding: 12px 30px;
     border: none;
@@ -1158,7 +1142,7 @@ li {
 /* News */
 .news {
     padding: 80px 20px;
-    background: linear-gradient(to bottom, #ffffff 0%, #ff5e14 100%);
+    background: linear-gradient(to bottom, #ffffff 0%, #e3644b 100%);
     font-family: 'Montserrat', sans-serif;
     margin-bottom: 0;
 }
@@ -1375,11 +1359,11 @@ li {
 }
 
 .contact__nav-link:hover {
-    color: #FF4500;
+    color: #e3644b;
 }
 
 .contact__call-btn {
-    background-color: #FF4500;
+    background-color: #e3644b;
     color: white;
     padding: 12px 30px;
     border: none;
@@ -1432,7 +1416,7 @@ li {
     width: 182px;
     height: 10px;
     border-radius: 10px;
-    background: #E3644B;
+    background: #e3644b;
     flex-shrink: 0;
 }
 
@@ -1504,7 +1488,6 @@ li {
         display: none;
         position: absolute;
         top: 100%;
-        /* Position below the clicked link */
         left: 50%;
         transform: translateX(-50%);
         background-color: rgba(255, 255, 255, 0.9);
@@ -1670,7 +1653,7 @@ li {
     .products__rectangle {
         width: 90px;
         height: 4px;
-        background: #E3644B;
+        background: #e3644b;
         margin-top: 10px;
         border-radius: 0;
     }
@@ -1718,7 +1701,7 @@ li {
         right: 0;
         width: 80px;
         height: 100%;
-        background-color: #E3644B;
+        background-color: #e3644b;
         z-index: 0;
         border-radius: 0;
     }
@@ -2107,7 +2090,7 @@ li {
 }
 
 .orange__text {
-    color: #E3644B;
+    color: #e3644b;
 }
 
 .gray {
@@ -2116,8 +2099,6 @@ li {
 
 .container {
     max-width: 1380px;
-    /* или значение из макета */
     margin: 0 auto;
     padding: 0 20px;
-    /* чтобы был небольшой отступ по краям */
 }
