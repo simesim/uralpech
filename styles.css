@@ -165,10 +165,20 @@ li {
     gap: 5px;
 }
 
-.header__whatsapp-btn img {
+.header__phone-icon,
+.header__whatsapp-btn {
     width: 30px;
     height: 30px;
-    cursor: pointer;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.header__phone-icon img,
+.header__whatsapp-btn img {
+    width: 100%;
+    height: auto;
+    max-width: 20px; 
 }
 
 /* Slider */
