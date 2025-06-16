@@ -167,15 +167,7 @@ document.addEventListener('DOMContentLoaded', () => {
     }
   });
 
-  // Обработчик для выпадающего списка в хедере
-  const headerNavSelect = document.getElementById('headerNavSelect');
-  headerNavSelect.addEventListener('change', (e) => {
-    const section = e.target.value;
-    if (section) {
-      document.querySelector(section).scrollIntoView({ behavior: 'smooth' });
-      headerNavSelect.value = ''; // Сброс значения после выбора
-    }
-  });
+
 });
 
 // О нас
