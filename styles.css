@@ -59,6 +59,7 @@ li {
 
 .header__link {
     position: relative;
+    padding: 10px 0;
 }
 
 .header__link-a {
@@ -71,11 +72,9 @@ li {
 }
 
 .header__link-a-mobile {
-    color: #FFF;
     text-decoration: none;
-    padding: 15px 20px;
     display: block;
-    font-size: 20px;
+    font-size: 14px;
     text-align: center;
 }
 
@@ -99,12 +98,19 @@ li {
 .header__link-dropdown {
     display: none;
     position: absolute;
-    top: 30px;
+    top: 40px;
     left: 0;
-    background-color: white;
+    background-color: #fff;
     padding: 10px;
     box-shadow: 0 2px 5px rgba(0, 0, 0, 0.2);
     z-index: 10;
+
+    font-size: 14px;
+    color: #222;
+}
+
+.header__link-dropdown a{
+    color: #000;
 }
 
 .header__nav-mobile {
@@ -177,7 +183,7 @@ li {
 }
 
 .slider__slide--bg-1 {
-    background-image: url("img/slider/bg1.jpg");
+    background-image: url("../../img/new_index/header/header_bg.jpg");
 }
 
 .slider__slide--bg-2 {
@@ -197,7 +203,7 @@ li {
 }
 
 .orange__text {
-    color: #e3644b;
+    color: #E3644B;
 }
 
 .slider__btn {
@@ -266,10 +272,13 @@ li {
 .black-strip {
     background-color: #000;
     height: 131px;
+    /* фиксированная черная полоска */
     width: 100%;
     display: flex;
     justify-content: center;
+    /* по центру экрана по горизонтали */
     align-items: center;
+    /* выравнивание текста по центру внутри полоски */
 }
 
 .black-strip__container {
@@ -290,6 +299,7 @@ li {
     align-items: center;
     white-space: nowrap;
     padding: 0 42px;
+    /* расстояние между словом и стрелкой увеличено */
 }
 
 .black-strip__text:not(.first)::before {
@@ -322,8 +332,9 @@ li {
     width: 182px;
     height: 10px;
     border-radius: 10px;
-    background: #e3644b;
+    background: #E3644B;
     flex-shrink: 0;
+    /* Убеждаемся, что прямоугольник не сжимается */
 }
 
 .products__title,
@@ -407,14 +418,16 @@ li {
     right: 200px;
     width: 402px;
     height: 100%;
-    background-color: #e3644b;
+    background-color: #E3644B;
     z-index: 0;
+    /* позади карточек */
 }
 
 .container {
     max-width: 1440px;
     margin: 0 auto;
     padding: 0 80px;
+    /* добавлены отступы слева и справа */
     box-sizing: border-box;
 }
 
@@ -486,7 +499,7 @@ li {
 }
 
 .projects__button--active {
-    background: #e3644b;
+    background: #E3644B;
     color: #FFF;
     font-weight: 700;
 }
@@ -504,7 +517,7 @@ li {
 }
 
 .projects__photo--bg {
-    background: url('photo1.png') lightgray 50% / cover no-repeat;
+    background: url('photo1.webp') lightgray 50% / cover no-repeat;
 }
 
 .projects__nav-btn {
@@ -558,7 +571,7 @@ li {
     width: 294px;
     height: 54px;
     border-radius: 50px;
-    border: 1px solid #e3644b;
+    border: 1px solid #E3644B;
     font-size: 15px;
     font-weight: 600;
     cursor: pointer;
@@ -570,7 +583,7 @@ li {
 }
 
 .projects__action-btn--filled {
-    background: #e3644b;
+    background: #E3644B;
     color: #FFF;
 }
 
@@ -578,7 +591,7 @@ li {
     position: absolute;
     width: 398px;
     height: 1000px;
-    background-color: #e3644b;
+    background-color: #E3644B;
     left: 350px;
     top: 500px;
     z-index: -1;
@@ -614,7 +627,7 @@ li {
 }
 
 .aboutus__photo--bg {
-    background: url('photo1.png') center/cover no-repeat;
+    background: url('photo1.webp') center/cover no-repeat;
 }
 
 .aboutus__arrow-btn {
@@ -675,7 +688,7 @@ li {
     height: 10px;
     flex-shrink: 0;
     border-radius: 10px;
-    background: #e3644b;
+    background: #E3644B;
     position: static;
     bottom: -15px;
     left: 0;
@@ -700,7 +713,7 @@ li {
     height: 62px;
     border-radius: 30px;
     border: none;
-    background: #e3644b;
+    background: #E3644B;
     color: #FFF;
     font-size: 17px;
     font-weight: 700;
@@ -752,7 +765,7 @@ li {
 .stats__dot {
     width: 30px;
     height: 30px;
-    background-color: #e3644b;
+    background-color: #E3644B;
     border-radius: 50%;
     flex-shrink: 0;
     align-self: center;
@@ -772,7 +785,7 @@ li {
     position: relative;
     width: 100%;
     padding-bottom: 56.25%;
-
+    /* 16:9 */
     height: 0;
     border-radius: 25px;
     overflow: hidden;
@@ -904,7 +917,7 @@ li {
     content: 'Обзор';
     position: absolute;
     right: 15px;
-    color: #e3644b;
+    color: #E3644B;
     font-weight: 700;
 }
 
@@ -916,7 +929,7 @@ li {
     width: 100%;
     height: 50px;
     border-radius: 20px;
-    background: #e3644b;
+    background: #E3644B;
     border: none;
     color: #FFF;
     font-family: 'Montserrat', sans-serif;
@@ -1093,11 +1106,11 @@ li {
 }
 
 .contact__nav-link:hover {
-    color: #e3644b;
+    color: #FF4500;
 }
 
 .contact__call-btn {
-    background-color: #e3644b;
+    background-color: #FF4500;
     color: white;
     padding: 12px 30px;
     border: none;
@@ -1142,7 +1155,7 @@ li {
 /* News */
 .news {
     padding: 80px 20px;
-    background: linear-gradient(to bottom, #ffffff 0%, #e3644b 100%);
+    background: linear-gradient(to bottom, #ffffff 0%, #ff5e14 100%);
     font-family: 'Montserrat', sans-serif;
     margin-bottom: 0;
 }
@@ -1359,11 +1372,11 @@ li {
 }
 
 .contact__nav-link:hover {
-    color: #e3644b;
+    color: #FF4500;
 }
 
 .contact__call-btn {
-    background-color: #e3644b;
+    background-color: #FF4500;
     color: white;
     padding: 12px 30px;
     border: none;
@@ -1416,7 +1429,7 @@ li {
     width: 182px;
     height: 10px;
     border-radius: 10px;
-    background: #e3644b;
+    background: #E3644B;
     flex-shrink: 0;
 }
 
@@ -1488,6 +1501,7 @@ li {
         display: none;
         position: absolute;
         top: 100%;
+        /* Position below the clicked link */
         left: 50%;
         transform: translateX(-50%);
         background-color: rgba(255, 255, 255, 0.9);
@@ -1517,6 +1531,10 @@ li {
     .header__nav-mobile {
         display: block;
         z-index: 101;
+    }
+
+    .header-nav__icon-wrap {
+        width: 24px;
     }
 
     .header__close-btn {
@@ -1653,7 +1671,7 @@ li {
     .products__rectangle {
         width: 90px;
         height: 4px;
-        background: #e3644b;
+        background: #E3644B;
         margin-top: 10px;
         border-radius: 0;
     }
@@ -1701,7 +1719,7 @@ li {
         right: 0;
         width: 80px;
         height: 100%;
-        background-color: #e3644b;
+        background-color: #E3644B;
         z-index: 0;
         border-radius: 0;
     }
@@ -2090,7 +2108,7 @@ li {
 }
 
 .orange__text {
-    color: #e3644b;
+    color: #E3644B;
 }
 
 .gray {
@@ -2099,6 +2117,8 @@ li {
 
 .container {
     max-width: 1380px;
+    /* или значение из макета */
     margin: 0 auto;
     padding: 0 20px;
+    /* чтобы был небольшой отступ по краям */
 }
