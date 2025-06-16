@@ -42,7 +42,7 @@ linkItems.forEach(link => {
   link.addEventListener('click', (e) => {
     if (window.innerWidth <= 768 && navLinks.classList.contains('active')) {
       e.preventDefault();
-      link.classList.toggle('active'); // Toggle the dropdown on repeated clicks
+      link.classList.toggle('active'); 
     }
   });
 });
@@ -63,53 +63,53 @@ const sections = {
     title: 'СТУДЕНЧЕСКИЙ КАМПУС УРФУ, ЕКАТЕРИНБУРГ',
     description: 'Комплекс работ по проектированию, изготовлению и монтажу противопожарных конструкций выполнило ООО «УКС ГРУПП». В составе противопожарных конструкций комплекса используются двери и перегородки из профильной системы Alutech и стекла Pyrolut.',
     images: [
-      'img/projects/door1.webp',
-      'img/projects/door2.webp',
+      'img/projects/door1.png',
+      'img/projects/door2.png',
       'img/projects/door3.jpg',
       'img/projects/door4.jpg',
-      'img/projects/door5.webp',
+      'img/projects/door5.png',
       'img/projects/door6.jpg',
-      'img/projects/door7.webp'
+      'img/projects/door7.png'
     ]
   },
   'peregorodki': {
     title: 'ДВОРЕЦ ВОДНЫХ ВИДОВ СПОРТА (ДВВС) ЕКАТЕРИНБУРГ',
     description: 'Работы по проектированию, изготовлению и монтажу противопожарных конструкций выполнило ООО «УКС ГРУП». В составе используются перегородки и двери из стального профиля Schuco и стекла Pyrolut с пределами огнестойкости EIW45 и EIW30 соответственно.',
     images: [
-      'img/projects/pere1.webp',
-      'img/projects/pere2.webp',
+      'img/projects/pere1.png',
+      'img/projects/pere2.png',
       'img/projects/pere3.jpg',
       'img/projects/pere4.jpg',
-      'img/projects/pere5.webp',
+      'img/projects/pere5.png',
       'img/projects/pere6.jpg',
       'img/projects/pere7.jpg',
       'img/projects/pere8.jpg',
-      'img/projects/pere9.webp'
+      'img/projects/pere9.png'
     ]
   },
   'okna': {
     title: 'ДВОРЕЦ ВОДНЫХ ВИДОВ СПОРТА, КРЫМ',
     description: 'ООО «УКС ГРУП» выполнило работы по проектированию, производству и монтажу огнестойких витражей и дверей. Выполнены технически сложные работы по монтажу витража высотой более 9 метров со внутренними и наружными углами поворотов. В составе конструкций используются противопожарный профиль Alutech серии F50 и W62 с пределами огнестойкости EIW15 и EIW60.',
     images: [
-      'img/projects/okno1.webp',
-      'img/projects/okno2.webp',
+      'img/projects/okno1.png',
+      'img/projects/okno2.png',
       'img/projects/okno3.jpg',
       'img/projects/okno4.jpg',
       'img/projects/okno5.jpg',
-      'img/projects/okno6.webp'
+      'img/projects/okno6.png'
     ]
   },
   'vitrazhi': {
     title: 'КЛУБНЫЙ ДОМ "РИВЬЕРА". ЕКАТЕРИНБУРГ',
     description: 'Комплекс работ по остеклению Клубного дома "Ривьера", с использованием фасадных систем премиального уровня SCHUCO и AGC выполнил завод ООО «УКС груп».',
     images: [
-      'img/projects/vetr1.webp',
-      'img/projects/vetr2.webp',
+      'img/projects/vetr1.png',
+      'img/projects/vetr2.png',
       'img/projects/vetr3.jpg',
       'img/projects/vetr4.jpg',
       'img/projects/vetr5.jpg',
       'img/projects/vetr6.jpg',
-      'img/projects/vetr7.webp',
+      'img/projects/vetr7.png',
     ]
   }
 };
@@ -166,18 +166,16 @@ document.addEventListener('DOMContentLoaded', () => {
       changeSection(section, null);
     }
   });
-
-
-});
+}); 
 
 // О нас
 const images = [
-  'img/aboutus/ab1.webp',
-  'img/aboutus/ab2.webp',
-  'img/aboutus/ab3.webp',
-  'img/aboutus/ab4.webp',
-  'img/aboutus/ab5.webp',
-  'img/aboutus/ab6.webp'
+  'img/aboutus/ab1.png',
+  'img/aboutus/ab2.png',
+  'img/aboutus/ab3.png',
+  'img/aboutus/ab4.png',
+  'img/aboutus/ab5.png',
+  'img/aboutus/ab6.png'
 ];
 
 let currentIndex = 0;
