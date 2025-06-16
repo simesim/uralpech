@@ -723,7 +723,7 @@ li {
 
 /* Stats */
 .stats {
-    background-image: url('img/stats/bg.jpg');
+    background-image: url('../../img/new_index/stats_bg.jpg');
     height: 360px;
     background-size: cover;
     background-position: center;
@@ -731,6 +731,7 @@ li {
     justify-content: center;
     align-items: center;
     padding: 20px;
+    position: relative;
 }
 
 .stats__list {
@@ -738,6 +739,18 @@ li {
     align-items: center;
     gap: 80px;
     list-style: none;
+    position: relative;
+    z-index: 10px;
+}
+
+.stats__container-filter {
+    background-image: linear-gradient(to bottom,rgba(0,0,0,0.85),rgba(0,0,0,0.25));
+    height: 360px;
+    position: absolute;
+    width: 100vw;
+    top: 0;
+    left: 0;
+
 }
 
 .stats__item {
@@ -779,6 +792,7 @@ li {
     max-width: 1160px;
     margin-left: auto;
     margin-right: auto;
+    position: relative;
 }
 
 .video-wrapper {
@@ -980,6 +994,16 @@ li {
     margin: 0 auto;
 }
 
+.cerifacte__img-wrap {
+    width: 260px;
+    min-height: 348px;
+}
+
+.cerifacte__img-wrap img {
+    width: 100%;
+    height: auto;
+}
+
 .certificates__slider-track-container {
     overflow: hidden;
     position: relative;
@@ -1034,27 +1058,18 @@ li {
     max-width: 1200px;
 }
 
-.contact__container {
-    width: 100%;
-    min-height: 374px;
-    background-image: url('img/contact/bg.png');
-    background-size: cover;
-    background-position: center;
-    border-radius: 20px;
-    overflow: hidden;
-    position: relative;
-    font-family: 'Montserrat', sans-serif;
-}
-
 .contact__overlay {
     width: 100%;
     height: 100%;
     background-color: rgba(0, 0, 0, 0.4);
+}
+
+.contact__row {
     display: flex;
     justify-content: space-between;
     align-items: center;
-    padding: 30px;
     box-sizing: border-box;
+    padding: 30px;
 }
 
 .contact__left {
@@ -1070,7 +1085,6 @@ li {
 
 .contact__logo-img {
     width: 353px;
-    height: 121px;
 }
 
 .contact__phone {
@@ -1302,8 +1316,7 @@ li {
 
 .contact__container {
     width: 100%;
-    min-height: 374px;
-    background-image: url('img/contact/bg.png');
+    background-image: url('../../img/new_index/contact_bg.png');
     background-size: cover;
     background-position: center;
     border-radius: 20px;
@@ -1312,16 +1325,6 @@ li {
     font-family: 'Montserrat', sans-serif;
 }
 
-.contact__overlay {
-    width: 100%;
-    height: 100%;
-    background-color: rgba(0, 0, 0, 0.4);
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-    padding: 30px;
-    box-sizing: border-box;
-}
 
 .contact__left {
     display: flex;
@@ -1336,7 +1339,6 @@ li {
 
 .contact__logo-img {
     width: 353px;
-    height: 121px;
 }
 
 .contact__phone {
@@ -1660,6 +1662,7 @@ li {
     }
 
     .products__title {
+        padding-top: 90px;
         font-size: 35px;
         font-weight: 700;
         color: #1C1E40;
