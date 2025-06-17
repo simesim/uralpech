@@ -885,10 +885,13 @@ li {
 
 .project-form__title {
     color: #FFF;
-    font-family: 'Montserrat', sans-serif;
     font-size: 24px;
-    font-weight: 700;
+    font-weight: 200;
     margin-bottom: 20px;
+    text-align: center; 
+    width: 100%; 
+    max-width: 600px; 
+    
 }
 
 .form-container {
@@ -928,7 +931,6 @@ li {
     border: none;
     padding: 0 15px;
     color: #000;
-    font-family: 'Montserrat', sans-serif;
     font-size: 16px;
     box-sizing: border-box;
 }
@@ -964,18 +966,9 @@ li {
     align-items: center;
     padding: 0 15px;
     color: #D9D9D9;
-    font-family: 'Montserrat', sans-serif;
     font-size: 16px;
     box-sizing: border-box;
     cursor: pointer;
-}
-
-.file-input-label::after {
-    content: 'Обзор';
-    position: absolute;
-    right: 15px;
-    color: #E3644B;
-    font-weight: 700;
 }
 
 .file-input:valid+.file-input-label {
@@ -983,19 +976,22 @@ li {
 }
 
 .form-submit {
-    width: 100%;
+    width: 400px;
     height: 50px;
-    border-radius: 20px;
-    background: #E3644B;
+    border-radius: 50px;
+    background: #e3644b;
     border: none;
     color: #FFF;
-    font-family: 'Montserrat', sans-serif;
     font-size: 18px;
     font-weight: 700;
-    cursor: pointer;
     margin-top: 10px;
+    display: block; 
+    margin-left: auto; 
+    margin-right: auto;
 }
-
+.file-input-label {
+    color: #D9D9D9;
+}
 /* Адаптивность */
 @media (max-width: 768px) {
     .project-form {
