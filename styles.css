@@ -1,4 +1,5 @@
-@import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@400;600;700&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,100..900;1,100..900&display=swap');
+
 
 * {
     margin: 0;
@@ -8,6 +9,7 @@
 
 body {
     font-family: 'Montserrat', sans-serif;
+    font-weight: 300;
 }
 
 ul,
@@ -885,13 +887,10 @@ li {
 
 .project-form__title {
     color: #FFF;
+    font-family: 'Montserrat', sans-serif;
     font-size: 24px;
-    font-weight: 200;
+    font-weight: 700;
     margin-bottom: 20px;
-    text-align: center; 
-    width: 100%; 
-    max-width: 600px; 
-    
 }
 
 .form-container {
@@ -931,6 +930,7 @@ li {
     border: none;
     padding: 0 15px;
     color: #000;
+    font-family: 'Montserrat', sans-serif;
     font-size: 16px;
     box-sizing: border-box;
 }
@@ -966,9 +966,18 @@ li {
     align-items: center;
     padding: 0 15px;
     color: #D9D9D9;
+    font-family: 'Montserrat', sans-serif;
     font-size: 16px;
     box-sizing: border-box;
     cursor: pointer;
+}
+
+.file-input-label::after {
+    content: 'Обзор';
+    position: absolute;
+    right: 15px;
+    color: #E3644B;
+    font-weight: 700;
 }
 
 .file-input:valid+.file-input-label {
@@ -976,22 +985,19 @@ li {
 }
 
 .form-submit {
-    width: 400px;
+    width: 100%;
     height: 50px;
-    border-radius: 50px;
-    background: #e3644b;
+    border-radius: 20px;
+    background: #E3644B;
     border: none;
     color: #FFF;
+    font-family: 'Montserrat', sans-serif;
     font-size: 18px;
     font-weight: 700;
+    cursor: pointer;
     margin-top: 10px;
-    display: block; 
-    margin-left: auto; 
-    margin-right: auto;
 }
-.file-input-label {
-    color: #D9D9D9;
-}
+
 /* Адаптивность */
 @media (max-width: 768px) {
     .project-form {
@@ -1095,20 +1101,30 @@ li {
 .contact {
     margin: 40px auto;
     max-width: 1200px;
+    position: relative;
+}
+
+.contact__container {
+    width: 100%;
+    background-image: url('../../img/new_index/contact_bg.jpg');
+    background-size: cover;
+    background-position: center;
+    border-radius: 20px;
+    overflow: hidden;
+    position: relative;
 }
 
 .contact__overlay {
     width: 100%;
     height: 100%;
-    background-color: rgba(0, 0, 0, 0.4);
+    background-color: rgba(0, 0, 0, 0.6);
 }
 
 .contact__row {
     display: flex;
     justify-content: space-between;
-    align-items: center;
     box-sizing: border-box;
-    padding: 30px;
+    padding: 56px 56px 50px 56px;
 }
 
 .contact__left {
@@ -1118,18 +1134,19 @@ li {
 }
 
 .contact__logo {
-    width: 150px;
-    margin-bottom: 20px;
+    width: 320px;
+    margin-bottom: 60px;
 }
 
 .contact__logo-img {
-    width: 353px;
+    width: 100%;
+    height: auto;
 }
 
 .contact__phone {
     font-size: 22px;
-    font-weight: bold;
-    margin: 0 0 10px 0;
+    font-weight: 500;
+    margin-bottom: 32px;
 }
 
 .contact__address {
@@ -1141,14 +1158,13 @@ li {
 .contact__right {
     display: flex;
     flex-direction: column;
-    align-items: flex-end;
-    gap: 15px;
+    align-items: end;
 }
 
 .contact__nav {
     display: flex;
     gap: 25px;
-    margin-bottom: 20px;
+    margin-bottom: 62px;
 }
 
 .contact__nav-link {
@@ -1163,18 +1179,19 @@ li {
 }
 
 .contact__call-btn {
-    background-color: #FF4500;
-    color: white;
+    background-color: #E3644B;
+    color: #fff;
     padding: 12px 30px;
     border: none;
     border-radius: 50px;
     cursor: pointer;
-    margin-bottom: 15px;
+    margin-bottom: 25px;
     transition: background-color 0.3s;
     width: 276px;
     height: 55px;
     font-size: 17px;
-    font-weight: 700;
+    font-weight: 500;
+    font-family: 'Montserrat', 'Arial' ,sans-serif;
 }
 
 .contact__call-btn:hover {
@@ -1182,8 +1199,8 @@ li {
 }
 
 .contact__hours {
-    color: white;
-    margin-bottom: 15px;
+    color: #fff;
+    margin-bottom: 40px;
     font-size: 18px;
 }
 
@@ -1192,12 +1209,22 @@ li {
     gap: 15px;
 }
 
-.contact__icon-img {
+.contact__icon-wrap {
     width: 66px;
     height: 66px;
+    display: flex;
+    align-items: center;
+    justify-self: center;
+
+    background-color: #fff;
     border-radius: 50%;
-    background-color: white;
-    padding: 5px;
+}
+
+
+.contact__icon-img {
+    width: 54px;
+    height: 54px;
+    border-radius: 50%;
     transition: transform 0.2s;
 }
 
@@ -1347,44 +1374,9 @@ li {
 }
 
 /* Contact */
-.contact {
-    margin: 40px auto;
-    max-width: 1200px;
-    position: relative;
-}
-
-.contact__container {
-    width: 100%;
-    background-image: url('../../img/new_index/contact_bg.png');
-    background-size: cover;
-    background-position: center;
-    border-radius: 20px;
-    overflow: hidden;
-    position: relative;
-    font-family: 'Montserrat', sans-serif;
-}
 
 
-.contact__left {
-    display: flex;
-    flex-direction: column;
-    color: #fff;
-}
 
-.contact__logo {
-    width: 150px;
-    margin-bottom: 20px;
-}
-
-.contact__logo-img {
-    width: 353px;
-}
-
-.contact__phone {
-    font-size: 22px;
-    font-weight: bold;
-    margin: 0 0 10px 0;
-}
 
 .contact__address {
     font-size: 22px;
@@ -1392,18 +1384,6 @@ li {
     margin: 0;
 }
 
-.contact__right {
-    display: flex;
-    flex-direction: column;
-    align-items: flex-end;
-    gap: 15px;
-}
-
-.contact__nav {
-    display: flex;
-    gap: 25px;
-    margin-bottom: 20px;
-}
 
 .contact__nav-link {
     color: white;
@@ -1414,31 +1394,6 @@ li {
 
 .contact__nav-link:hover {
     color: #FF4500;
-}
-
-.contact__call-btn {
-    background-color: #FF4500;
-    color: white;
-    padding: 12px 30px;
-    border: none;
-    border-radius: 50px;
-    cursor: pointer;
-    margin-bottom: 15px;
-    transition: background-color 0.3s;
-    width: 276px;
-    height: 55px;
-    font-size: 17px;
-    font-weight: 700;
-}
-
-.contact__call-btn:hover {
-    background-color: #e03e00;
-}
-
-.contact__hours {
-    color: white;
-    margin-bottom: 15px;
-    font-size: 18px;
 }
 
 .contact__icons {
@@ -2011,11 +1966,6 @@ li {
     .contact__left {
         align-items: center;
         text-align: center;
-    }
-
-    .contact__logo-img {
-        width: 200px;
-        height: auto;
     }
 
     .contact__phone,
