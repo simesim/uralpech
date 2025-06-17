@@ -63,20 +63,20 @@
                     </li>
                 </ul>
                 <button class="header__nav-mobile" id="headerNavBtn">
-                    <img src="img/header/menu-icon.png" alt="Menu" style="width: 24px; height: 24px;">
+                    <img src="./static/img/new_index/header/menu-icon.png" alt="Menu" style="width: 24px; height: 24px;">
                 </button>
                 <button class="header__close-btn" id="headerCloseBtn">✖</button>
             </nav>
             <div class="header__contact">
                 <a href="tel:+73433850951" class="header__contact-link phone">
                     <span class="header__phone-icon">
-                        <img src="img/header/telefom.png" alt="Телефон">
+                        <img src="./static/img/new_index/header/phone.png" alt="Телефон">
                     </span>
                     +7 (343) 385-09-51
                 </a>
                 <a href="mailto:info@uksgroup.ru" class="header__contact-link email">info@uksgroup.ru</a>
                 <a href="https://wa.me/73433850951" class="header__whatsapp-btn">
-                    <img src="img/header/w.png" alt="WhatsApp">
+                    <img src="./static/img/new_index/header/header_wa.png" alt="WhatsApp">
                 </a>
             </div>
         </header>
@@ -127,21 +127,21 @@
                 <div class="products__grid">
                     <div class="products__column">
                         <div class="products__item"
-                            style="background: url('img/products/photo1.webp') center/cover no-repeat;">
+                            style="background: url('./static/img/new_index/products/doors.png') center/cover no-repeat;">
                             <div class="products__item-text">Двери</div>
                         </div>
                         <div class="products__item"
-                            style="background: url('img/products/photo3.webp') center/cover no-repeat;">
+                            style="background: url('./static/img/new_index/products/speakingroom.png') center/cover no-repeat;">
                             <div class="products__item-text">Перегородки</div>
                         </div>
                     </div>
                     <div class="products__column">
                         <div class="products__item"
-                            style="background: url('img/products/photo2.webp') center/cover no-repeat;">
+                            style="background: url('./static/img/new_index/products/fasads.png') center/cover no-repeat;">
                             <div class="products__item-text">Фасады</div>
                         </div>
                         <div class="products__item"
-                            style="background: url('img/products/photo4.webp') center/cover no-repeat;">
+                            style="background: url('./static/img/new_index/products/fasasds_result.png') center/cover no-repeat;">
                             <div class="products__item-text">Фасадные решения</div>
                         </div>
                     </div>
@@ -173,9 +173,9 @@
             </div>
             <div class="projects__content-block">
                 <div class="projects__photo" id="photoContainer">
-                    <img src="img/prev.png" alt="Left Arrow" class="projects__nav-btn projects__nav-btn--left"
+                    <img src="./static/img/new_index/prev.png" alt="Left Arrow" class="projects__nav-btn projects__nav-btn--left"
                         onclick="prevImage()">
-                    <img src="img/next.png" alt="Right Arrow" class="projects__nav-btn projects__nav-btn--right"
+                    <img src="./static/img/new_index/next.png" alt="Right Arrow" class="projects__nav-btn projects__nav-btn--right"
                         onclick="nextImage()">
                 </div>
                 <div class="projects__text">
@@ -228,6 +228,7 @@
 
     <section class="stats">
         <div class="container">
+            <div class="stats__container-filter"></div>
             <ul class="stats__list">
                 <li class="stats__item">
                     <div class="stats__number">25</div>
@@ -259,49 +260,52 @@
             </iframe>
         </div>
     </section>
-    <section class="project-form section">
+    <section class="">
         <div class="container">
             <div class="project-form">
                 <div class="project-form__left">
-                    <h2 class="project-form__title">
-                        Получите информацию о проектировании, изготовлении и доставке продукции прямо сейчас
-                    </h2>
+                    <div class="project-form__wrapper">
+                        <h2 class="project-form__title">
+                            Получите информацию о проектировании, изготовлении и доставке продукции прямо сейчас
+                        </h2>
 
-                    <div class="form-container">
-                        <div class="form-row">
-                            <div class="form-column form-column--medium">
-                                <label class="form-label">Название компании</label>
-                                <input type="text" class="form-input">
-                            </div>
-                            <div class="form-column form-column--medium">
-                                <label class="form-label">Ваша почта</label>
-                                <input type="email" class="form-input">
-                            </div>
-                        </div>
-
-                        <div class="form-row">
-                            <div class="form-column">
-                                <label class="form-label">Номер телефона</label>
-                                <input type="tel" class="form-input" placeholder="+7 (999) 999-99-99">
-                            </div>
-                        </div>
-
-                        <div class="form-row">
-                            <div class="form-column form-column--medium">
-                                <label class="form-label">Напишите Ваш город</label>
-                                <input type="text" class="form-input" placeholder="Введите ваш город">
-                            </div>
-                            <div class="form-column form-column--medium">
-                                <label class="form-label">Прикрепить файл</label>
-                                <div class="file-input-container">
-                                    <input type="file" id="file-upload" class="file-input">
-                                    <label for="file-upload" class="file-input-label">Прикрепить файл</label>
+                        <div class="form-container">
+                            <div class="form-row">
+                                <div class="form-column form-column--medium">
+                                    <label class="form-label">Название компании</label>
+                                    <input type="text" class="form-input">
+                                </div>
+                                <div class="form-column form-column--medium">
+                                    <label class="form-label">Ваша почта</label>
+                                    <input type="email" class="form-input">
                                 </div>
                             </div>
-                        </div>
 
-                        <button class="form-submit">Оставить заявку</button>
+                            <div class="form-row">
+                                <div class="form-column">
+                                    <label class="form-label">Номер телефона</label>
+                                    <input type="tel" class="form-input" placeholder="+7 (999) 999-99-99">
+                                </div>
+                            </div>
+
+                            <div class="form-row form-row--bottom">
+                                <div class="form-column form-column--medium">
+                                    <label class="form-label">Напишите Ваш город</label>
+                                    <input type="text" class="form-input" placeholder="Введите ваш город">
+                                </div>
+                                <div class="form-column form-column--medium">
+                                    <label class="form-label" for="file-upload">Прикрепить файл</label>
+                                    <div class="file-input-container">
+                                        <input type="file" id="file-upload" class="file-input">
+                                        <label for="file-upload" class="file-input-label">Прикрепить файл</label>
+                                    </div>
+                                </div>
+                            </div>
+
+                            <button class="form-submit">Оставить заявку</button>
+                        </div>
                     </div>
+                    
                 </div>
 
                 <div class="project-form__right"></div>
@@ -322,34 +326,44 @@
                     <div class="certificates__slider-track-container">
                         <div class="certificates__slider-track">
                             <div class="certificates__slide">
-                                <img src="img/cert/cert1.jpg" alt="Certificate 1" class="certificates__slide-img">
+                                <div class="cerifacte__img-wrap">
+                                    <img src="./static/img/new_index/cert1.jpg" alt="Certificate 1" class="certificates__slide-img">
+                                </div>
                                 <p class="certificates__slide-text">Действует до 09.08.2023 г.</p>
                             </div>
                             <div class="certificates__slide">
-                                <img src="img/cert/cert2.webp" alt="Certificate 2" class="certificates__slide-img">
+                                <div class="cerifacte__img-wrap">
+                                    <img src="./static/img/new_index/cert2.png" alt="Certificate 2" class="certificates__slide-img">
+                                </div>
                                 <p class="certificates__slide-text">Однопольные огнестойкие двери Alutech ALT W62. До
                                     16.02.2026 г.</p>
                             </div>
                             <div class="certificates__slide">
-                                <img src="img/cert/cert3.webp" alt="Certificate 3" class="certificates__slide-img">
+                                <div class="cerifacte__img-wrap">
+                                    <img src="./static/img/new_index/cert3.png" alt="Certificate 3" class="certificates__slide-img">
+                                </div>
                                 <p class="certificates__slide-text">Двупольные двери VoestAlpine VA-FORM 6050. До
                                     31.01.2027
                                     г.</p>
                             </div>
                             <div class="certificates__slide">
-                                <img src="img/cert/cert4.webp" alt="Certificate 4" class="certificates__slide-img">
+                                <div class="cerifacte__img-wrap">
+                                    <img src="./static/img/new_index/cert4.png" alt="Certificate 4" class="certificates__slide-img">
+                                </div>
                                 <p class="certificates__slide-text">Перегородка VISS FIRE с Pyrobel 21. До 17.11.2025 г.
                                 </p>
                             </div>
                             <div class="certificates__slide">
-                                <img src="img/cert/cert5.webp" alt="Certificate 5" class="certificates__slide-img">
+                                <div class="cerifacte__img-wrap">
+                                    <img src="./static/img/new_index/cert5.png" alt="Certificate 5" class="certificates__slide-img">
+                                </div>
                                 <p class="certificates__slide-text">Окно Alutech W62 с Pyropane 100. До 02.07.2024 г.
                                 </p>
                             </div>
                         </div>
                     </div>
-                    <img src="img/prev.png" alt="Previous" class="certificates__btn certificates__btn--prev">
-                    <img src="img/next.png" alt="Next" class="certificates__btn certificates__btn--next">
+                    <img src="./static/img/new_index/prev.png" alt="Previous" class="certificates__btn certificates__btn--prev">
+                    <img src="./static/img/new_index/next.png" alt="Next" class="certificates__btn certificates__btn--next">
                 </div>
             </div>
         </div>
@@ -359,26 +373,32 @@
         <div class="container">
             <div class="contact__container">
                 <div class="contact__overlay">
-                    <div class="contact__left">
-                        <div class="contact__logo">
-                            <img src="img/contact/logo.png" alt="Logo" class="contact__logo-img">
+                    <div class="contact__row">
+                        <div class="contact__left">
+                            <div class="contact__logo">
+                                <img src="./static/img/new_index/footer_logo.png" alt="Logo" class="contact__logo-img">
+                            </div>
+                            <p class="contact__phone">+7 (343) 385-09-51</p>
+                            <p class="contact__address">620063, г. Екатеринбург,<br>ул. Чапаева, 1а, 3 этаж</p>
                         </div>
-                        <p class="contact__phone">+7 (343) 385-09-51</p>
-                        <p class="contact__address">620063, г. Екатеринбург,<br>ул. Чапаева, 1а, 3 этаж</p>
-                    </div>
-                    <div class="contact__right">
-                        <nav class="contact__nav">
-                            <a href="#" class="contact__nav-link">Главная</a>
-                            <a href="#aboutus" class="contact__nav-link">О нас</a>
-                            <a href="#projects" class="contact__nav-link">Проекты</a>
-                            <a href="#products" class="contact__nav-link">Продукция</a>
-                            <a href="#certificates" class="contact__nav-link">Сертификаты</a>
-                        </nav>
-                        <button class="contact__call-btn">Позвонить</button>
-                        <p class="contact__hours">Пн–Пт / 09:00–18:00</p>
-                        <div class="contact__icons">
-                            <img src="img/contact/w.png" alt="Icon 1" class="contact__icon-img">
-                            <img src="img/contact/mail.png" alt="Icon 2" class="contact__icon-img">
+                        <div class="contact__right">
+                            <nav class="contact__nav">
+                                <a href="#" class="contact__nav-link">Главная</a>
+                                <a href="#aboutus" class="contact__nav-link">О нас</a>
+                                <a href="#projects" class="contact__nav-link">Проекты</a>
+                                <a href="#products" class="contact__nav-link">Продукция</a>
+                                <a href="#certificates" class="contact__nav-link">Сертификаты</a>
+                            </nav>
+                            <button class="contact__call-btn">Позвонить</button>
+                            <p class="contact__hours">Пн–Пт / 09:00–18:00</p>
+                            <div class="contact__icons">
+                                <div class="contact__icon-wrap">
+                                    <img src="./static/img/new_index/w.svg" alt="Icon 1" class="contact__icon-img">
+                                </div>
+                                <div class="contact__icon-wrap">
+                                    <img src="./static/img/new_index/mail.svg" alt="Icon 2" class="contact__icon-img">
+                                </div>
+                            </div>
                         </div>
                     </div>
                 </div>
