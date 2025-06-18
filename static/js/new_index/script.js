@@ -128,22 +128,34 @@ function changeSection(section, clickedBtn) {
   updateImage();
 }
 
-function updateImage() {
-  document.getElementById('photoContainer').style.background = `url('${sections[currentSection].images[currentImageIndex]}') lightgray 50% / cover no-repeat`;
-}
+(function(){
+  const leftBtn = document.getElementById('projectLeftBtn');
+  const rightBtn = document.getElementById('projectRightBtn');
 
-function nextImage() {
-  currentImageIndex = (currentImageIndex + 1) % sections[currentSection].images.length;
-  updateImage();
-}
+  leftBtn.addEventListener('click', prevImage);
+  rightBtn.addEventListener('click', nextImage);
 
-function prevImage() {
-  currentImageIndex = (currentImageIndex - 1 + sections[currentSection].images.length) % sections[currentSection].images.length;
-  updateImage();
-}
+  function updateImage() {
+    document.getElementById('photoContainer').style.background = `url('${sections[currentSection].images[currentImageIndex]}') lightgray 50% / cover no-repeat`;
+  }
+
+  function nextImage() {
+    currentImageIndex = (currentImageIndex + 1) % sections[currentSection].images.length;
+    updateImage();
+  }
+
+  function prevImage() {
+    currentImageIndex = (currentImageIndex - 1 + sections[currentSection].images.length) % sections[currentSection].images.length;
+    updateImage();
+  }
+
+  document.addEventListener('DOMContentLoaded', () => {
+    updateImage();
+  });
+})();
+
 
 document.addEventListener('DOMContentLoaded', () => {
-  updateImage();
   const buttons = document.querySelectorAll('.projects__button');
   buttons.forEach(button => {
     button.addEventListener('click', () => {
