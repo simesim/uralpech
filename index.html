@@ -11,7 +11,8 @@
 <body class="body">
     <header class="header">
         <div class="header__logo">
-            <img src="./static/img/new_index/header/Logo.png" alt="УКС Групп – завод огнестойких, сверхпрочных конструкций">
+            <img src="./static/img/new_index/header/Logo.png"
+                alt="УКС Групп – завод огнестойких, сверхпрочных конструкций">
         </div>
         <nav class="header__nav">
             <ul class="header__links">
@@ -35,8 +36,7 @@
                     </div>
                 </li>
                 <li class="header__link">
-                    <a href="#" class="header__link-a">НАША ПРОДУКЦИЯ <span
-                            class="header__link-triangle"></span></a>
+                    <a href="#" class="header__link-a">НАША ПРОДУКЦИЯ <span class="header__link-triangle"></span></a>
                     <div class="header__link-dropdown">
                         <ul class="dropdown__list">
                             <li class="dropdown-list__item">
@@ -55,8 +55,7 @@
                     </div>
                 </li>
                 <li class="header__link">
-                    <a href="#" class="header__link-a">ПРОЕКТЫ <span
-                            class="header__link-triangle"></span></a>
+                    <a href="#" class="header__link-a">ПРОЕКТЫ <span class="header__link-triangle"></span></a>
                     <div class="header__link-dropdown">
                         <ul class="dropdown__list">
                             <li class="dropdown-list__item">
@@ -75,8 +74,7 @@
                     </div>
                 </li>
                 <li class="header__link">
-                    <a href="#" class="header__link-a">КОНТАКТЫ <span
-                            class="header__link-triangle"></span></a>
+                    <a href="#" class="header__link-a">КОНТАКТЫ <span class="header__link-triangle"></span></a>
                     <div class="header__link-dropdown">
                         <ul>
                             <li class="dropdown-list__item">
@@ -144,8 +142,9 @@
         </div>
     </div>
 
-    <section class="products section" style="min-height: 700px;">
-        <div class="container">
+    <section class="products section">
+        <div class="container container--relative">
+
             <div class="products__header">
                 <div class="products__rectangle"></div>
                 <h2 class="products__title">НАША <br> ПРОДУКЦИЯ</h2>
@@ -174,22 +173,24 @@
                     </div>
                 </div>
             </div>
+
             <div class="global-products"></div>
         </div>
     </section>
 
     <section class="projects section">
-        <div class="container">
+        <div class="container container--relative">
+
             <div class="projects__header">
                 <div class="projects__rectangle"></div>
                 <h2 class="projects__title">ПРОЕКТЫ</h2>
             </div>
             <select class="projects__button-group-mobile" id="projectsSelect">
-                    <option value="dveri">Двери</option>
-                    <option value="peregorodki">Перегородки</option>
-                    <option value="okna">Окна</option>
-                    <option value="vitrazhi">Витражи</option>
-                </select>
+                <option value="dveri">Двери</option>
+                <option value="peregorodki">Перегородки</option>
+                <option value="okna">Окна</option>
+                <option value="vitrazhi">Витражи</option>
+            </select>
             <div class="projects__button-group">
                 <button class="projects__button" data-section="dveri">Двери</button>
                 <button class="projects__button" data-section="peregorodki">Перегородки</button>
@@ -202,53 +203,57 @@
                         <img src="./static/img/new_index/prev.png" alt="Left Arrow">
                     </button>
                     <button class="projects__nav-btn projects__nav-btn--right" id="projectRightBtn">
-                        <img src="./static/img/new_index/next.png" alt="Right Arrow" >
+                        <img src="./static/img/new_index/next.png" alt="Right Arrow">
                     </button>
                 </div>
                 <div class="projects__text">
                     <div>
                         <h3 class="projects__text-title" id="textTitle">СТУДЕНЧЕСКИЙ КАМПУС УРФУ, ЕКАТЕРИНБУРГ</h3>
-                        <p class="projects__text-description" id="textDescription">Комплекс работ по проектированию,
-                            изготовлению и монтажу противопожарных конструкций выполнило ООО «УКС ГРУПП». В составе
-                            противопожарных конструкций комплекса используются двери и перегородки из профильной системы
-                            Alutech и стекла Pyrolut.</p>
+                        <p class="projects__text-description" id="textDescription">
+                            Комплекс работ по проектированию, изготовлению и монтажу противопожарных конструкций
+                            выполнило ООО «УКС ГРУПП». В составе противопожарных конструкций комплекса используются
+                            двери и перегородки из профильной системы Alutech и стекла Pyrolut.
+                        </p>
                     </div>
                     <div class="projects__action-buttons">
                         <button class="projects__action-btn projects__action-btn--outline">Оставить заявку</button>
                         <button class="projects__action-btn projects__action-btn--filled">Узнать больше</button>
                     </div>
                 </div>
+
             </div>
+            <div class="global-projects"></div>
         </div>
-        <div class="global-projects"></div>
     </section>
 
 
 
     <section class="aboutus" id="aboutus">
-        <div class="aboutus__header container">
-            <h2 class="aboutus__title">О НАС</h2>
-            <div class="aboutus__orange-line"></div>
-        </div>
-        <div class="aboutus__row">
-            <div class="aboutus__container">
-                <div class="aboutus__photo aboutus__photo--bg" id="photoBlock">
-                    <button class="aboutus__arrow-btn aboutus__arrow-btn--left" id="prevBtn">‹</button>
-                    <button class="aboutus__arrow-btn aboutus__arrow-btn--right" id="nextBtn">›</button>
-                </div>
-                <div class="aboutus__text">
-                    <p class="aboutus__bold-text">
-                        Предприятие, специализирующееся на изготовлении огнестойких светопрозрачных конструкций, применяемых
-                        для противопожарного оборудования зданий и сооружений любого назначения, включая коммерческие,
-                        жилые, производственные и промышленные объекты.
-                    </p>
-                    <p class="aboutus__regular-text">
-                        ООО «УКС ГРУП» осуществляет полный цикл работ, связанных с разработкой технического задания,
-                        проектированием, изготовлением, организацией поставок, монтажом и обслуживанием огнестойких
-                        светопрозрачных конструкций с применением высококачественного противопожарного стального или
-                        алюминиевого профиля и огнеупорного стекла.
-                    </p>
-                    <button class="aboutus__btn">Узнать больше</button>
+        <div class="container">
+            <div class="aboutus__header">
+                <h2 class="aboutus__title">О НАС</h2>
+                <div class="aboutus__orange-line"></div>
+            </div>
+            <div class="aboutus__row">
+                <div class="aboutus__container">
+                    <div class="aboutus__photo aboutus__photo--bg" id="photoBlock">
+                        <button class="aboutus__arrow-btn aboutus__arrow-btn--left" id="prevBtn">‹</button>
+                        <button class="aboutus__arrow-btn aboutus__arrow-btn--right" id="nextBtn">›</button>
+                    </div>
+                    <div class="aboutus__text">
+                        <p class="aboutus__bold-text">
+                            Предприятие, специализирующееся на изготовлении огнестойких светопрозрачных конструкций,
+                            применяемых для противопожарного оборудования зданий и сооружений любого назначения, включая
+                            коммерческие, жилые, производственные и промышленные объекты.
+                        </p>
+                        <p class="aboutus__regular-text">
+                            ООО «УКС ГРУП» осуществляет полный цикл работ, связанных с разработкой технического задания,
+                            проектированием, изготовлением, организацией поставок, монтажом и обслуживанием огнестойких
+                            светопрозрачных конструкций с применением высококачественного противопожарного стального или
+                            алюминиевого профиля и огнеупорного стекла.
+                        </p>
+                        <button class="aboutus__btn">Узнать больше</button>
+                    </div>
                 </div>
             </div>
         </div>
@@ -334,7 +339,7 @@
                             <button class="form-submit">Оставить заявку</button>
                         </div>
                     </div>
-                    
+
                 </div>
 
                 <div class="project-form__right"></div>
@@ -356,20 +361,23 @@
                         <div class="certificates__slider-track">
                             <div class="certificates__slide">
                                 <div class="cerifacte__img-wrap">
-                                    <img src="./static/img/new_index/cert1.jpg" alt="Certificate 1" class="certificates__slide-img">
+                                    <img src="./static/img/new_index/cert1.jpg" alt="Certificate 1"
+                                        class="certificates__slide-img">
                                 </div>
                                 <p class="certificates__slide-text">Действует до 09.08.2023 г.</p>
                             </div>
                             <div class="certificates__slide">
                                 <div class="cerifacte__img-wrap">
-                                    <img src="./static/img/new_index/cert2.png" alt="Certificate 2" class="certificates__slide-img">
+                                    <img src="./static/img/new_index/cert2.png" alt="Certificate 2"
+                                        class="certificates__slide-img">
                                 </div>
                                 <p class="certificates__slide-text">Однопольные огнестойкие двери Alutech ALT W62. До
                                     16.02.2026 г.</p>
                             </div>
                             <div class="certificates__slide">
                                 <div class="cerifacte__img-wrap">
-                                    <img src="./static/img/new_index/cert3.png" alt="Certificate 3" class="certificates__slide-img">
+                                    <img src="./static/img/new_index/cert3.png" alt="Certificate 3"
+                                        class="certificates__slide-img">
                                 </div>
                                 <p class="certificates__slide-text">Двупольные двери VoestAlpine VA-FORM 6050. До
                                     31.01.2027
@@ -377,22 +385,26 @@
                             </div>
                             <div class="certificates__slide">
                                 <div class="cerifacte__img-wrap">
-                                    <img src="./static/img/new_index/cert4.png" alt="Certificate 4" class="certificates__slide-img">
+                                    <img src="./static/img/new_index/cert4.png" alt="Certificate 4"
+                                        class="certificates__slide-img">
                                 </div>
                                 <p class="certificates__slide-text">Перегородка VISS FIRE с Pyrobel 21. До 17.11.2025 г.
                                 </p>
                             </div>
                             <div class="certificates__slide">
                                 <div class="cerifacte__img-wrap">
-                                    <img src="./static/img/new_index/cert5.png" alt="Certificate 5" class="certificates__slide-img">
+                                    <img src="./static/img/new_index/cert5.png" alt="Certificate 5"
+                                        class="certificates__slide-img">
                                 </div>
                                 <p class="certificates__slide-text">Окно Alutech W62 с Pyropane 100. До 02.07.2024 г.
                                 </p>
                             </div>
                         </div>
                     </div>
-                    <img src="./static/img/new_index/prev.png" alt="Previous" class="certificates__btn certificates__btn--prev">
-                    <img src="./static/img/new_index/next.png" alt="Next" class="certificates__btn certificates__btn--next">
+                    <img src="./static/img/new_index/prev.png" alt="Previous"
+                        class="certificates__btn certificates__btn--prev">
+                    <img src="./static/img/new_index/next.png" alt="Next"
+                        class="certificates__btn certificates__btn--next">
                 </div>
             </div>
         </div>
