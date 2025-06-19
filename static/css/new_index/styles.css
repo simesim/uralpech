@@ -649,7 +649,6 @@ li {
     display: flex;
     flex-direction: column;
     gap: 12px;
-    margin-top: -5px;
 }
 
 .projects__action-btn {
@@ -684,7 +683,8 @@ li {
 
 /* About Us */
 .aboutus {
-    margin: 80px 0;
+    padding-top: 80px;
+    padding-bottom: 80px;
 }
 
 .aboutus__row {
@@ -702,6 +702,7 @@ li {
 .aboutus__container {
     display: flex;
     justify-content: end;
+    align-items: center;
     gap: 0px;
     width: 100%;
     max-width: 1380px;
@@ -1494,6 +1495,10 @@ li {
     flex-shrink: 0;
 }
 
+.news.section {
+    margin-bottom: 0;
+}
+
 /* Адаптивность */
 @media screen and (max-width: 768px) {
 
@@ -1817,11 +1822,6 @@ li {
 
     /* About Us */
 
-    .aboutus {
-        padding: 20px;
-        margin: 40px 0;
-    }
-
     .aboutus__container {
         flex-direction: column;
         padding: 0;
@@ -1840,13 +1840,6 @@ li {
         order: 2;
     }
 
-    .aboutus__header {
-        position: static;
-        margin-bottom: 20px;
-        flex-direction: column;
-        align-items: flex-start;
-        gap: 10px;
-    }
 
     .aboutus__title {
         font-size: 36px;
@@ -2009,7 +2002,6 @@ li {
 
     .contact__container {
         height: auto;
-        padding: 20px;
     }
 
     .contact__overlay {
@@ -2048,11 +2040,6 @@ li {
 
     .contact__hours {
         font-size: 14px;
-    }
-
-    .contact__icon-img {
-        width: 40px;
-        height: 40px;
     }
 
     /* News */
@@ -2186,4 +2173,169 @@ li {
         font-size: 17px;
         font-weight: 600;
     }
+
+    .aboutus__photo {
+        position: static;
+        width: 100%;
+        height: 200px;
+    }
+
+    .aboutus__arrow-btn {
+        width: 30px;
+        height: 30px;
+    }
+
+    .aboutus__arrow-btn {
+        top: 100px;
+    }
+
+    #aboutus .aboutus__header {
+        padding-left: 0;
+        justify-content: start;
+        flex-direction: row-reverse;
+        align-items: end;
+        gap: 20px;
+        padding-right: 0;
+        font-size: 40px;
+
+        margin-bottom: 80px;
+    }
+
+    .aboutus__bold-text {
+        width: 100%;
+    }
+
+    .projects__text-description {
+        margin-bottom: 20px;
+    }
+
+    .projects__header {
+        margin-left: -120px;
+        align-items: end;
+        font-size: 40px;
+        font-weight: 600;
+    }
+
+    .aboutus__text {
+        margin-bottom: 0;
+    }
+
+    .products__title {
+        padding-top: 0;
+        order: 1;
+    }
+
+    .products__rectangle {
+        order: 2;
+        height: 10px;
+        width: 170px;
+        margin-left: -80px;
+        border-radius: 50px;
+        margin-bottom: 70px;
+    }
+
+    .products__header::before {
+        position: absolute;
+        top: 104px;
+        left: 180px;
+        width: 62px;
+        height: 30px;
+    }
+
+    .project-form__left {
+        padding-left: 40px;
+    }
+
+    .project-form {
+        padding: 0;
+    }
+
+    .form-input {
+        width: 266px;
+    }
+
+    .project-form__wrapper {
+        width: 100%;
+    }
+
+    .project-form__left {
+        padding: 24px;
+    }
+
+    .form-label {
+        font-size: 13px;
+    }
+
+    .certificates__title {
+        font-size: 32px;
+        font-weight: 600;
+    }
+
+    .certificates__rectangle {
+        margin-left: -80px;
+    }
+
+    .certificates__header {
+        align-items: end;
+    }
+    
+    .order {
+        margin-bottom: 80px;
+    }
+
+    .contact__row {
+        flex-direction: column;
+        padding: 16px;
+    }
+
+    .contact__logo {
+        width: 170px;
+    }
+
+    .contact__logo {
+        margin-bottom: 34px;
+    }
+
+    .contact__phone {
+        margin-bottom: 16px;
+    }
+
+    .contact__call-btn {
+        order: 1;
+    }
+
+    .contact__nav {
+        order: 4;
+        align-items: center;
+        margin-bottom: 16px;
+    }
+
+    .contact__hours {
+        order: 2;
+        margin-bottom: 16px;
+    }
+
+    .contact__icons {
+        order: 3;
+        margin-bottom: 16px;
+    }
+
+    .contact__address {
+        margin-bottom: 16px;
+    }
+
+    .contact__call-btn {
+        width: 208px;
+    }
+
+    .contact__icon-wrap {
+        width: 50px;
+        height: 50px;
+    }
+
+    .contact__icon-img {
+        width: 100%;
+        height: auto;
+    }
+
 }
