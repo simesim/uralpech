@@ -295,3 +295,15 @@ window.addEventListener('click', (e) => {
     closeNewsModal();
   }
 });
+
+
+document.querySelectorAll('a[data-project]').forEach(link => {
+  link.addEventListener('click', function (e) {
+    const targetSection = this.getAttribute('data-project');
+    setTimeout(() => {
+      if (targetSection && sections[targetSection]) {
+        changeSection(targetSection, null);
+      }
+    }, 100);
+  });
+});
