@@ -1875,24 +1875,43 @@ li {
     /* Stats */
     .stats {
         height: auto;
-        padding: 20px;
+        padding: 20px 0;
     }
-
+    
     .stats__list {
-        flex-direction: column;
-        gap: 20px;
+        flex-direction: row;
+        flex-wrap: wrap;
+        justify-content: center;
+        gap: 2px;
+        flex-wrap: nowrap;
     }
-
+    
+    .stats__item {
+        flex: 0 0 auto; 
+        padding: 0 2px;
+    }
+    
     .stats__number {
-        font-size: 60px;
+        font-size: 30px;
+        line-height: 1;
     }
-
+    
     .stats__text {
-        font-size: 16px;
+        font-size: 10px;
+        margin-top: 5px;
+        text-align: center;
+        white-space: normal;
     }
-
+    
     .stats__dot {
-        display: none;
+        width: 6px;
+        height: 6px;
+        margin: 0 2px; 
+        align-self: center;
+    }
+    
+    .stats__container-filter {
+        height: 100%;
     }
 
     #video-container {
