@@ -42,7 +42,7 @@ linkItems.forEach(link => {
   link.addEventListener('click', (e) => {
     if (window.innerWidth <= 768 && navLinks.classList.contains('active')) {
       e.preventDefault();
-      link.classList.toggle('active'); 
+      link.classList.toggle('active');
     }
   });
 });
@@ -128,7 +128,7 @@ function changeSection(section, clickedBtn) {
   updateImage();
 }
 
-(function(){
+(function () {
   const leftBtn = document.getElementById('projectLeftBtn');
   const rightBtn = document.getElementById('projectRightBtn');
 
@@ -178,7 +178,7 @@ document.addEventListener('DOMContentLoaded', () => {
       changeSection(section, null);
     }
   });
-}); 
+});
 
 // О нас
 const images = [
@@ -296,7 +296,7 @@ window.addEventListener('click', (e) => {
   }
 });
 
-
+//Кнопки в выпада.щем списки для проектов
 document.querySelectorAll('a[data-project]').forEach(link => {
   link.addEventListener('click', function (e) {
     const targetSection = this.getAttribute('data-project');
@@ -306,4 +306,142 @@ document.querySelectorAll('a[data-project]').forEach(link => {
       }
     }, 100);
   });
+});
+
+//Кнопка в форме
+document.getElementById('requestForm').addEventListener('submit', function (e) {
+  e.preventDefault();
+
+  if (this.checkValidity()) {
+    alert('Форма успешно отправлена!');
+    this.reset();
+  } else {
+    const invalidFields = this.querySelectorAll(':invalid');
+    invalidFields.forEach(field => {
+      field.classList.add('invalid-field');
+    });
+  }
+});
+
+
+// Функции для управления попапом
+function openPopup() {
+  document.getElementById('requestPopup').style.display = 'flex';
+  document.body.style.overflow = 'hidden'; // Блокируем прокрутку страницы
+}
+
+function closePopup() {
+  document.getElementById('requestPopup').style.display = 'none';
+  document.body.style.overflow = '';
+}
+
+// Закрытие попапа при клике вне его области
+document.getElementById('requestPopup').addEventListener('click', function (e) {
+  if (e.target === this) {
+    closePopup();
+  }
+});
+
+// Обработка формы
+document.getElementById('requestForm').addEventListener('submit', function (e) {
+  e.preventDefault();
+
+  const userName = document.getElementById('userName').value;
+  const userPhone = document.getElementById('userPhone').value;
+
+  console.log('Форма отправлена:', { userName, userPhone });
+  closePopup();
+
+  alert('Спасибо за заявку! Мы скоро с вами свяжемся.');
+});
+
+// Закрытие по ESC
+document.addEventListener('keydown', function (e) {
+  if (e.key === 'Escape') {
+    closePopup();
+  }
+});
+
+
+
+
+// Данные для попапов
+const projectData = {
+  'dveri': {
+    title: 'СТУДЕНЧЕСКИЙ КАМПУС УРФУ, ЕКАТЕРИНБУРГ',
+    description: 'Ключевая идея проекта — формирование мощного научно-образовательного кластера в сфере IT, где российские и международные студенты смогут жить и учиться в комфортных условиях. Это способствует привлекательности учебного заведения и мотивации студентов для достижения высоких результатов. Многофункциональный общественный центр кампуса включает в себя лекционные аудитории, комплекс лабораторий, помещения для самостоятельной и проектной работы, а также холлы для отдыха. В составе противопожарных конструкций комплекса используются двери и перегородки из профильной системы Alutech и стекла Pyrolut. Предел огнестойкости конструкций EIW45 (период сдерживания продуктов горения до 45 минут). Огнестойкие светопрозрачные конструкции оснащены ручками штангами из нержавеющей стали СДР-13 1200 мм, Dorma TS Match с координатором последовательного закрывания G-GSRN, автоматическими выпадающими порогами Sipam (Италия) и врезными электромагнитными замками AL-400SM. Комплекс работ по проектированию, изготовлению и монтажу противопожарных конструкций выполнило ООО «УКС ГРУПП» Применяемые в работе материалы, комплектующие и фурнитура отвечают всем требованиям с точки зрения надежности, эстетики и пожарной безопасности.'
+  },
+  'peregorodki': {
+    title: 'ДВОРЕЦ ВОДНЫХ ВИДОВ СПОРТА (ДВВС) ЕКАТЕРИНБУРГ',
+    description: 'Дворец водных видов спорта (ДВВС) — это самый крупный современный комплекс в России для тренировок и соревнований, соответствущий всем требованиям международной федерации университетского спорта FISU и готовый принимать чемпионаты мира по водным видам спорта. Ключевой особенностью объекта является возможность предоставить профессиональным спортменам совершенствовать свое мастерство по плаванию, водному поло, синхронному плаванию, подводным дисциплинам и прыжкам в воду. В составе противопожарных конструкций комплекса используются перегородки и двери из стального профиля Schuco и стекла Pyrolut с пределами огнестойкости EIW45 и EIW30 соответственно. Работы по проектированию, изготовлению и монтажу противопожарных конструкций выполнило ООО «УКС ГРУП». ДВВС — лауреат премии Sportsfacilities в номинации «Спортивный объект — открытие года».'
+  },
+  'okna': {
+    title: 'ДВОРЕЦ ВОДНЫХ ВИДОВ СПОРТА, КРЫМ',
+    description: 'Современные оконные решения включают энергосберегающие стеклопакеты, шумозащитные конструкции и интеллектуальные системы управления. Наши окна сочетают в себе высокую функциональность и эстетичный дизайн.'
+  },
+  'vitrazhi': {
+    title: 'Витражи',
+    description: 'Наши витражи - это сочетание традиционных технологий и современных материалов. Мы создаем уникальные светопрозрачные конструкции для интерьеров любого стиля.'
+  }
+};
+
+// Текущий выбранный раздел
+let currentsSection = 'dveri';
+
+document.querySelectorAll('.projects__button').forEach(button => {
+  button.addEventListener('click', function () {
+    currentsSection = this.dataset.section;
+  });
+});
+
+document.getElementById('projectsSelect').addEventListener('change', function () {
+  currentsSection = this.value;
+});
+
+// Обработчик для кнопки "Узнать больше"
+document.getElementById('learnMoreBtn').addEventListener('click', function () {
+  const data = projectData[currentsSection];
+  openProjectPopup(data.title, data.description);
+});
+
+// Функции управления попапом
+function openProjectPopup(title, description) {
+  document.getElementById('projectPopupTitle').textContent = title;
+  document.getElementById('projectPopupDescription').textContent = description;
+  document.getElementById('projectPopup').style.display = 'flex';
+  document.body.style.overflow = 'hidden';
+}
+
+function closeProjectPopup() {
+  document.getElementById('projectPopup').style.display = 'none';
+  document.body.style.overflow = '';
+}
+
+document.getElementById('projectPopup').addEventListener('click', function (e) {
+  if (e.target === this) {
+    closeProjectPopup();
+  }
+});
+
+document.getElementById('projectForm').addEventListener('submit', function (e) {
+  e.preventDefault();
+
+  const userName = document.getElementById('projectUserName').value;
+  const userPhone = document.getElementById('projectUserPhone').value;
+  const projectTitle = document.getElementById('projectPopupTitle').textContent;
+
+  console.log('Форма отправлена:', {
+    project: projectTitle,
+    userName,
+    userPhone
+  });
+
+  closeProjectPopup();
+  alert('Спасибо за заявку! Мы скоро с вами свяжемся по вопросу "' + projectTitle + '".');
+});
+
+document.addEventListener('keydown', function (e) {
+  if (e.key === 'Escape') {
+    closeProjectPopup();
+  }
 });
