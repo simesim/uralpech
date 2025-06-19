@@ -104,7 +104,8 @@
                 +7 (343) 385-09-51
             </a>
             <a href="mailto:info@uksgroup.ru" class="header__contact-link email">info@uksgroup.ru</a>
-            <a href="https://api.whatsapp.com/send/?phone=79120449777&text=Привет%21++Меня+интересует...&type=phone_number&app_absent=0" class="header__whatsapp-btn">
+            <a href="https://api.whatsapp.com/send/?phone=79120449777&text=Привет%21++Меня+интересует...&type=phone_number&app_absent=0"
+                class="header__whatsapp-btn">
                 <img src="./static/img/new_index/header/header_wa.png" alt="WhatsApp">
             </a>
         </div>
@@ -131,7 +132,7 @@
                 </div>
             </div>
 
-            <button class="slider__cta-btn">Оставить заявку на расчёт</button>
+            <button class="slider__cta-btn" onclick="openPopup()">Оставить заявку на расчёт</button>
             <div class="slider__contact-mobile">
                 <a href="tel:+73433850951" class="header__contact-link phone">+7 (343) 385-09-51</a>
                 <div class="row">
@@ -237,8 +238,9 @@
                         </p>
                     </div>
                     <div class="projects__action-buttons">
-                        <button class="projects__action-btn projects__action-btn--outline">Оставить заявку</button>
-                        <button class="projects__action-btn projects__action-btn--filled">Узнать больше</button>
+                        <button class="projects__action-btn projects__action-btn--outline"
+                            onclick="openPopup()">Оставить заявку</button>
+                        <button class="projects__action-btn projects__action-btn--filled" id="learnMoreBtn">Узнать больше</button>
                     </div>
                 </div>
 
@@ -323,11 +325,11 @@
                             Получите информацию о проектировании, изготовлении и доставке продукции прямо сейчас
                         </h2>
 
-                        <div class="form-container">
+                        <form id="requestForm" class="form-container">
                             <div class="form-row">
                                 <div class="form-column form-column--medium">
                                     <label class="form-label">Название компании</label>
-                                    <input type="text" class="form-input">
+                                    <input type="text" class="form-input" required>
                                 </div>
                                 <div class="form-column form-column--medium">
                                     <label class="form-label">Ваша почта</label>
@@ -338,14 +340,14 @@
                             <div class="form-row">
                                 <div class="form-column">
                                     <label class="form-label">Номер телефона</label>
-                                    <input type="tel" class="form-input" placeholder="+7 (999) 999-99-99">
+                                    <input type="tel" class="form-input" placeholder="+7 (999) 999-99-99" required>
                                 </div>
                             </div>
 
                             <div class="form-row form-row--bottom">
                                 <div class="form-column form-column--medium">
                                     <label class="form-label">Напишите Ваш город</label>
-                                    <input type="text" class="form-input" placeholder="Введите ваш город">
+                                    <input type="text" class="form-input" placeholder="Введите ваш город" required>
                                 </div>
                                 <div class="form-column form-column--medium">
                                     <label class="form-label" for="file-upload">Прикрепить файл</label>
@@ -356,8 +358,8 @@
                                 </div>
                             </div>
 
-                            <button class="form-submit">Оставить заявку</button>
-                        </div>
+                            <button class="form-submit" type="submit">Оставить заявку</button>
+                        </form>
                     </div>
 
                 </div>
@@ -439,7 +441,7 @@
                             <div class="contact__logo">
                                 <img src="./static/img/new_index/footer_logo.png" alt="Logo" class="contact__logo-img">
                             </div>
-                            <a class="contact__phone"  href="tel:+7-343-385-09-51">+7 (343) 385-09-51</a>
+                            <a class="contact__phone" href="tel:+7-343-385-09-51">+7 (343) 385-09-51</a>
                             <p class="contact__address">620063, г. Екатеринбург,<br>ул. Чапаева, 1а, 3 этаж</p>
                         </div>
                         <div class="contact__right">
@@ -454,7 +456,10 @@
                             <p class="contact__hours">Пн–Пт / 09:00–18:00</p>
                             <div class="contact__icons">
                                 <div class="contact__icon-wrap">
-                                    <a href="https://api.whatsapp.com/send/?phone=79120449777&text=Привет%21++Меня+интересует...&type=phone_number&app_absent=0"><img src="./static/img/new_index/w.svg" alt="Icon 1" class="contact__icon-img"></a>
+                                    <a
+                                        href="https://api.whatsapp.com/send/?phone=79120449777&text=Привет%21++Меня+интересует...&type=phone_number&app_absent=0"><img
+                                            src="./static/img/new_index/w.svg" alt="Icon 1"
+                                            class="contact__icon-img"></a>
                                 </div>
                                 <div class="contact__icon-wrap">
                                     <img src="./static/img/new_index/mail.svg" alt="Icon 2" class="contact__icon-img">
@@ -511,6 +516,59 @@
             <img src="" alt="News Image" class="news-modal__img" id="NewsModalImage">
             <p class="news-modal__text" id="NewsModalText"></p>
             <p class="news-modal__date">05.03.2025</p>
+        </div>
+    </div>
+
+
+    <!-- Сам попап -->
+    <div id="requestPopup" class="popup-overlay">
+        <div class="popup-content">
+            <button class="popup-close" onclick="closePopup()">×</button>
+            <h2 class="popup-title">Получите расчет стоимости прямо сейчас</h2>
+            <p class="popup-subtitle">Оставьте свои контактные данные и мы с Вами свяжемся</p>
+
+            <form id="requestForm">
+                <div class="form-row">
+                    <div class="input-group">
+                        <input type="text" id="userName" name="userName" placeholder="Ваше имя">
+                    </div>
+
+                    <div class="input-group">
+                        <input type="tel" id="userPhone" name="userPhone" placeholder="+7 (999) 999-99-99" required>
+                    </div>
+                </div>
+
+                <button type="submit" class="submit-btn">Отправить</button>
+            </form>
+        </div>
+    </div>
+
+    <!-- Попап для проектов -->
+    <div id="projectPopup" class="popup-overlay">
+        <div class="popup-content">
+            <button class="popup-close" onclick="closeProjectPopup()">×</button>
+            <h2 class="popup-title" id="projectPopupTitle"></h2>
+            <p class="popup-description" id="projectPopupDescription"></p>
+
+            <p class="popup-subtitle">Получить информацию о проектировании, изготовлении и доставке продукции прямо
+                сейчас</p>
+
+            <form id="projectForm">
+                <div class="form-row">
+                    <div class="input-group">
+                        <label for="projectUserName">Ваше имя</label>
+                        <input type="text" id="projectUserName" name="userName" required>
+                    </div>
+
+                    <div class="input-group">
+                        <label for="projectUserPhone">Номер телефона</label>
+                        <input type="tel" id="projectUserPhone" name="userPhone" placeholder="+7 (999) 999-99-99"
+                            required>
+                    </div>
+                </div>
+
+                <button type="submit" class="submit-btn">Отправить</button>
+            </form>
         </div>
     </div>
     <script src="./static/js/new_index/script.js"></script>
