@@ -306,15 +306,30 @@ function initUKSWebsite() {
 
   //Кнопка в форме
   const requestForm = document.getElementById('requestForm');
-
   if (requestForm) {
     requestForm.addEventListener('submit', function (e) {
-      e.preventDefault(); // важно!
-
+      e.preventDefault();
       if (this.checkValidity()) {
-        this.reset(); // очищаем поля
-        closePopup(); // закрываем форму
-        showSuccessPopup(); // показываем спасибо
+        this.reset();
+        showSuccessPopup();
+      } else {
+        const invalidFields = this.querySelectorAll(':invalid');
+        invalidFields.forEach(field => {
+          field.classList.add('invalid-field');
+        });
+      }
+    });
+  }
+
+  // Обработчик для формы в попапе
+  const popupRequestForm = document.getElementById('popupRequestForm');
+  if (popupRequestForm) {
+    popupRequestForm.addEventListener('submit', function (e) {
+      e.preventDefault();
+      if (this.checkValidity()) {
+        this.reset();
+        closePopup();
+        showSuccessPopup();
       } else {
         const invalidFields = this.querySelectorAll(':invalid');
         invalidFields.forEach(field => {
@@ -496,4 +511,4 @@ function initUKSWebsite() {
 }
 
 document.addEventListener('DOMContentLoaded', initUKSWebsite);
-initUKSWebsite();ы
+initUKSWebsite();
