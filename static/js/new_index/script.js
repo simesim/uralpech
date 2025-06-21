@@ -131,34 +131,27 @@ function initUKSWebsite() {
     updateImage();
   }
 
-  (function () {
-    const leftBtn = document.getElementById('projectLeftBtn');
-    const rightBtn = document.getElementById('projectRightBtn');
+  function updateImage() {
+    document.getElementById('photoContainer').style.background = `url('${sections[currentSection].images[currentImageIndex]}') lightgray 50% / cover no-repeat`;
+  }
 
-    leftBtn.addEventListener('click', prevImage);
-    rightBtn.addEventListener('click', nextImage);
+  function nextImage() {
+    currentImageIndex = (currentImageIndex + 1) % sections[currentSection].images.length;
+    updateImage();
+  }
 
-    function updateImage() {
-      document.getElementById('photoContainer').style.background = `url('${sections[currentSection].images[currentImageIndex]}') lightgray 50% / cover no-repeat`;
-    }
+  function prevImage() {
+    currentImageIndex = (currentImageIndex - 1 + sections[currentSection].images.length) % sections[currentSection].images.length;
+    updateImage();
+  }
 
-    function nextImage() {
-      currentImageIndex = (currentImageIndex + 1) % sections[currentSection].images.length;
-      updateImage();
-    }
-
-    function prevImage() {
-      currentImageIndex = (currentImageIndex - 1 + sections[currentSection].images.length) % sections[currentSection].images.length;
-      updateImage();
-    }
-
-    document.addEventListener('DOMContentLoaded', () => {
-      updateImage();
-    });
-  })();
+  document.getElementById('projectLeftBtn')?.addEventListener('click', prevImage);
+  document.getElementById('projectRightBtn')?.addEventListener('click', nextImage);
 
 
   document.addEventListener('DOMContentLoaded', () => {
+    changeSection('dveri', document.querySelector('.projects__button[data-section="dveri"]'));
+    updateImage();
     const buttons = document.querySelectorAll('.projects__button');
     buttons.forEach(button => {
       button.addEventListener('click', () => {
@@ -312,19 +305,24 @@ function initUKSWebsite() {
   });
 
   //Кнопка в форме
-  document.getElementById('requestForm').addEventListener('submit', function (e) {
-    e.preventDefault();
+  const requestForm = document.getElementById('requestForm');
 
-    if (this.checkValidity()) {
-      alert('Форма успешно отправлена!');
-      this.reset();
-    } else {
-      const invalidFields = this.querySelectorAll(':invalid');
-      invalidFields.forEach(field => {
-        field.classList.add('invalid-field');
-      });
-    }
-  });
+  if (requestForm) {
+    requestForm.addEventListener('submit', function (e) {
+      e.preventDefault(); // важно!
+
+      if (this.checkValidity()) {
+        this.reset(); // очищаем поля
+        closePopup(); // закрываем форму
+        showSuccessPopup(); // показываем спасибо
+      } else {
+        const invalidFields = this.querySelectorAll(':invalid');
+        invalidFields.forEach(field => {
+          field.classList.add('invalid-field');
+        });
+      }
+    });
+  }
 
 
   // Функции для управления попапом
@@ -343,19 +341,6 @@ function initUKSWebsite() {
     if (e.target === this) {
       closePopup();
     }
-  });
-
-  // Обработка формы
-  document.getElementById('requestForm').addEventListener('submit', function (e) {
-    e.preventDefault();
-
-    const userName = document.getElementById('userName').value;
-    const userPhone = document.getElementById('userPhone').value;
-
-    console.log('Форма отправлена:', { userName, userPhone });
-    closePopup();
-
-    alert('Спасибо за заявку! Мы скоро с вами свяжемся.');
   });
 
   // Закрытие по ESC
@@ -439,7 +424,7 @@ function initUKSWebsite() {
     });
 
     closeProjectPopup();
-    alert('Спасибо за заявку! Мы скоро с вами свяжемся по вопросу "' + projectTitle + '".');
+    showSuccessPopup();
   });
 
   document.addEventListener('keydown', function (e) {
@@ -457,20 +442,20 @@ function initUKSWebsite() {
     if (e.target.closest('.aboutus__arrow-btn--right')) showNext();
   });
 
- 
-  
-  window.changeSection = function(section, clickedBtn) {
+
+
+  window.changeSection = function (section, clickedBtn) {
     console.log('Switching to section:', section); // Логируем
     currentSection = section;
     currentImageIndex = 0;
-    
+
     const buttons = document.querySelectorAll('.projects__button');
     buttons.forEach(btn => btn.classList.remove('projects__button--active'));
-    
+
     if (clickedBtn) {
       clickedBtn.classList.add('projects__button--active');
     }
-    
+
     document.getElementById('textTitle').textContent = sections[section].title;
     document.getElementById('textDescription').textContent = sections[section].description;
     updateImage();
@@ -488,6 +473,18 @@ function initUKSWebsite() {
     changeSection(e.target.value, null);
   });
 
+  /* Благодарности */
+  function showSuccessPopup() {
+    const popup = document.getElementById('successPopup');
+    popup.style.display = 'flex';
+    document.body.style.overflow = 'hidden';
+  }
+
+  document.getElementById('successPopupCloseBtn').addEventListener('click', () => {
+    document.getElementById('successPopup').style.display = 'none';
+    document.body.style.overflow = '';
+  });
+
   //функции глобальные, вроде все
   window.openPopup = openPopup;
   window.closePopup = closePopup;
@@ -495,6 +492,8 @@ function initUKSWebsite() {
   window.closeProjectPopup = closeProjectPopup;
   window.closeNewsModal = closeNewsModal;
   window.changeSection = changeSection;
+  window.showSuccessPopup = showSuccessPopup;
 }
 
 document.addEventListener('DOMContentLoaded', initUKSWebsite);
+initUKSWebsite();ы
