@@ -2504,7 +2504,16 @@ li {
   font-weight: bold;
 }
 
-
+#projectPopup .popup-content {
+  max-height: 80vh;
+  overflow-y: auto; 
+  padding: 30px;
+}
+/* Чтобы остальные не затронуть */
+#requestPopup .popup-content,
+#successPopup .success-popup__content {
+  overflow-y: visible; 
+}
 
 /* Адаптивные стили попапа */
 @media (max-width: 768px) {
