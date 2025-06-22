@@ -449,8 +449,6 @@ function initUKSWebsite() {
   });
 
   document.addEventListener('click', function (e) {
-    if (e.target.closest('.slider__btn--next')) nextSlide();
-    if (e.target.closest('.slider__btn--prev')) prevSlide();
     if (e.target.closest('.projects__nav-btn--left')) prevImage();
     if (e.target.closest('.projects__nav-btn--right')) nextImage();
     if (e.target.closest('.aboutus__arrow-btn--left')) showPrev();
@@ -508,6 +506,7 @@ function initUKSWebsite() {
   window.closeNewsModal = closeNewsModal;
   window.changeSection = changeSection;
   window.showSuccessPopup = showSuccessPopup;
+
 }
 
 document.addEventListener('DOMContentLoaded', initUKSWebsite);
