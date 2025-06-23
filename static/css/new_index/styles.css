@@ -1272,6 +1272,11 @@ li {
     font-family: 'Montserrat', 'Arial', sans-serif;
 }
 
+.header-contact__row {
+    display: flex;
+    justify-content: space-between;
+}
+
 .contact__call-btn:hover {
     background-color: #e03e00;
 }
@@ -1448,6 +1453,12 @@ li {
 .certificates__btn--next,
 .aboutus__arrow-btn--right {
     right: 10px;
+}
+
+.slider__contact-row {
+    flex-direction: row-reverse;
+    justify-content: space-between;
+    width: 100%;
 }
 
 /* Contact */
@@ -1672,6 +1683,7 @@ li {
         flex-direction: column;
         align-items: flex-start;
         gap: 10px;
+        width: 100%;
     }
 
     .slider__contact-mobile .header__contact-link {
