@@ -1256,7 +1256,10 @@ li {
 .contact__call-btn {
     background-color: #E3644B;
     color: #fff;
-    padding: 12px 30px;
+    text-decoration: none;
+    text-align: center;
+    display: block;
+    padding: 18px 30px;
     border: none;
     border-radius: 50px;
     cursor: pointer;
