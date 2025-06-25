@@ -180,6 +180,10 @@ li {
     gap: 5px;
 }
 
+.slider__contact-mobile .phone{
+    width: 200px;
+}
+
 .header__phone-icon,
 .header__whatsapp-btn {
     width: 30px;
@@ -453,8 +457,11 @@ li {
 
 .products__grid {
     display: flex;
-    gap: 20px;
+    flex-direction: column;
     position: relative;
+    gap: 20px;
+    
+    width: 100%;
 }
 
 .products__column {
@@ -927,7 +934,7 @@ li {
     display: flex;
     justify-content: start;
     width: 1156px;
-    min-height: 566px;
+
     border-radius: 25px;
     overflow: hidden;
     margin: 0 auto;
@@ -968,22 +975,10 @@ li {
     width: 100%;
 }
 
-
-.form-row {
-    display: flex;
-    gap: 15px;
-    margin-bottom: 15px;
-    width: 100%;
-}
-
 .form-column {
     display: flex;
     flex-direction: column;
     width: 100%;
-}
-
-.form-column--medium {
-    width: calc(50% - 7.5px);
 }
 
 .form-label {
@@ -1070,7 +1065,7 @@ li {
 /* Адаптивность */
 @media screen and (max-width: 768px) {
     .container {
-        width: 640px;
+        width: 520px;
     }
 
     .project-form {
@@ -1083,19 +1078,14 @@ li {
     .project-form__right {
         width: 100%;
         border-radius: 0;
+        padding: 10px;
     }
 
     .project-form__right {
         display: none;
     }
 
-    .form-row {
-        flex-direction: column;
-    }
 
-    .form-column--medium {
-        width: 100%;
-    }
 
     .form-submit {
         width: 100%;
@@ -1520,8 +1510,171 @@ li {
     margin-bottom: 0;
 }
 
-/* Адаптивность */
+
+/* Стили для попапа */
+.popup-overlay {
+    display: none;
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.5);
+    z-index: 1000;
+    justify-content: center;
+    align-items: center;
+}
+
+.popup-content {
+    background-color: white;
+    padding: 30px;
+    border-radius: 10px;
+    width: 100%;
+    max-width: 600px;
+    box-shadow: 0 4px 20px rgba(0, 0, 0, 0.15);
+    position: relative;
+}
+
+.popup-close {
+    position: absolute;
+    top: 15px;
+    right: 15px;
+    width: 24px;
+    height: 24px;
+    cursor: pointer;
+    background: none;
+    border: none;
+    font-size: 20px;
+    color: #666;
+}
+
+.popup-title {
+    font-size: 22px;
+    font-weight: bold;
+    margin-bottom: 15px;
+    text-align: center;
+    color: #333;
+}
+
+.popup-subtitle {
+    font-size: 16px;
+    margin-bottom: 25px;
+    text-align: center;
+    color: #666;
+}
+
+.popup-description {
+    margin-bottom: 25px;
+    color: #444;
+    line-height: 1.5;
+}
+
+.form-row {
+    display: flex;
+    gap: 15px;
+    margin-bottom: 20px;
+}
+
+.input-group {
+    flex: 1;
+}
+
+.input-group label {
+    display: block;
+    margin-bottom: 8px;
+    font-weight: 500;
+    color: #444;
+}
+
+.input-group input {
+    width: 100%;
+    padding: 12px 15px;
+    border: 1px solid #ddd;
+    border-radius: 6px;
+    font-size: 16px;
+    box-sizing: border-box;
+}
+
+.submit-btn {
+    width: 100%;
+    padding: 14px;
+    background-color: #E3644B;
+    color: white;
+    border: none;
+    border-radius: 20px;
+    font-size: 16px;
+    font-weight: bold;
+    cursor: pointer;
+    transition: background-color 0.3s;
+}
+
+.submit-btn:hover {
+    background-color: #d05a43;
+}
+
+
+/* Благодарности */
+.success-popup {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: rgba(0, 0, 0, 0.6);
+    display: none;
+    align-items: center;
+    justify-content: center;
+    z-index: 9999;
+}
+
+.success-popup__content {
+    background: white;
+    padding: 40px 30px;
+    border-radius: 15px;
+    text-align: center;
+    max-width: 400px;
+    box-shadow: 0 0 20px rgba(0, 0, 0, 0.2);
+}
+
+.success-popup__close-btn {
+    margin-top: 20px;
+    background: #E3644B;
+    color: white;
+    padding: 10px 20px;
+    border: none;
+    border-radius: 50px;
+    cursor: pointer;
+    font-weight: bold;
+}
+
+#projectPopup .popup-content {
+    max-height: 80vh;
+    overflow-y: auto;
+    padding: 30px;
+}
+
+/* Чтобы остальные не затронуть */
+#requestPopup .popup-content,
+#successPopup .success-popup__content {
+    overflow-y: visible;
+    scrollbar-width: 2px;
+}
+
+/* Адаптивные стили попапа */
 @media screen and (max-width: 768px) {
+    .popup-content {
+        max-width: none;
+        height: 100%;
+        border-radius: 0;
+        padding: 60px 20px 30px;
+        overflow-y: auto;
+    }
+
+    .popup-close {
+        top: 20px;
+        right: 20px;
+        font-size: 24px;
+    }
 
     /* Общие стили */
     .section {
@@ -1539,23 +1692,6 @@ li {
     .header__logo img {
         width: 80px;
         height: 52px;
-    }
-
-    .header__links {
-        display: none;
-        position: fixed;
-        top: 0;
-        left: 0;
-        width: 100%;
-        height: 100%;
-        background-color: black;
-        flex-direction: column;
-        gap: 20px;
-        padding: 50px 20px;
-        z-index: 100;
-        justify-content: center;
-        align-items: center;
-        text-align: center;
     }
 
     .header__links.active {
@@ -1615,11 +1751,6 @@ li {
         border-bottom: 10px solid rgba(255, 255, 255, 0.9);
     }
 
-    .header__nav-mobile {
-        display: block;
-        z-index: 101;
-    }
-
     .header-nav__icon-wrap {
         width: 24px;
     }
@@ -1649,13 +1780,6 @@ li {
         min-height: 600px;
     }
 
-    .slider__text {
-        font-size: 25px;
-        top: 25%;
-        left: 5%;
-        text-align: left;
-    }
-
     .slider__btn {
         top: auto;
         bottom: 45%;
@@ -1675,14 +1799,6 @@ li {
         height: 50px;
         justify-content: center;
         font-size: 16px;
-    }
-
-    .slider__contact-mobile {
-        display: flex;
-        flex-direction: column;
-        align-items: flex-start;
-        gap: 10px;
-        width: 100%;
     }
 
     .slider__contact-mobile .header__contact-link {
@@ -1766,22 +1882,8 @@ li {
         display: flex;
         flex-direction: row;
         gap: 16px;
-        width: max-content;
+
         padding-bottom: 10px;
-    }
-
-    .products__column {
-        display: flex;
-        flex-direction: row;
-        gap: 16px;
-    }
-
-    .products__item {
-        width: 280px;
-        height: 180px;
-        border-radius: 12px;
-        flex-shrink: 0;
-        min-width: 280px;
     }
 
     .products__item-text {
@@ -1867,11 +1969,6 @@ li {
         font-size: 36px;
     }
 
-    .aboutus__orange-line {
-        width: 100px;
-        height: 8px;
-    }
-
     .aboutus__bold-text {
         font-size: 14px;
     }
@@ -1947,6 +2044,7 @@ li {
     }
 
     .project-form__wrapper {
+        margin: 0 auto;
         margin-bottom: 20px;
     }
 
@@ -2150,12 +2248,12 @@ li {
     .certificates__title,
     .aboutus__title,
     .news__title {
-        font-size: 35px !important;
+        font-size: 35px;
     }
 
     /* Стили для выпадающего списка проектов */
     .projects__button-group-mobile {
-        display: block !important;
+        display: block;
         width: 100%;
         max-width: 300px;
         height: 40px;
@@ -2176,392 +2274,6 @@ li {
     .projects__button-group-desktop {
         display: none !important;
     }
-}
-
-@media screen and (max-width: 420px) {
-    .container {
-        width: 320px;
-    }
-
-    .slider__content {
-        padding-top: 220px;
-        gap: 28px;
-    }
-
-    .slider__text {
-        line-height: 1.3;
-    }
-
-    .slider-btn__wrap {
-        position: relative;
-        height: 40px;
-        width: 100%;
-    }
-
-    .slider__btn {
-        top: 0;
-    }
-
-    .slider__btn--prev {
-        left: 0;
-    }
-
-    .slider__cta-btn {
-        border-radius: 20px;
-        width: 306px;
-        height: 60px;
-        font-size: 17px;
-        font-weight: 600;
-    }
-
-    .aboutus__photo {
-        position: static;
-        width: 100%;
-        height: 200px;
-    }
-
-    .aboutus__arrow-btn {
-        width: 30px;
-        height: 30px;
-    }
-
-    .aboutus__arrow-btn {
-        top: 100px;
-    }
-
-    #aboutus .aboutus__header {
-        padding-left: 0;
-        justify-content: start;
-        flex-direction: row-reverse;
-        align-items: end;
-        gap: 20px;
-        padding-right: 0;
-        font-size: 40px;
-
-        margin-bottom: 80px;
-    }
-
-    .aboutus__bold-text {
-        width: 100%;
-    }
-
-    .projects__text-description {
-        margin-bottom: 20px;
-    }
-
-    .projects__header {
-        margin-left: -120px;
-        align-items: end;
-        font-size: 40px;
-        font-weight: 600;
-    }
-
-    .aboutus__text {
-        margin-bottom: 0;
-    }
-
-    .products__title {
-        padding-top: 0;
-        order: 1;
-    }
-
-    .products__rectangle {
-        order: 2;
-        height: 10px;
-        width: 170px;
-        margin-left: -80px;
-        border-radius: 50px;
-        margin-bottom: 70px;
-    }
-
-    .products__header::before {
-        position: absolute;
-        top: 104px;
-        left: 180px;
-        width: 62px;
-        height: 30px;
-    }
-
-    .project-form__left {
-        padding-left: 40px;
-    }
-
-    .project-form {
-        padding: 0;
-    }
-
-    .form-input {
-        width: 266px;
-    }
-
-    .project-form__wrapper {
-        width: 100%;
-    }
-
-    .project-form__left {
-        padding: 24px;
-    }
-
-    .form-label {
-        font-size: 13px;
-    }
-
-    .certificates__title {
-        font-size: 32px;
-        font-weight: 600;
-    }
-
-    .certificates__rectangle {
-        margin-left: -80px;
-    }
-
-    .certificates__header {
-        align-items: end;
-    }
-
-    .order {
-        margin-bottom: 80px;
-    }
-
-    .contact__row {
-        flex-direction: column;
-        padding: 16px;
-    }
-
-    .contact__logo {
-        width: 170px;
-    }
-
-    .contact__logo {
-        margin-bottom: 34px;
-    }
-
-    .contact__phone {
-        margin-bottom: 16px;
-    }
-
-    .contact__call-btn {
-        order: 1;
-    }
-
-    .contact__nav {
-        order: 4;
-        align-items: center;
-        margin-bottom: 16px;
-    }
-
-    .contact__hours {
-        order: 2;
-        margin-bottom: 16px;
-    }
-
-    .contact__icons {
-        order: 3;
-        margin-bottom: 16px;
-    }
-
-    .contact__address {
-        margin-bottom: 16px;
-    }
-
-    .contact__call-btn {
-        width: 208px;
-    }
-
-    .contact__icon-wrap {
-        width: 50px;
-        height: 50px;
-        padding: 5px;
-    }
-
-    .contact__icon-wrap a {
-        display: flex;
-        align-items: center;
-        width: 40px;
-    }
-
-    .contact__icon-img {
-        width: 100%;
-        height: auto;
-    }
-
-}
-
-
-/* Стили для попапа */
-.popup-overlay {
-    display: none;
-    position: fixed;
-    top: 0;
-    left: 0;
-    width: 100%;
-    height: 100%;
-    background-color: rgba(0, 0, 0, 0.5);
-    z-index: 1000;
-    justify-content: center;
-    align-items: center;
-}
-
-.popup-content {
-    background-color: white;
-    padding: 30px;
-    border-radius: 10px;
-    width: 100%;
-    max-width: 600px;
-    box-shadow: 0 4px 20px rgba(0, 0, 0, 0.15);
-    position: relative;
-}
-
-.popup-close {
-    position: absolute;
-    top: 15px;
-    right: 15px;
-    width: 24px;
-    height: 24px;
-    cursor: pointer;
-    background: none;
-    border: none;
-    font-size: 20px;
-    color: #666;
-}
-
-.popup-title {
-    font-size: 22px;
-    font-weight: bold;
-    margin-bottom: 15px;
-    text-align: center;
-    color: #333;
-}
-
-.popup-subtitle {
-    font-size: 16px;
-    margin-bottom: 25px;
-    text-align: center;
-    color: #666;
-}
-
-.popup-description {
-    margin-bottom: 25px;
-    color: #444;
-    line-height: 1.5;
-}
-
-.form-row {
-    display: flex;
-    gap: 15px;
-    margin-bottom: 20px;
-}
-
-.input-group {
-    flex: 1;
-}
-
-.input-group label {
-    display: block;
-    margin-bottom: 8px;
-    font-weight: 500;
-    color: #444;
-}
-
-.input-group input {
-    width: 100%;
-    padding: 12px 15px;
-    border: 1px solid #ddd;
-    border-radius: 6px;
-    font-size: 16px;
-    box-sizing: border-box;
-}
-
-.submit-btn {
-    width: 100%;
-    padding: 14px;
-    background-color: #E3644B;
-    color: white;
-    border: none;
-    border-radius: 20px;
-    font-size: 16px;
-    font-weight: bold;
-    cursor: pointer;
-    transition: background-color 0.3s;
-}
-
-.submit-btn:hover {
-    background-color: #d05a43;
-}
-
-
-/* Благодарности */
-.success-popup {
-    position: fixed;
-    top: 0;
-    left: 0;
-    width: 100%;
-    height: 100%;
-    background: rgba(0, 0, 0, 0.6);
-    display: none;
-    align-items: center;
-    justify-content: center;
-    z-index: 9999;
-}
-
-.success-popup__content {
-    background: white;
-    padding: 40px 30px;
-    border-radius: 15px;
-    text-align: center;
-    max-width: 400px;
-    box-shadow: 0 0 20px rgba(0, 0, 0, 0.2);
-}
-
-.success-popup__close-btn {
-    margin-top: 20px;
-    background: #E3644B;
-    color: white;
-    padding: 10px 20px;
-    border: none;
-    border-radius: 50px;
-    cursor: pointer;
-    font-weight: bold;
-}
-
-#projectPopup .popup-content {
-    max-height: 80vh;
-    overflow-y: auto;
-    padding: 30px;
-}
-
-/* Чтобы остальные не затронуть */
-#requestPopup .popup-content,
-#successPopup .success-popup__content {
-    overflow-y: visible;
-    scrollbar-width: 2px;
-}
-
-/* Адаптивные стили попапа */
-@media (max-width: 768px) {
-    .popup-content {
-        max-width: none;
-        height: 100%;
-        border-radius: 0;
-        padding: 60px 20px 30px;
-        overflow-y: auto;
-    }
-
-    .popup-close {
-        top: 20px;
-        right: 20px;
-        font-size: 24px;
-    }
-
-    .form-row {
-        flex-direction: column;
-        gap: 15px;
-    }
-}
-
-
-/* --- Планшетная адаптация (768px) --- */
-@media screen and (max-width: 768px) {
 
     /* Header */
     .header__nav-mobile,
@@ -2570,7 +2282,7 @@ li {
     }
 
     .header__links {
-        display: flex !important;
+        display: flex;
         flex-direction: row;
         flex-wrap: nowrap;
         gap: 16px;
@@ -2708,13 +2420,6 @@ li {
         padding: 0 15px;
     }
 
-    .products__grid {
-        display: flex;
-        flex-direction: column;
-        gap: 20px;
-        width: 100%;
-    }
-
     .products__column {
         width: 100%;
         display: flex;
@@ -2850,14 +2555,13 @@ li {
         flex-direction: column;
         width: 100%;
         position: relative;
+
+        padding: 0;
     }
 
     .project-form__left {
         width: 100%;
         height: 100%;
-        position: absolute;
-        inset: 0;
-        z-index: 0;
     }
 
     .project-form form,
@@ -2870,10 +2574,6 @@ li {
         flex-direction: row;
         flex-wrap: wrap;
         gap: 15px;
-    }
-
-    .form-column--medium {
-        width: calc(50% - 7.5px);
     }
 
     .form-submit {
@@ -2892,6 +2592,295 @@ li {
     }
 
     .news__image {
+        width: 100%;
+        height: auto;
+    }
+}
+
+@media screen and (max-width: 420px) {
+    .header__nav-mobile {
+        display: block;
+        z-index: 101;
+    }
+
+    .container {
+        width: 320px;
+    }
+
+
+    .products__item {
+        width: 280px;
+        height: 180px;
+        border-radius: 12px;
+        flex-shrink: 0;
+        min-width: 280px;
+    }
+
+    .slider__text {
+        font-size: 25px;
+        top: 25%;
+        left: 5%;
+        text-align: left;
+    }
+
+    .slider__content {
+        padding-top: 220px;
+        gap: 28px;
+    }
+
+    .slider__text {
+        line-height: 1.3;
+    }
+
+    .slider-btn__wrap {
+        position: relative;
+        height: 40px;
+        width: 100%;
+        margin-top: 0;
+        gap:0;
+    }
+
+    .slider__btn {
+        top: 0;
+    }
+
+    .products__column {
+        display: flex;
+        flex-direction: row;
+        gap: 16px;
+    }
+
+    .slider__btn--prev {
+        left: 0;
+    }
+
+    .form-column--medium {
+        width: 100%;
+    }
+
+    .header__links {
+        display: none;
+        position: fixed;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 100%;
+        background-color: black;
+        flex-direction: column;
+        gap: 20px;
+        padding: 50px 20px;
+        z-index: 100;
+        justify-content: center;
+        align-items: center;
+        text-align: center;
+    }
+
+
+    .slider__contact-mobile {
+        display: flex;
+        flex-direction: column;
+        align-items: flex-start;
+        gap: 10px;
+        width: 100%;
+    }
+
+    .slider__cta-btn {
+        border-radius: 20px;
+        width: 306px;
+        height: 60px;
+        font-size: 17px;
+        font-weight: 600;
+    }
+
+    .aboutus__photo {
+        position: static;
+        width: 100%;
+        height: 200px;
+    }
+
+    .aboutus__arrow-btn {
+        width: 30px;
+        height: 30px;
+    }
+
+    .aboutus__arrow-btn {
+        top: 100px;
+    }
+
+    .products__grid {
+        width: 100%;
+    }
+
+    .aboutus__title {
+        order: initial;
+    }
+
+    #aboutus .aboutus__header {
+        
+        padding-left: 0;
+        justify-content: start;
+        flex-direction: row-reverse;
+        align-items: end;
+        gap: 20px;
+        padding-right: 0;
+        font-size: 40px;
+
+        margin-bottom: 80px;
+    }
+
+    .aboutus__bold-text {
+        width: 100%;
+    }
+
+    .projects__text-description {
+        margin-bottom: 20px;
+    }
+
+    .projects__header {
+        margin-left: -120px;
+        align-items: end;
+        font-size: 40px;
+        font-weight: 600;
+    }
+
+    .aboutus__text {
+        margin-bottom: 0;
+    }
+
+    .products__title {
+        padding-top: 0;
+        order: 1;
+    }
+
+    .products__rectangle {
+        order: 2;
+        height: 10px;
+        width: 170px;
+        margin-left: -80px;
+        border-radius: 50px;
+        margin-bottom: 70px;
+    }
+
+    .products__header {
+        gap: 20px;
+        margin-bottom: 0px;
+    }
+
+    .products__header::before {
+        position: absolute;
+        display: block;
+        top: 96px;
+        left: 180px;
+        width: 62px;
+        height: 30px;
+    }
+
+    .project-form__left {
+        padding-left: 40px;
+    }
+
+    .form-input {
+        width: 266px;
+    }
+
+    .project-form__wrapper {
+        width: 100%;
+    }
+
+    .project-form__left {
+        padding: 24px;
+    }
+
+    .form-label {
+        font-size: 13px;
+    }
+
+    .form-row {
+        flex-direction: column;
+        gap: 15px;
+    }
+
+    .certificates__title {
+        font-size: 32px;
+        font-weight: 600;
+    }
+
+    .certificates__rectangle {
+        margin-left: -80px;
+    }
+
+    .certificates__header {
+        align-items: end;
+    }
+
+    .order {
+        margin-bottom: 80px;
+    }
+
+    .contact__row {
+        flex-direction: column;
+        padding: 16px;
+    }
+
+    .contact__logo {
+        width: 170px;
+    }
+
+    .contact__logo {
+        margin-bottom: 34px;
+    }
+
+    .contact__phone {
+        margin-bottom: 16px;
+    }
+
+    .aboutus__orange-line {
+        width: 100px;
+        height: 8px;
+    }
+
+
+    .contact__call-btn {
+        order: 1;
+    }
+
+    .contact__nav {
+        order: 4;
+        align-items: center;
+        margin-bottom: 16px;
+    }
+
+    .contact__hours {
+        order: 2;
+        margin-bottom: 16px;
+    }
+
+    .contact__icons {
+        order: 3;
+        margin-bottom: 16px;
+    }
+
+    .contact__address {
+        margin-bottom: 16px;
+    }
+
+    .contact__call-btn {
+        width: 208px;
+    }
+
+    .contact__icon-wrap {
+        width: 50px;
+        height: 50px;
+        padding: 5px;
+    }
+
+    .contact__icon-wrap a {
+        display: flex;
+        align-items: center;
+        width: 40px;
+    }
+
+    .contact__icon-img {
         width: 100%;
         height: auto;
     }
