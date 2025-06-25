@@ -184,6 +184,14 @@ li {
     width: 200px;
 }
 
+.header__nav-mobile.active {
+  display: none;
+}
+
+.header__close-btn.active {
+  display: block;
+}
+
 .header__phone-icon,
 .header__whatsapp-btn {
     width: 30px;
