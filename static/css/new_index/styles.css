@@ -2555,6 +2555,7 @@ li {
         flex-wrap: nowrap;
         gap: 16px;
         justify-content: center;
+        align-items: center;
         background: transparent;
         position: static;
         height: auto;
@@ -2640,6 +2641,10 @@ li {
     }
 
     /* Заголовки секций */
+    .products__header::before {
+        display: none;
+    }
+
     .products__header,
     .projects__header,
     .certificates__header,
@@ -2648,68 +2653,66 @@ li {
         flex-direction: column;
         align-items: flex-start;
         margin-bottom: 30px;
+        gap: 8px;
     }
 
     .products__title,
     .projects__title,
     .certificates__title,
     .aboutus__title {
-        font-size: 36px;
+        font-size: 30px;
         font-weight: 600;
         margin: 0;
-        order: 1;
+        order: 2;
+        line-height: 1.1;
     }
 
     .products__rectangle,
     .projects__rectangle,
     .certificates__rectangle,
     .aboutus__orange-line {
-        width: 170px;
-        height: 10px;
-        border-radius: 10px;
-        background: #E3644B;
-        order: 2;
-        margin-left: -80px;
-        margin-bottom: 70px;
+        width: 100px;
+        height: 6px;
+        background-color: #E3644B;
+        border-radius: 6px;
+        order: 1;
+        margin-bottom: 4px;
     }
 
     /* Продукция */
+    .products__title {
+        padding: 0;
+    }
+
     .products__content {
         padding: 0 15px;
     }
-    
+
     .products__grid {
         display: flex;
         flex-direction: column;
         gap: 20px;
         width: 100%;
     }
-    
+
     .products__column {
         width: 100%;
         display: flex;
         flex-direction: column;
         gap: 20px;
     }
-    
+
     .products__item {
-        width: 100% !important;
-        max-width: 100%;
-        height: 400px;
+        width: 100%;
+        height: auto;
         margin: 0;
         border-radius: 15px;
     }
-    
+
     .products__item-text {
         font-size: 24px;
     }
-    
-    .global-products {
-        right: -20px;
-        width: 100px;
-        height: 100%;
-        top: 0;
-    }
+
 
     /* Проекты */
     .projects__button-group {
@@ -2719,6 +2722,18 @@ li {
     .projects__button-group-mobile {
         display: block;
         font-size: 16px;
+        width: 640зpx;
+        text-align: left;
+    }
+
+    .projects__button-group-mobile select {
+        width: 100%;
+        box-sizing: border-box;
+    }
+
+    .projects__dropdown {
+        width: 100%;
+        box-sizing: border-box;
     }
 
     .global-projects {
@@ -2812,15 +2827,23 @@ li {
 
     /* Форма */
     .project-form {
-        flex-direction: row;
-        flex-wrap: wrap;
+        flex-direction: column;
         width: 100%;
-        height: auto;
+        position: relative;
     }
 
     .project-form__left {
         width: 100%;
-        border-radius: 0;
+        height: 100%;
+        position: absolute;
+        inset: 0;
+        z-index: 0;
+    }
+
+    .project-form form,
+    .project-form__right {
+        position: relative;
+        z-index: 1;
     }
 
     .form-row {
