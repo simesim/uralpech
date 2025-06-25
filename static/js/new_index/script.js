@@ -305,21 +305,21 @@ function initUKSWebsite() {
   });
 
   //Кнопка в форме
-  const requestForm = document.getElementById('requestForm');
-  if (requestForm) {
-    requestForm.addEventListener('submit', function (e) {
-      e.preventDefault();
-      if (this.checkValidity()) {
-        this.reset();
-        showSuccessPopup();
-      } else {
-        const invalidFields = this.querySelectorAll(':invalid');
-        invalidFields.forEach(field => {
-          field.classList.add('invalid-field');
-        });
-      }
-    });
-  }
+//   const requestForm = document.getElementById('requestForm');
+//   if (requestForm) {
+//     requestForm.addEventListener('submit', function (e) {
+//       e.preventDefault();
+//       if (this.checkValidity()) {
+//         this.reset();
+//         showSuccessPopup();
+//       } else {
+//         const invalidFields = this.querySelectorAll(':invalid');
+//         invalidFields.forEach(field => {
+//           field.classList.add('invalid-field');
+//         });
+//       }
+//     });
+//   }
 
   // Обработчик для формы в попапе
   const popupRequestForm = document.getElementById('popupRequestForm');

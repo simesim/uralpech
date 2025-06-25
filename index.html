@@ -156,7 +156,7 @@
         </div>
     </div>
 
-    <section class="products section">
+    <section id="products" class="products section">
         <div class="container container--relative">
 
             <div class="products__header">
@@ -329,30 +329,30 @@
                             <div class="form-row">
                                 <div class="form-column form-column--medium">
                                     <label class="form-label">Название компании</label>
-                                    <input type="text" class="form-input" required>
+                                    <input type="text" name="userName" class="form-input" required>
                                 </div>
                                 <div class="form-column form-column--medium">
                                     <label class="form-label">Ваша почта</label>
-                                    <input type="email" class="form-input">
+                                    <input name="userEmail" type="email" class="form-input">
                                 </div>
                             </div>
 
                             <div class="form-row">
                                 <div class="form-column">
                                     <label class="form-label">Номер телефона</label>
-                                    <input type="tel" class="form-input" placeholder="+7 (999) 999-99-99" required>
+                                    <input type="tel" name="userPhone" class="form-input" placeholder="+7 (999) 999-99-99" required>
                                 </div>
                             </div>
 
                             <div class="form-row form-row--bottom">
                                 <div class="form-column form-column--medium">
                                     <label class="form-label">Напишите Ваш город</label>
-                                    <input type="text" class="form-input" placeholder="Введите ваш город" required>
+                                    <input type="text" name="userCity" class="form-input" placeholder="Введите ваш город" required>
                                 </div>
                                 <div class="form-column form-column--medium">
                                     <label class="form-label" for="file-upload">Прикрепить файл</label>
-                                    <div class="file-input-container">
-                                        <input type="file" id="file-upload" class="file-input">
+                                    <div name="userFile" class="file-input-container">
+                                        <input name="userFile" type="file" id="file-upload" class="file-input">
                                         <label for="file-upload" class="file-input-label">Прикрепить файл</label>
                                     </div>
                                 </div>
@@ -472,42 +472,7 @@
         </div>
     </section>
 
-    <section class="news section" id="news">
-        <div class="container">
-            <div class="news__container">
-                <h2 class="news__title">Наши новости</h2>
-                <div class="news__cards">
-                    <div class="news__card">
-                        <img src="./static/img/new_index/generators/n1.jpg" alt="News 1" class="news__image">
-                        <h3 class="news__heading">НОВОСТЬ ОДИН</h3>
-                        <p class="news__description">A text for a new post. Add text here as a discription. It will be
-                            shown
-                            only in the description of a news card.</p>
-                        <p class="news__date">05.03.2025</p>
-                    </div>
-                    <div class="news__card">
-                        <img src="./static/img/new_index/generators/n2.jpg" alt="News 2" class="news__image">
-                        <h3 class="news__heading">НОВОСТЬ ДВА</h3>
-                        <p class="news__description">This is a field to be filled it with a description right under the
-                            headline. Use a short text to expand the meaning of your title</p>
-                        <p class="news__date">05.03.2025</p>
-                    </div>
-                    <div class="news__card">
-                        <img src="./static/img/new_index/generators/n3.jpg" alt="News 3" class="news__image">
-                        <h3 class="news__heading">НОВОСТЬ ТРИ</h3>
-                        <p class="news__description">Fill in description field and start your stories. This text will be
-                            shown as a description in a blog card in the newsfeed</p>
-                        <p class="news__date">05.03.2025</p>
-                    </div>
-                    <div class="news__card">
-                        <img src="./static/img/new_index/generators/n4.jpg" alt="News 4" class="news__image">
-                        <h3 class="news__heading">НОВОСТЬ ЧЕТЫРЕ</h3>
-                        <p class="news__date">05.03.2025</p>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </section>
+    ___
 
     <div class="news-modal" id="NewsModal">
         <div class="news-modal__content">
@@ -579,7 +544,13 @@
     <button id="successPopupCloseBtn" class="success-popup__close-btn">Закрыть</button>
   </div>
 </div>
-    <script src="./static/js/new_index/script.js"></script>
-</body>
+<script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+<!-- Маска телефона -->
+<script src="https://cdnjs.cloudflare.com/ajax/libs/jquery.mask/1.14.16/jquery.mask.min.js"></script>
 
+<script src="./static/js/new_index/script.js"></script>
+<script src="./static/js/new_index/form.js"></script>
+
+
+</body>
 </html>
