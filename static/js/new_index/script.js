@@ -34,10 +34,14 @@ function initUKSWebsite() {
 
   navBtn.addEventListener('click', () => {
     navLinks.classList.add('active');
+    navBtn.classList.add('active');
+    closeBtn.classList.add('active');
   });
 
   closeBtn.addEventListener('click', () => {
     navLinks.classList.remove('active');
+    navBtn.classList.remove('active');
+    closeBtn.classList.remove('active');
     linkItems.forEach(link => link.classList.remove('active'));
   });
 
@@ -305,21 +309,21 @@ function initUKSWebsite() {
   });
 
   //Кнопка в форме
-//   const requestForm = document.getElementById('requestForm');
-//   if (requestForm) {
-//     requestForm.addEventListener('submit', function (e) {
-//       e.preventDefault();
-//       if (this.checkValidity()) {
-//         this.reset();
-//         showSuccessPopup();
-//       } else {
-//         const invalidFields = this.querySelectorAll(':invalid');
-//         invalidFields.forEach(field => {
-//           field.classList.add('invalid-field');
-//         });
-//       }
-//     });
-//   }
+  //   const requestForm = document.getElementById('requestForm');
+  //   if (requestForm) {
+  //     requestForm.addEventListener('submit', function (e) {
+  //       e.preventDefault();
+  //       if (this.checkValidity()) {
+  //         this.reset();
+  //         showSuccessPopup();
+  //       } else {
+  //         const invalidFields = this.querySelectorAll(':invalid');
+  //         invalidFields.forEach(field => {
+  //           field.classList.add('invalid-field');
+  //         });
+  //       }
+  //     });
+  //   }
 
   // Обработчик для формы в попапе
   const popupRequestForm = document.getElementById('popupRequestForm');
