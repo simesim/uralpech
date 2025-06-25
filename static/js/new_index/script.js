@@ -425,23 +425,6 @@ function initUKSWebsite() {
     }
   });
 
-  document.getElementById('projectForm').addEventListener('submit', function (e) {
-    e.preventDefault();
-
-    const userName = document.getElementById('projectUserName').value;
-    const userPhone = document.getElementById('projectUserPhone').value;
-    const projectTitle = document.getElementById('projectPopupTitle').textContent;
-
-    console.log('Форма отправлена:', {
-      project: projectTitle,
-      userName,
-      userPhone
-    });
-
-    closeProjectPopup();
-    showSuccessPopup();
-  });
-
   document.addEventListener('keydown', function (e) {
     if (e.key === 'Escape') {
       closeProjectPopup();
