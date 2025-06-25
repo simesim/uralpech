@@ -18,12 +18,15 @@ $(document).ready(function () {
             return /^\+7 \(\d{3}\) \d{3}-\d{2}-\d{2}$/.test(phone);
         }
 
-        function sendAjaxForm(form, name, phone, message) {
+        function sendAjaxForm(form, data) {
+            console.log(data)
             $.ajax({
                 type: 'POST',
-                url: '/_service/modern_sendcallback.php',
-                data: 'name=' + encodeURIComponent(name) + '&phone=' + encodeURIComponent(phone) + '&message=' + encodeURIComponent(message),
+                contentType: 'application/json',
+                url: 'http://uksgroup.test/_service/modern_sendcallback.php',
+                data: JSON.stringify(data),
                 success: function (response) {
+                    console.log(response)
                     // здесь можно заменить на свою логику показа окна
                     $('#successPopup').fadeIn();
                     $(form).trigger("reset");
@@ -32,6 +35,7 @@ $(document).ready(function () {
                     alert('Ошибка при отправке формы. Попробуйте позже.');
                 }
             });
+            showSuccessPopup();
         }
 
         $('#orderRequestForm, #requestForm, #projectForm').on('submit', function (e) {
@@ -42,7 +46,9 @@ $(document).ready(function () {
     
                 const name = $(form).find('input[name="userName"]').val() || $(form).find('input[type="text"]').first().val();
                 const phone = $(form).find('input[type="tel"]').val();
-                const message = $(form).find('textarea').val() || ''; // если есть textarea
+                const email = $(form).find('input[name="userEmail"]').val() || "";
+                const city = $(form).find('input[name="userCity"]').val() || "";
+
                 let valid = true;
     
                 if (!name || name.trim().length < 2) {
@@ -56,12 +62,14 @@ $(document).ready(function () {
                 }
     
                 if (valid) {
-                    sendAjaxForm(form, name.trim(), phone.trim(), message.trim());
-                    console.log('Форма отправлена:', {
+                    const formData = {
                         name: name.trim(),
                         phone: phone.trim(),
-                        message: message.trim()
-                    });
+                        email: email.trim(),
+                        city: city.trim(),
+                    }
+
+                    sendAjaxForm(form, formData);
                 } else {
                     console.log('Ошибка валидации', "телефон: "+ phone, name)
                     console.log($(form).find('input[type="tel"]').val())
