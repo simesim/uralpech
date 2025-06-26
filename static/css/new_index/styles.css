@@ -465,10 +465,8 @@ li {
 
 .products__grid {
     display: flex;
-<<<<<<< merge-webp-images
-=======
     position: relative;
->>>>>>> main
+
     gap: 20px;
     width: 100%;
     justify-content: center;

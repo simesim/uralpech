@@ -1,6 +1,5 @@
 function initUKSWebsite() {
 
-<<<<<<< merge-webp-images
   function checkWebPSupport(callback) {
     const webP = new Image();
     webP.onload = webP.onerror = function () {
@@ -25,8 +24,6 @@ function initUKSWebsite() {
     }
   });
 
-=======
->>>>>>> main
   // Баннер сверху
   const slides = document.querySelectorAll('.slider__slide');
   const prevBtn = document.querySelector('.slider__btn--prev');
