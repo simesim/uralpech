@@ -457,7 +457,6 @@ li {
 
 .products__grid {
     display: flex;
-    flex-direction: column;
     position: relative;
     gap: 20px;
     
@@ -1337,6 +1336,8 @@ li {
     background: transparent;
     width: 250px;
     text-align: left;
+
+    text-decoration: none;
 }
 
 .news__image {
