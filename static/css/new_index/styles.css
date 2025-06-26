@@ -180,16 +180,16 @@ li {
     gap: 5px;
 }
 
-.slider__contact-mobile .phone{
+.slider__contact-mobile .phone {
     width: 200px;
 }
 
 .header__nav-mobile.active {
-  display: none;
+    display: none;
 }
 
 .header__close-btn.active {
-  display: block;
+    display: block;
 }
 
 .header__phone-icon,
@@ -268,13 +268,13 @@ li {
     z-index: 2;
 }
 
-.slider__slide--bg-1 {
+/* .slider__slide--bg-1 {
     background-image: url("../../img/new_index/header/header_bg.jpg");
 }
 
 .slider__slide--bg-2 {
     background-image: url("../../img/new_index/header/header_bg2.jpg");
-}
+} */
 
 .slider__content {
     position: relative;
@@ -465,23 +465,22 @@ li {
 
 .products__grid {
     display: flex;
-    flex-direction: column;
-    position: relative;
     gap: 20px;
-    
     width: 100%;
+    justify-content: center;
 }
 
 .products__column {
     display: flex;
     flex-direction: column;
     gap: 20px;
+    width: calc(50% - 10px);
+    /* Половина ширины минус половина gap */
 }
 
 .products__item {
-    width: 502px;
+    width: 100%;
     height: 335px;
-    flex-shrink: 0;
     aspect-ratio: 502/335;
     border-radius: 15px;
     position: relative;
@@ -506,7 +505,6 @@ li {
     color: #FFF;
     font-family: 'Montserrat';
     font-size: 32px;
-    font-style: bold;
     font-weight: 700;
     line-height: normal;
     z-index: 3;
@@ -846,7 +844,7 @@ li {
 
 /* Stats */
 .stats {
-    background-image: url('../../img/new_index/stats_bg.jpg');
+    /* background-image: url('../../img/new_index/stats_bg.jpg'); */
     height: 360px;
     background-size: cover;
     background-position: center;
@@ -1177,7 +1175,7 @@ li {
 
 .contact__container {
     width: 100%;
-    background-image: url('../../img/new_index/contact_bg.jpg');
+    /* background-image: url('../../img/new_index/contact_bg.jpg'); */
     background-size: cover;
     background-position: center;
     border-radius: 20px;
@@ -2645,7 +2643,7 @@ li {
         height: 40px;
         width: 100%;
         margin-top: 0;
-        gap:0;
+        gap: 0;
     }
 
     .slider__btn {
@@ -2724,7 +2722,7 @@ li {
     }
 
     #aboutus .aboutus__header {
-        
+
         padding-left: 0;
         justify-content: start;
         flex-direction: row-reverse;
