@@ -553,10 +553,24 @@
         </div>
     </section>
 
+<section class="news section" id="news">
+        <div class="container">
+            <div class="news__container">
+                <h2 class="news__title">Наши новости</h2>
+                <div class="news__cards">
+                    {foreach from=$news item=item}
+                         <a href="/o_zavode/novosti/news-{$item.news_id}.html" target="_blank" rel="noopener"  class="news__card">
+                            <img src="./gallery/news/{$item.news_id}.jpg" alt="News 1" class="news__image">
+                            <h3 class="news__heading">{$item.title}</h3>
+                            <p class="news__description">{$item.short}</p>
+                            <p class="news__date">{$item.add_date}</p>
+                        </a>
+                    {/foreach}
+                </div>
+            </div>
+        </div>
+    </section>
 
-
-
-    ___
 
     <div class="news-modal" id="NewsModal">
         <div class="news-modal__content">
@@ -591,6 +605,8 @@
             </form>
         </div>
     </div>
+    
+    
 
     <!-- Попап для проектов -->
     <div id="projectPopup" class="popup-overlay">
@@ -632,9 +648,9 @@
     <!-- Маска телефона -->
     <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery.mask/1.14.16/jquery.mask.min.js"></script>
 
-    <script src="./static/js/new_index/script.js"></script>
-    <script src="./static/js/new_index/form.js"></script>
-
+<script src="./static/js/new_index/script.js"></script>
+<script src="./static/js/new_index/form.js"></script>
+{$current_category.text_block.counters_html.description}
 
 </body>
 

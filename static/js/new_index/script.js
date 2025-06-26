@@ -1,5 +1,6 @@
 function initUKSWebsite() {
 
+<<<<<<< merge-webp-images
   function checkWebPSupport(callback) {
     const webP = new Image();
     webP.onload = webP.onerror = function () {
@@ -24,6 +25,8 @@ function initUKSWebsite() {
     }
   });
 
+=======
+>>>>>>> main
   // Баннер сверху
   const slides = document.querySelectorAll('.slider__slide');
   const prevBtn = document.querySelector('.slider__btn--prev');
@@ -96,7 +99,8 @@ function initUKSWebsite() {
     });
   });
 
-  // Проекты
+
+  
   // Проекты
   const sections = {
     'dveri': {
@@ -392,56 +396,7 @@ function initUKSWebsite() {
 
   window.addEventListener('load', updateCertslider);
 
-  // Модальное окно новостей
-  const modal = document.getElementById('NewsModal');
-  const modalTitle = document.getElementById('NewsModalTitle');
-  const modalImage = document.getElementById('NewsModalImage');
-  const modalText = document.getElementById('NewsModalText');
-
-  // Данные по новостям
-  const NewsData = [
-    {
-      title: 'НОВОСТЬ ОДИН',
-      image: './static/img/new_index/generators/n1.jpg',
-      text: `A balancing rock, also called balanced rock or precarious boulder, is a naturally occurring geological formation...`
-    },
-    {
-      title: 'НОВОСТЬ ДВА',
-      image: './static/img/new_index/generators/n2.jpg',
-      text: ``
-    },
-    {
-      title: 'НОВОСТЬ ТРИ',
-      image: './static/img/new_index/generators/n3.jpg',
-      text: ``
-    },
-    {
-      title: 'НОВОСТЬ ЧЕТЫРЕ',
-      image: './static/img/new_index/generators/n4.jpg',
-      text: ``
-    }
-  ];
-
-  // Привязка обработчиков ко всем карточкам
-  document.querySelectorAll('.news__card').forEach((card, index) => {
-    card.addEventListener('click', () => {
-      const news = NewsData[index];
-      modalTitle.innerText = news.title;
-      modalImage.src = news.image;
-      modalText.innerText = news.text;
-      modal.style.display = 'flex';
-    });
-  });
-
-  function closeNewsModal() {
-    modal.style.display = 'none';
-  }
-
-  window.addEventListener('click', (e) => {
-    if (e.target === modal) {
-      closeNewsModal();
-    }
-  });
+  
 
   //Кнопки в выпада.щем списки для проектов
   document.querySelectorAll('a[data-project]').forEach(link => {
@@ -576,6 +531,23 @@ function initUKSWebsite() {
     }
   });
 
+  document.getElementById('projectForm').addEventListener('submit', function (e) {
+    e.preventDefault();
+
+    const userName = document.getElementById('projectUserName').value;
+    const userPhone = document.getElementById('projectUserPhone').value;
+    const projectTitle = document.getElementById('projectPopupTitle').textContent;
+
+    console.log('Форма отправлена:', {
+      project: projectTitle,
+      userName,
+      userPhone
+    });
+
+    closeProjectPopup();
+    showSuccessPopup();
+  });
+
   document.addEventListener('keydown', function (e) {
     if (e.key === 'Escape') {
       closeProjectPopup();
@@ -637,10 +609,8 @@ function initUKSWebsite() {
   window.closePopup = closePopup;
   window.openProjectPopup = openProjectPopup;
   window.closeProjectPopup = closeProjectPopup;
-  window.closeNewsModal = closeNewsModal;
   window.changeSection = changeSection;
   window.showSuccessPopup = showSuccessPopup;
-
 }
 
 document.addEventListener('DOMContentLoaded', initUKSWebsite);
