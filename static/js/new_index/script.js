@@ -1,5 +1,32 @@
 function initUKSWebsite() {
 
+<<<<<<< merge-webp-images
+  function checkWebPSupport(callback) {
+    const webP = new Image();
+    webP.onload = webP.onerror = function () {
+      callback(webP.height === 2);
+    };
+    webP.src = 'data:image/webp;base64,UklGRjoAAABXRUJQVlA4IC4AAACyAgCdASoCAAIALmk0mk0iIiIiIgBoSygABc6WWgAA/veff/0PP8bA//LwYAAA';
+  }
+  checkWebPSupport(function (isSupported) {
+    const stats = document.querySelector('.stats');
+    if (stats) {
+      const webp = stats.dataset.webp;
+      const fallback = stats.dataset.fallback;
+      const url = isSupported ? webp : fallback;
+      stats.style.backgroundImage = `url('${url}')`;
+    }
+    const contact = document.querySelector('.contact__container');
+    if (contact) {
+      const webp = contact.dataset.webp;
+      const fallback = contact.dataset.fallback;
+      const url = isSupported ? webp : fallback;
+      contact.style.backgroundImage = `url('${url}')`;
+    }
+  });
+
+=======
+>>>>>>> main
   // Баннер сверху
   const slides = document.querySelectorAll('.slider__slide');
   const prevBtn = document.querySelector('.slider__btn--prev');
@@ -7,6 +34,16 @@ function initUKSWebsite() {
   let currentSlide = 0;
 
   function showSlide(index) {
+    const slideElement = slides[index];
+
+    checkWebPSupport(function (isSupported) {
+      const imageUrl = isSupported ?
+        slideElement.dataset.webp || slideElement.style.backgroundImage :
+        slideElement.dataset.fallback || slideElement.style.backgroundImage;
+
+      slideElement.style.backgroundImage = `url('${imageUrl}')`;
+    });
+
     slides.forEach((slide, i) => {
       slide.classList.toggle('slider__slide--active', i === index);
     });
@@ -33,10 +70,14 @@ function initUKSWebsite() {
 
   navBtn.addEventListener('click', () => {
     navLinks.classList.add('active');
+    navBtn.classList.add('active');
+    closeBtn.classList.add('active');
   });
 
   closeBtn.addEventListener('click', () => {
     navLinks.classList.remove('active');
+    navBtn.classList.remove('active');
+    closeBtn.classList.remove('active');
     linkItems.forEach(link => link.classList.remove('active'));
   });
 
@@ -66,53 +107,140 @@ function initUKSWebsite() {
       title: 'СТУДЕНЧЕСКИЙ КАМПУС УРФУ, ЕКАТЕРИНБУРГ',
       description: 'Комплекс работ по проектированию, изготовлению и монтажу противопожарных конструкций выполнило ООО «УКС ГРУПП». В составе противопожарных конструкций комплекса используются двери и перегородки из профильной системы Alutech и стекла Pyrolut.',
       images: [
-        './static/img/new_index/generators/door1.png',
-        './static/img/new_index/generators/door2.png',
-        './static/img/new_index/generators/door3.jpg',
-        './static/img/new_index/generators/door4.jpg',
-        './static/img/new_index/generators/door5.png',
-        './static/img/new_index/generators/door6.jpg',
-        './static/img/new_index/generators/door7.png'
+        {
+          webp: './static/webp/new_index/generators/door1.webp',
+          fallback: './static/img/new_index/generators/door1.png'
+        },
+        {
+          webp: './static/webp/new_index/generators/door2.webp',
+          fallback: './static/img/new_index/generators/door2.png'
+        },
+        {
+          webp: './static/webp/new_index/generators/door3.webp',
+          fallback: './static/img/new_index/generators/door3.png'
+        },
+        {
+          webp: './static/webp/new_index/generators/door4.webp',
+          fallback: './static/img/new_index/generators/door4.png'
+        },
+        {
+          webp: './static/webp/new_index/generators/door5.webp',
+          fallback: './static/img/new_index/generators/door5.png'
+        },
+        {
+          webp: './static/webp/new_index/generators/door6.webp',
+          fallback: './static/img/new_index/generators/door6.png'
+        },
+        {
+          webp: './static/webp/new_index/generators/door7.webp',
+          fallback: './static/img/new_index/generators/door7.png'
+        }
       ]
     },
     'peregorodki': {
       title: 'ДВОРЕЦ ВОДНЫХ ВИДОВ СПОРТА (ДВВС) ЕКАТЕРИНБУРГ',
       description: 'Работы по проектированию, изготовлению и монтажу противопожарных конструкций выполнило ООО «УКС ГРУП». В составе используются перегородки и двери из стального профиля Schuco и стекла Pyrolut с пределами огнестойкости EIW45 и EIW30 соответственно.',
       images: [
-        './static/img/new_index/generators/pere1.png',
-        './static/img/new_index/generators/pere2.png',
-        './static/img/new_index/generators/pere3.jpg',
-        './static/img/new_index/generators/pere4.jpg',
-        './static/img/new_index/generators/pere5.png',
-        './static/img/new_index/generators/pere6.jpg',
-        './static/img/new_index/generators/pere7.jpg',
-        './static/img/new_index/generators/pere8.jpg',
-        './static/img/new_index/generators/pere9.png'
+        {
+          webp: './static/webp/new_index/generators/pere1.webp',
+          fallback: './static/img/new_index/generators/pere1.png'
+        },
+        {
+          webp: './static/webp/new_index/generators/pere2.webp',
+          fallback: './static/img/new_index/generators/pere2.png'
+        },
+        {
+          webp: './static/webp/new_index/generators/pere3.webp',
+          fallback: './static/img/new_index/generators/pere3.png'
+        },
+        {
+          webp: './static/webp/new_index/generators/pere4.webp',
+          fallback: './static/img/new_index/generators/pere4.png'
+        },
+        {
+          webp: './static/webp/new_index/generators/pere5.webp',
+          fallback: './static/img/new_index/generators/pere5.png'
+        },
+        {
+          webp: './static/webp/new_index/generators/pere6.webp',
+          fallback: './static/img/new_index/generators/pere6.png'
+        },
+        {
+          webp: './static/webp/new_index/generators/pere7.webp',
+          fallback: './static/img/new_index/generators/pere7.png'
+        },
+        {
+          webp: './static/webp/new_index/generators/pere8.webp',
+          fallback: './static/img/new_index/generators/pere8.png'
+        },
+        {
+          webp: './static/webp/new_index/generators/pere9.webp',
+          fallback: './static/img/new_index/generators/pere9.png'
+        }
       ]
     },
     'okna': {
       title: 'ДВОРЕЦ ВОДНЫХ ВИДОВ СПОРТА, КРЫМ',
       description: 'ООО «УКС ГРУП» выполнило работы по проектированию, производству и монтажу огнестойких витражей и дверей. Выполнены технически сложные работы по монтажу витража высотой более 9 метров со внутренними и наружными углами поворотов. В составе конструкций используются противопожарный профиль Alutech серии F50 и W62 с пределами огнестойкости EIW15 и EIW60.',
       images: [
-        './static/img/new_index/generators/okno1.png',
-        './static/img/new_index/generators/okno2.png',
-        './static/img/new_index/generators/okno3.jpg',
-        './static/img/new_index/generators/okno4.jpg',
-        './static/img/new_index/generators/okno5.jpg',
-        './static/img/new_index/generators/okno6.png'
+        {
+          webp: './static/webp/new_index/generators/okno1.webp',
+          fallback: './static/img/new_index/generators/okno1.png'
+        },
+        {
+          webp: './static/webp/new_index/generators/okno2.webp',
+          fallback: './static/img/new_index/generators/okno2.png'
+        },
+        {
+          webp: './static/webp/new_index/generators/okno3.webp',
+          fallback: './static/img/new_index/generators/okno3.png'
+        },
+        {
+          webp: './static/webp/new_index/generators/okno4.webp',
+          fallback: './static/img/new_index/generators/okno4.png'
+        },
+        {
+          webp: './static/webp/new_index/generators/okno5.webp',
+          fallback: './static/img/new_index/generators/okno5.png'
+        },
+        {
+          webp: './static/webp/new_index/generators/okno6.webp',
+          fallback: './static/img/new_index/generators/okno6.png'
+        }
       ]
     },
     'vitrazhi': {
       title: 'КЛУБНЫЙ ДОМ "РИВЬЕРА". ЕКАТЕРИНБУРГ',
       description: 'Комплекс работ по остеклению Клубного дома "Ривьера", с использованием фасадных систем премиального уровня SCHUCO и AGC выполнил завод ООО «УКС груп».',
       images: [
-        './static/img/new_index/generators/vetr1.png',
-        './static/img/new_index/generators/vetr2.png',
-        './static/img/new_index/generators/vetr3.jpg',
-        './static/img/new_index/generators/vetr4.jpg',
-        './static/img/new_index/generators/vetr5.jpg',
-        './static/img/new_index/generators/vetr6.jpg',
-        './static/img/new_index/generators/vetr7.png',
+        {
+          webp: './static/webp/new_index/generators/vetr1.webp',
+          fallback: './static/img/new_index/generators/vetr1.png'
+        },
+        {
+          webp: './static/webp/new_index/generators/vetr2.webp',
+          fallback: './static/img/new_index/generators/vetr2.png'
+        },
+        {
+          webp: './static/webp/new_index/generators/vetr3.webp',
+          fallback: './static/img/new_index/generators/vetr3.png'
+        },
+        {
+          webp: './static/webp/new_index/generators/vetr4.webp',
+          fallback: './static/img/new_index/generators/vetr4.png'
+        },
+        {
+          webp: './static/webp/new_index/generators/vetr5.webp',
+          fallback: './static/img/new_index/generators/vetr5.png'
+        },
+        {
+          webp: './static/webp/new_index/generators/vetr6.webp',
+          fallback: './static/img/new_index/generators/vetr6.png'
+        },
+        {
+          webp: './static/webp/new_index/generators/vetr7.webp',
+          fallback: './static/img/new_index/generators/vetr7.png'
+        }
       ]
     }
   };
@@ -132,7 +260,13 @@ function initUKSWebsite() {
   }
 
   function updateImage() {
-    document.getElementById('photoContainer').style.background = `url('${sections[currentSection].images[currentImageIndex]}') lightgray 50% / cover no-repeat`;
+    const imageData = sections[currentSection].images[currentImageIndex];
+    const photoContainer = document.getElementById('photoContainer');
+
+    checkWebPSupport(function (isSupported) {
+      const imageUrl = isSupported ? imageData.webp : imageData.fallback;
+      photoContainer.style.backgroundImage = `url('${imageUrl}')`;
+    });
   }
 
   function nextImage() {
@@ -178,12 +312,30 @@ function initUKSWebsite() {
 
   // О нас
   const images = [
-    './static/img/new_index/generators/ab1.png',
-    './static/img/new_index/generators/ab2.png',
-    './static/img/new_index/generators/ab3.png',
-    './static/img/new_index/generators/ab4.png',
-    './static/img/new_index/generators/ab5.png',
-    './static/img/new_index/generators/ab6.png'
+    {
+      webp: './static/webp/new_index/generators/ab1.webp',
+      png: './static/img/new_index/generators/ab1.png'
+    },
+    {
+      webp: './static/webp/new_index/generators/ab2.webp',
+      png: './static/img/new_index/generators/ab2.png'
+    },
+    {
+      webp: './static/webp/new_index/generators/ab3.webp',
+      png: './static/img/new_index/generators/ab3.png'
+    },
+    {
+      webp: './static/webp/new_index/generators/ab4.webp',
+      png: './static/img/new_index/generators/ab4.png'
+    },
+    {
+      webp: './static/webp/new_index/generators/ab5.webp',
+      png: './static/img/new_index/generators/ab5.png'
+    },
+    {
+      webp: './static/webp/new_index/generators/ab6.webp',
+      png: './static/img/new_index/generators/ab6.png'
+    }
   ];
 
   let currentIndex = 0;
@@ -192,7 +344,10 @@ function initUKSWebsite() {
   const nextBtn1 = document.getElementById('nextBtn');
 
   function updatePhoto() {
-    photoBlock.style.backgroundImage = `url('${images[currentIndex]}')`;
+    checkWebPSupport(function (isSupported) {
+      const imageUrl = isSupported ? images[currentIndex].webp : images[currentIndex].png;
+      photoBlock.style.backgroundImage = `url('${imageUrl}')`;
+    });
   }
 
   function showNext() {
@@ -256,21 +411,21 @@ function initUKSWebsite() {
   });
 
   //Кнопка в форме
-//   const requestForm = document.getElementById('requestForm');
-//   if (requestForm) {
-//     requestForm.addEventListener('submit', function (e) {
-//       e.preventDefault();
-//       if (this.checkValidity()) {
-//         this.reset();
-//         showSuccessPopup();
-//       } else {
-//         const invalidFields = this.querySelectorAll(':invalid');
-//         invalidFields.forEach(field => {
-//           field.classList.add('invalid-field');
-//         });
-//       }
-//     });
-//   }
+  //   const requestForm = document.getElementById('requestForm');
+  //   if (requestForm) {
+  //     requestForm.addEventListener('submit', function (e) {
+  //       e.preventDefault();
+  //       if (this.checkValidity()) {
+  //         this.reset();
+  //         showSuccessPopup();
+  //       } else {
+  //         const invalidFields = this.querySelectorAll(':invalid');
+  //         invalidFields.forEach(field => {
+  //           field.classList.add('invalid-field');
+  //         });
+  //       }
+  //     });
+  //   }
 
   // Обработчик для формы в попапе
   const popupRequestForm = document.getElementById('popupRequestForm');
