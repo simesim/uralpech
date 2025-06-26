@@ -604,10 +604,13 @@ li {
     width: 600px;
     height: 463px;
     border-radius: 20px 0 0 20px;
+
+    background-size: cover;
+    
 }
 
-.projects__photo--bg {
-    background: url('photo1.webp') lightgray 50% / cover no-repeat;
+.projects__photo {
+    background: url('../../webp/new_index/generators/door1.webp') lightgray 50% / cover no-repeat;
 }
 
 .projects__nav-btn {
@@ -740,7 +743,7 @@ li {
 }
 
 .aboutus__photo--bg {
-    background: url('photo1.webp') center/cover no-repeat;
+    background: url('../../webp/new_index/generators/ab1.webp') center/cover no-repeat;
 }
 
 .aboutus__arrow-btn {
@@ -1891,6 +1894,7 @@ li {
     .products__grid {
         display: flex;
         flex-direction: row;
+        justify-content: start;
         gap: 16px;
 
         padding-bottom: 10px;

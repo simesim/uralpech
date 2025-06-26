@@ -1,5 +1,4 @@
 function initUKSWebsite() {
-
   function checkWebPSupport(callback) {
     const webP = new Image();
     webP.onload = webP.onerror = function () {
@@ -7,6 +6,7 @@ function initUKSWebsite() {
     };
     webP.src = 'data:image/webp;base64,UklGRjoAAABXRUJQVlA4IC4AAACyAgCdASoCAAIALmk0mk0iIiIiIgBoSygABc6WWgAA/veff/0PP8bA//LwYAAA';
   }
+
   checkWebPSupport(function (isSupported) {
     const stats = document.querySelector('.stats');
     if (stats) {
@@ -407,23 +407,6 @@ function initUKSWebsite() {
     });
   });
 
-  //Кнопка в форме
-  //   const requestForm = document.getElementById('requestForm');
-  //   if (requestForm) {
-  //     requestForm.addEventListener('submit', function (e) {
-  //       e.preventDefault();
-  //       if (this.checkValidity()) {
-  //         this.reset();
-  //         showSuccessPopup();
-  //       } else {
-  //         const invalidFields = this.querySelectorAll(':invalid');
-  //         invalidFields.forEach(field => {
-  //           field.classList.add('invalid-field');
-  //         });
-  //       }
-  //     });
-  //   }
-
   // Обработчик для формы в попапе
   const popupRequestForm = document.getElementById('popupRequestForm');
   if (popupRequestForm) {
@@ -467,6 +450,10 @@ function initUKSWebsite() {
       closePopup();
     }
   });
+
+  const sliderBtn = document.querySelector('.slider__cta-btn');
+
+  sliderBtn.addEventListener('click', openPopup);
 
 
 
@@ -611,4 +598,3 @@ function initUKSWebsite() {
 }
 
 document.addEventListener('DOMContentLoaded', initUKSWebsite);
-initUKSWebsite();

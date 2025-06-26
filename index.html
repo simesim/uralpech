@@ -12,12 +12,8 @@
 <body class="body">
     <header class="header">
         <div class="header__logo">
-            <picture>
-                <source srcset="./static/webp/new_index/header/Logo.webp" type="image/webp">
-                <source srcset="./static/img/new_index/header/Logo.png" type="image/png">
-                <img src="./static/img/new_index/header/Logo.png"
-                    alt="УКС Групп – завод огнестойких, сверхпрочных конструкций" loading="lazy">
-            </picture>
+            <img src="./static/img/new_index/header/Logo.png"
+                alt="УКС Групп – завод огнестойких, сверхпрочных конструкций" loading="lazy">
         </div>
         <nav class="header__nav">
             <ul class="header__links">
@@ -97,12 +93,8 @@
                 </li>
             </ul>
             <button class="header__nav-mobile" id="headerNavBtn">
-                <picture>
-                    <source srcset="./static/webp/new_index/header/menu-icon.webp" type="image/webp">
-                    <source srcset="./static/img/new_index/header/menu-icon.png" type="image/png">
-                    <img src="./static/img/new_index/header/menu-icon.png" loading="lazy" alt="Menu"
-                        style="width: 24px; height: 24px;">
-                </picture>
+                <img src="./static/img/new_index/header/menu-icon.png" loading="lazy" alt="Menu"
+                    style="width: 24px; height: 24px;">
             </button>
             <button class="header__close-btn" id="headerCloseBtn">✖</button>
         </nav>
@@ -116,11 +108,7 @@
             <a href="mailto:info@uksgroup.ru" class="header__contact-link email">info@uksgroup.ru</a>
             <a href="https://api.whatsapp.com/send/?phone=79120449777&text=Привет%21++Меня+интересует...&type=phone_number&app_absent=0"
                 class="header__whatsapp-btn">
-                <picture>
-                    <source srcset="./static/webp/new_index/header/header_wa.webp" type="image/webp">
-                    <source srcset="./static/img/new_index/header/header_wa.png" type="image/png">
-                    <img src="./static/img/new_index/header/header_wa.png" loading="lazy" alt="WhatsApp">
-                </picture>
+            <img src="./static/img/new_index/header/header_wa.png" loading="lazy" alt="WhatsApp">
             </a>
         </div>
     </header>
@@ -145,32 +133,20 @@
             </div>
             <div class="slider-btn__wrap">
                 <div class="slider__btn slider__btn--prev">
-                    <picture>
-                        <source srcset="./static/webp/new_index/prev.webp" type="image/webp">
-                        <source srcset="./static/img/new_index/prev.png" type="image/png">
-                        <img src="./static/img/new_index/prev.png" alt="Previous" loading="lazy">
-                    </picture>
+                    <img src="./static/img/new_index/prev.png" alt="Previous" loading="lazy">
                 </div>
                 <div class="slider__btn slider__btn--next">
-                    <picture>
-                        <source srcset="./static/webp/new_index/next.webp" type="image/webp">
-                        <source srcset="./static/img/new_index/next.png" type="image/png">
-                        <img src="./static/img/new_index/next.png" alt="Next" loading="lazy">
-                    </picture>
+                    <img src="./static/img/new_index/next.png" alt="Next" loading="lazy">
                 </div>
             </div>
 
-            <button class="slider__cta-btn" onclick="openPopup()">Оставить заявку на расчёт</button>
+            <button class="slider__cta-btn" >Оставить заявку на расчёт</button>
             <div class="slider__contact-mobile">
                 <a href="tel:+73433850951" class="header__contact-link phone">+7 (343) 385-09-51</a>
                 <div class="slider__contact-row row">
                     <a href="https://api.whatsapp.com/send/?phone=79120449777&type=phone_number&app_absent=0"
                         class="header__whatsapp-btn">
-                        <picture>
-                            <source srcset="./static/webp/new_index/header/header_wa.webp" type="image/webp">
-                            <source srcset="./static/img/new_index/header/header_wa.png" type="image/png">
-                            <img src="./static/img/new_index/header/header_wa.png" alt="WhatsApp" loading="lazy">
-                        </picture>
+                        <img src="./static/img/new_index/header/header_wa.png" alt="WhatsApp" loading="lazy">
                     </a>
                     <a href="mailto:info@uksgroup.ru" class="header__contact-link email">sales@uksgroup.ru</a>
                 </div>
@@ -571,6 +547,29 @@
             </div>
         </div>
     </section>    
+
+    <!-- Попап заявка -->
+    <div id="requestPopup" class="popup-overlay">
+        <div class="popup-content">
+            <button class="popup-close" onclick="closePopup()">×</button>
+            <h2 class="popup-title">Получите расчет стоимости прямо сейчас</h2>
+            <p class="popup-subtitle">Оставьте свои контактные данные и мы с Вами свяжемся</p>
+
+            <form id="requestForm">
+                <div class="form-row">
+                    <div class="input-group">
+                        <input type="text" id="userName" name="userName" placeholder="Ваше имя">
+                    </div>
+
+                    <div class="input-group">
+                        <input type="tel" id="userPhone" name="userPhone" placeholder="+7 (999) 999-99-99" required>
+                    </div>
+                </div>
+
+                <button type="submit" class="submit-btn">Отправить</button>
+            </form>
+        </div>
+    </div>
 
     <!-- Попап для проектов -->
     <div id="projectPopup" class="popup-overlay">
