@@ -6,6 +6,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>УКС Групп</title>
     <link rel="stylesheet" href="./static/css/new_index/styles.css">
+    <link rel="shortcut icon" href="/static/img/favicon.png" type="image/x-icon">
 </head>
 
 <body class="body">
@@ -553,44 +554,23 @@
         </div>
     </section>
 
-
-
-
-    ___
-
-    <div class="news-modal" id="NewsModal">
-        <div class="news-modal__content">
-            <button class="news-modal__close" onclick="closeNewsModal()">×</button>
-            <h2 class="news-modal__title" id="NewsModalTitle"></h2>
-            <img src="" alt="News Image" class="news-modal__img" id="NewsModalImage">
-            <p class="news-modal__text" id="NewsModalText"></p>
-            <p class="news-modal__date">05.03.2025</p>
-        </div>
-    </div>
-
-
-    <!-- Сам попап -->
-    <div id="requestPopup" class="popup-overlay">
-        <div class="popup-content">
-            <button class="popup-close" onclick="closePopup()">×</button>
-            <h2 class="popup-title">Получите расчет стоимости прямо сейчас</h2>
-            <p class="popup-subtitle">Оставьте свои контактные данные и мы с Вами свяжемся</p>
-
-            <form id="requestForm">
-                <div class="form-row">
-                    <div class="input-group">
-                        <input type="text" id="userName" name="userName" placeholder="Ваше имя">
-                    </div>
-
-                    <div class="input-group">
-                        <input type="tel" id="userPhone" name="userPhone" placeholder="+7 (999) 999-99-99" required>
-                    </div>
+<section class="news section" id="news">
+        <div class="container">
+            <div class="news__container">
+                <h2 class="news__title">Наши новости</h2>
+                <div class="news__cards">
+                    {foreach from=$news item=item}
+                         <a href="/o_zavode/novosti/news-{$item.news_id}.html" target="_blank" rel="noopener"  class="news__card">
+                            <img src="./gallery/news/{$item.news_id}.jpg" alt="News 1" class="news__image">
+                            <h3 class="news__heading">{$item.title}</h3>
+                            <p class="news__description">{$item.short}</p>
+                            <p class="news__date">{$item.add_date}</p>
+                        </a>
+                    {/foreach}
                 </div>
-
-                <button type="submit" class="submit-btn">Отправить</button>
-            </form>
+            </div>
         </div>
-    </div>
+    </section>    
 
     <!-- Попап для проектов -->
     <div id="projectPopup" class="popup-overlay">
@@ -632,9 +612,9 @@
     <!-- Маска телефона -->
     <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery.mask/1.14.16/jquery.mask.min.js"></script>
 
-    <script src="./static/js/new_index/script.js"></script>
-    <script src="./static/js/new_index/form.js"></script>
-
+<script src="./static/js/new_index/script.js"></script>
+<script src="./static/js/new_index/form.js"></script>
+{$current_category.text_block.counters_html.description}
 
 </body>
 

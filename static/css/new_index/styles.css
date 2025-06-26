@@ -465,6 +465,8 @@ li {
 
 .products__grid {
     display: flex;
+    position: relative;
+
     gap: 20px;
     width: 100%;
     justify-content: center;
@@ -1343,6 +1345,8 @@ li {
     background: transparent;
     width: 250px;
     text-align: left;
+
+    text-decoration: none;
 }
 
 .news__image {
