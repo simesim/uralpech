@@ -4,7 +4,9 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>УКС Групп</title>
+    <title>{$globals.site_name}</title>
+    {if $globals.site_description}<meta name="description" content="{$globals.site_description}"/>{/if}
+    {if $globals.site_keywords}<meta name="keywords" content="{$globals.site_keywords}"/>{/if}
     <link rel="stylesheet" href="./static/css/new_index/styles.css">
     <link rel="shortcut icon" href="/static/img/favicon.png" type="image/x-icon">
 </head>
@@ -12,12 +14,8 @@
 <body class="body">
     <header class="header">
         <div class="header__logo">
-            <picture>
-                <source srcset="./static/webp/new_index/header/Logo.webp" type="image/webp">
-                <source srcset="./static/img/new_index/header/Logo.png" type="image/png">
-                <img src="./static/img/new_index/header/Logo.png"
-                    alt="УКС Групп – завод огнестойких, сверхпрочных конструкций" loading="lazy">
-            </picture>
+            <img src="./static/img/new_index/header/Logo.png"
+                alt="УКС Груп – завод огнестойких, сверхпрочных конструкций" loading="lazy">
         </div>
         <nav class="header__nav">
             <ul class="header__links">
@@ -97,12 +95,8 @@
                 </li>
             </ul>
             <button class="header__nav-mobile" id="headerNavBtn">
-                <picture>
-                    <source srcset="./static/webp/new_index/header/menu-icon.webp" type="image/webp">
-                    <source srcset="./static/img/new_index/header/menu-icon.png" type="image/png">
-                    <img src="./static/img/new_index/header/menu-icon.png" loading="lazy" alt="Menu"
-                        style="width: 24px; height: 24px;">
-                </picture>
+                <img src="./static/img/new_index/header/menu-icon.png" loading="lazy" alt="Menu"
+                    style="width: 24px; height: 24px;">
             </button>
             <button class="header__close-btn" id="headerCloseBtn">✖</button>
         </nav>
@@ -113,14 +107,14 @@
                 </span>
                 +7 (343) 385-09-51
             </a>
-            <a href="mailto:info@uksgroup.ru" class="header__contact-link email">info@uksgroup.ru</a>
+            <div>
+                <a href="mailto:info@uksgroup.ru" class="header__contact-link email">info@uksgroup.ru</a>
+                <a href="mailto:sales@uksgroup.ru" class="header__contact-link email">sales@uksgroup.ru</a>
+                <span class="header__email-description">(почта для заявок и расчета)</span>
+            </div>
             <a href="https://api.whatsapp.com/send/?phone=79120449777&text=Привет%21++Меня+интересует...&type=phone_number&app_absent=0"
                 class="header__whatsapp-btn">
-                <picture>
-                    <source srcset="./static/webp/new_index/header/header_wa.webp" type="image/webp">
-                    <source srcset="./static/img/new_index/header/header_wa.png" type="image/png">
-                    <img src="./static/img/new_index/header/header_wa.png" loading="lazy" alt="WhatsApp">
-                </picture>
+            <img src="./static/img/new_index/header/header_wa.png" loading="lazy" alt="WhatsApp">
             </a>
         </div>
     </header>
@@ -135,42 +129,34 @@
             <div class="slider__slide slider__slide--bg-2" data-webp="./static/webp/new_index/header/header_bg2.webp"
                 data-fallback="./static/img/new_index/header/header_bg2.jpg">
             </div>
+
+            <div class="slider__slide slider__slide--bg-2" data-webp="./static/webp/new_index/header/header_bg3.webp"
+                data-fallback="./static/img/new_index/header/header_bg3.jpg">
+            </div>
         </div>
         <div class="slider__content container container--relative">
-            <div class="slider__text">
+            <h1 class="slider__text">
                 ЗАВОД<br>
                 <span class="orange__text">ОГНЕСТОЙКИХ</span><br>
                 СВЕТОПРОЗРАЧНЫХ<br>
                 КОНСТРУКЦИЙ
-            </div>
+            </h1>
             <div class="slider-btn__wrap">
                 <div class="slider__btn slider__btn--prev">
-                    <picture>
-                        <source srcset="./static/webp/new_index/prev.webp" type="image/webp">
-                        <source srcset="./static/img/new_index/prev.png" type="image/png">
-                        <img src="./static/img/new_index/prev.png" alt="Previous" loading="lazy">
-                    </picture>
+                    <img src="./static/img/new_index/prev.png" alt="Previous" loading="lazy">
                 </div>
                 <div class="slider__btn slider__btn--next">
-                    <picture>
-                        <source srcset="./static/webp/new_index/next.webp" type="image/webp">
-                        <source srcset="./static/img/new_index/next.png" type="image/png">
-                        <img src="./static/img/new_index/next.png" alt="Next" loading="lazy">
-                    </picture>
+                    <img src="./static/img/new_index/next.png" alt="Next" loading="lazy">
                 </div>
             </div>
 
-            <button class="slider__cta-btn" onclick="openPopup()">Оставить заявку на расчёт</button>
+            <button class="slider__cta-btn" >Оставить заявку на расчёт</button>
             <div class="slider__contact-mobile">
                 <a href="tel:+73433850951" class="header__contact-link phone">+7 (343) 385-09-51</a>
                 <div class="slider__contact-row row">
                     <a href="https://api.whatsapp.com/send/?phone=79120449777&type=phone_number&app_absent=0"
                         class="header__whatsapp-btn">
-                        <picture>
-                            <source srcset="./static/webp/new_index/header/header_wa.webp" type="image/webp">
-                            <source srcset="./static/img/new_index/header/header_wa.png" type="image/png">
-                            <img src="./static/img/new_index/header/header_wa.png" alt="WhatsApp" loading="lazy">
-                        </picture>
+                        <img src="./static/img/new_index/header/header_wa.png" alt="WhatsApp" loading="lazy">
                     </a>
                     <a href="mailto:info@uksgroup.ru" class="header__contact-link email">sales@uksgroup.ru</a>
                 </div>
@@ -256,7 +242,7 @@
                 <option value="vitrazhi">Витражи</option>
             </select>
             <div class="projects__button-group">
-                <button class="projects__button" data-section="dveri">Двери</button>
+                <button class="projects__button projects__button--active" data-section="dveri">Двери</button>
                 <button class="projects__button" data-section="peregorodki">Перегородки</button>
                 <button class="projects__button" data-section="okna">Окна</button>
                 <button class="projects__button projects__button--last" data-section="vitrazhi">Витражи</button>
@@ -283,7 +269,7 @@
                         <h3 class="projects__text-title" id="textTitle">СТУДЕНЧЕСКИЙ КАМПУС УРФУ, ЕКАТЕРИНБУРГ</h3>
                         <p class="projects__text-description" id="textDescription">
                             Комплекс работ по проектированию, изготовлению и монтажу противопожарных конструкций
-                            выполнило ООО «УКС ГРУПП». В составе противопожарных конструкций комплекса используются
+                            выполнило ООО «УКС ГРУП». В составе противопожарных конструкций комплекса используются
                             двери и перегородки из профильной системы Alutech и стекла Pyrolut.
                         </p>
                     </div>
@@ -385,7 +371,7 @@
                                 </div>
                                 <div class="form-column form-column--medium">
                                     <label class="form-label" for="formUserEmail">Ваша почта</label>
-                                    <input name="userEmail" id="formUserEmail" type="email" class="form-input">
+                                    <input name="userEmail" id="formUserEmail" type="email" class="form-input" required>
                                 </div>
                             </div>
 
@@ -571,6 +557,29 @@
             </div>
         </div>
     </section>    
+
+    <!-- Попап заявка -->
+    <div id="requestPopup" class="popup-overlay">
+        <div class="popup-content">
+            <button class="popup-close" onclick="closePopup()">×</button>
+            <h2 class="popup-title">Получите расчет стоимости прямо сейчас</h2>
+            <p class="popup-subtitle">Оставьте свои контактные данные и мы с Вами свяжемся</p>
+
+            <form id="requestForm">
+                <div class="form-row">
+                    <div class="input-group">
+                        <input type="text" id="userName" name="userName" placeholder="Ваше имя">
+                    </div>
+
+                    <div class="input-group">
+                        <input type="tel" id="userPhone" name="userPhone" placeholder="+7 (999) 999-99-99" required>
+                    </div>
+                </div>
+
+                <button type="submit" class="submit-btn">Отправить</button>
+            </form>
+        </div>
+    </div>
 
     <!-- Попап для проектов -->
     <div id="projectPopup" class="popup-overlay">

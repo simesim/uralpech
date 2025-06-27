@@ -208,6 +208,12 @@ li {
     margin-right: 8px;
 }
 
+.header__email-description {
+    color: #fff;
+    font-size: 12px;
+    font-weight: 200;
+}
+
 .dropdown-list__item a {
     text-transform: uppercase;
     font-size: 12px;
@@ -510,6 +516,8 @@ li {
     font-weight: 700;
     line-height: normal;
     z-index: 3;
+    
+    text-transform: uppercase;
 }
 
 .global-products {
@@ -604,10 +612,13 @@ li {
     width: 600px;
     height: 463px;
     border-radius: 20px 0 0 20px;
+
+    background-size: cover;
+    
 }
 
-.projects__photo--bg {
-    background: url('photo1.webp') lightgray 50% / cover no-repeat;
+.projects__photo {
+    background: url('../../webp/new_index/generators/door1.webp') lightgray 50% / cover no-repeat;
 }
 
 .projects__nav-btn {
@@ -740,7 +751,7 @@ li {
 }
 
 .aboutus__photo--bg {
-    background: url('photo1.webp') center/cover no-repeat;
+    background: url('../../webp/new_index/generators/ab1.webp') center/cover no-repeat;
 }
 
 .aboutus__arrow-btn {
@@ -767,10 +778,10 @@ li {
 }
 
 .aboutus__text {
-    width: 740px;
+    width: 714px;
     border-radius: 20px;
     background: #EFF3F2;
-    padding: 40px 40px 40px 120px;
+    padding: 40px 40px 40px 78px;
     box-sizing: border-box;
     display: flex;
     flex-direction: column;
@@ -1358,7 +1369,7 @@ li {
 
 .news__heading {
     font-size: 24px;
-    font-weight: 900;
+    font-weight: 600;
     margin: 0 0 10px;
     line-height: 1.3;
     color: #000;
@@ -1891,6 +1902,7 @@ li {
     .products__grid {
         display: flex;
         flex-direction: row;
+        justify-content: start;
         gap: 16px;
 
         padding-bottom: 10px;
