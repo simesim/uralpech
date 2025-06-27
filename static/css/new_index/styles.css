@@ -506,18 +506,31 @@ li {
     background: rgba(0, 0, 0, 0.5);
 }
 
-.products__item-text {
+.products__item-text-wrap {
     position: absolute;
     bottom: 20px;
     left: 20px;
+    z-index: 3;
+    display: flex;
+    flex-direction: column;
+    gap: 4px;
+}
+
+.products__item-text {
     color: #FFF;
     font-family: 'Montserrat';
     font-size: 32px;
     font-weight: 700;
-    line-height: normal;
-    z-index: 3;
-    
     text-transform: uppercase;
+    line-height: 1.1;
+}
+
+.products__item-subtitle {
+    color: #E3644B;
+    font-size: 23px;
+    font-weight: 400;
+    text-transform: uppercase;
+    line-height: 1.1;
 }
 
 .global-products {
@@ -1341,7 +1354,7 @@ li {
 .news__title {
     font-size: 48px;
     font-weight: bold;
-    color: #1d1d38;
+    color: #1C1E40;
     margin-bottom: 50px;
 }
 
