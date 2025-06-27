@@ -5,8 +5,10 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>{$globals.site_name}</title>
-    {if $globals.site_description}<meta name="description" content="{$globals.site_description}"/>{/if}
-    {if $globals.site_keywords}<meta name="keywords" content="{$globals.site_keywords}"/>{/if}
+    {if $globals.site_description}
+    <meta name="description" content="{$globals.site_description}" />{/if}
+    {if $globals.site_keywords}
+    <meta name="keywords" content="{$globals.site_keywords}" />{/if}
     <link rel="stylesheet" href="./static/css/new_index/styles.css">
     <link rel="shortcut icon" href="/static/img/favicon.png" type="image/x-icon">
 </head>
@@ -114,7 +116,7 @@
             </div>
             <a href="https://api.whatsapp.com/send/?phone=79120449777&text=Привет%21++Меня+интересует...&type=phone_number&app_absent=0"
                 class="header__whatsapp-btn">
-            <img src="./static/img/new_index/header/header_wa.png" loading="lazy" alt="WhatsApp">
+                <img src="./static/img/new_index/header/header_wa.png" loading="lazy" alt="WhatsApp">
             </a>
         </div>
     </header>
@@ -150,7 +152,7 @@
                 </div>
             </div>
 
-            <button class="slider__cta-btn" >Оставить заявку на расчёт</button>
+            <button class="slider__cta-btn">Оставить заявку на расчёт</button>
             <div class="slider__contact-mobile">
                 <a href="tel:+73433850951" class="header__contact-link phone">+7 (343) 385-09-51</a>
                 <div class="slider__contact-row row">
@@ -190,7 +192,10 @@
                                 style="background: url('./static/img/new_index/products/doors.png') center/cover no-repeat;"
                                 data-bg-webp="./static/webp/new_index/products/doors.webp"
                                 data-bg-fallback="./static/img/new_index/products/doors.png">
-                                <div class="products__item-text">Двери</div>
+                                <div class="products__item-text-wrap">
+                                    <div class="products__item-subtitle">ПРОТИВОПОЖАРНЫЕ<br>СВЕТОПРОЗРАЧНЫЕ</div>
+                                    <div class="products__item-text">Двери</div>
+                                </div>
                             </div>
                         </a>
                         <a href="https://www.uksgroup.ru/catalog/peregorodki">
@@ -198,7 +203,10 @@
                                 style="background: url('./static/img/new_index/products/speakingroom.png') center/cover no-repeat;"
                                 data-bg-webp="./static/webp/new_index/products/speakingroom.webp"
                                 data-bg-fallback="./static/img/new_index/products/speakingroom.png">
-                                <div class="products__item-text">Перегородки</div>
+                                <div class="products__item-text-wrap">
+                                    <div class="products__item-subtitle">ПРОТИВОПОЖАРНЫЕ</div>
+                                    <div class="products__item-text">Перегородки</div>
+                                </div>
                             </div>
                         </a>
                     </div>
@@ -210,15 +218,20 @@
                                 style="background: url('./static/img/new_index/products/fasads.png') center/cover no-repeat;"
                                 data-bg-webp="./static/webp/new_index/products/fasads.webp"
                                 data-bg-fallback="./static/img/new_index/products/fasads.png">
-                                <div class="products__item-text">Фасады</div>
+                                <div class="products__item-text-wrap">
+                                    <div class="products__item-subtitle">ПРОТИВОПОЖАРНЫЕ</div>
+                                    <div class="products__item-text">Фасады</div>
+                                </div>
                             </div>
                         </a>
                         <a href="https://www.uksgroup.ru/catalog/vitrazhi">
                             <div class="products__item"
                                 style="background: url('./static/img/new_index/products/fasasds_result.png') center/cover no-repeat;"
                                 data-bg-webp="./static/webp/new_index/products/fasasds_result.webp"
-                                data-bg-fallback="./static/img/new_index/products/fasasds_result.png">>
-                                <div class="products__item-text">Фасадные решения</div>
+                                data-bg-fallback="./static/img/new_index/products/fasasds_result.png">
+                                <div class="products__item-text-wrap">
+                                    <div class="products__item-text">Фасадные<br>решения</div>
+                                </div>
                             </div>
                         </a>
                     </div>
@@ -540,23 +553,24 @@
         </div>
     </section>
 
-<section class="news section" id="news">
+    <section class="news section" id="news">
         <div class="container">
             <div class="news__container">
                 <h2 class="news__title">Наши новости</h2>
                 <div class="news__cards">
                     {foreach from=$news item=item}
-                         <a href="/o_zavode/novosti/news-{$item.news_id}.html" target="_blank" rel="noopener"  class="news__card">
-                            <img src="./gallery/news/{$item.news_id}.jpg" alt="News 1" class="news__image">
-                            <h3 class="news__heading">{$item.title}</h3>
-                            <p class="news__description">{$item.short}</p>
-                            <p class="news__date">{$item.add_date}</p>
-                        </a>
+                    <a href="/o_zavode/novosti/news-{$item.news_id}.html" target="_blank" rel="noopener"
+                        class="news__card">
+                        <img src="./gallery/news/{$item.news_id}.jpg" alt="News 1" class="news__image">
+                        <h3 class="news__heading">{$item.title}</h3>
+                        <p class="news__description">{$item.short}</p>
+                        <p class="news__date">{$item.add_date}</p>
+                    </a>
                     {/foreach}
                 </div>
             </div>
         </div>
-    </section>    
+    </section>
 
     <!-- Попап заявка -->
     <div id="requestPopup" class="popup-overlay">
@@ -621,9 +635,9 @@
     <!-- Маска телефона -->
     <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery.mask/1.14.16/jquery.mask.min.js"></script>
 
-<script src="./static/js/new_index/script.js"></script>
-<script src="./static/js/new_index/form.js"></script>
-{$current_category.text_block.counters_html.description}
+    <script src="./static/js/new_index/script.js"></script>
+    <script src="./static/js/new_index/form.js"></script>
+    {$current_category.text_block.counters_html.description}
 
 </body>
 
