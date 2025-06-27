@@ -4,7 +4,9 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>УКС Групп</title>
+    <title>{$globals.site_name}</title>
+    {if $globals.site_description}<meta name="description" content="{$globals.site_description}"/>{/if}
+    {if $globals.site_keywords}<meta name="keywords" content="{$globals.site_keywords}"/>{/if}
     <link rel="stylesheet" href="./static/css/new_index/styles.css">
     <link rel="shortcut icon" href="/static/img/favicon.png" type="image/x-icon">
 </head>
@@ -13,7 +15,7 @@
     <header class="header">
         <div class="header__logo">
             <img src="./static/img/new_index/header/Logo.png"
-                alt="УКС Групп – завод огнестойких, сверхпрочных конструкций" loading="lazy">
+                alt="УКС Груп – завод огнестойких, сверхпрочных конструкций" loading="lazy">
         </div>
         <nav class="header__nav">
             <ul class="header__links">
@@ -105,7 +107,11 @@
                 </span>
                 +7 (343) 385-09-51
             </a>
-            <a href="mailto:info@uksgroup.ru" class="header__contact-link email">info@uksgroup.ru</a>
+            <div>
+                <a href="mailto:info@uksgroup.ru" class="header__contact-link email">info@uksgroup.ru</a>
+                <a href="mailto:sales@uksgroup.ru" class="header__contact-link email">sales@uksgroup.ru</a>
+                <span class="header__email-description">(почта для заявок и расчета)</span>
+            </div>
             <a href="https://api.whatsapp.com/send/?phone=79120449777&text=Привет%21++Меня+интересует...&type=phone_number&app_absent=0"
                 class="header__whatsapp-btn">
             <img src="./static/img/new_index/header/header_wa.png" loading="lazy" alt="WhatsApp">
@@ -123,14 +129,18 @@
             <div class="slider__slide slider__slide--bg-2" data-webp="./static/webp/new_index/header/header_bg2.webp"
                 data-fallback="./static/img/new_index/header/header_bg2.jpg">
             </div>
+
+            <div class="slider__slide slider__slide--bg-2" data-webp="./static/webp/new_index/header/header_bg3.webp"
+                data-fallback="./static/img/new_index/header/header_bg3.jpg">
+            </div>
         </div>
         <div class="slider__content container container--relative">
-            <div class="slider__text">
+            <h1 class="slider__text">
                 ЗАВОД<br>
                 <span class="orange__text">ОГНЕСТОЙКИХ</span><br>
                 СВЕТОПРОЗРАЧНЫХ<br>
                 КОНСТРУКЦИЙ
-            </div>
+            </h1>
             <div class="slider-btn__wrap">
                 <div class="slider__btn slider__btn--prev">
                     <img src="./static/img/new_index/prev.png" alt="Previous" loading="lazy">
@@ -232,7 +242,7 @@
                 <option value="vitrazhi">Витражи</option>
             </select>
             <div class="projects__button-group">
-                <button class="projects__button" data-section="dveri">Двери</button>
+                <button class="projects__button projects__button--active" data-section="dveri">Двери</button>
                 <button class="projects__button" data-section="peregorodki">Перегородки</button>
                 <button class="projects__button" data-section="okna">Окна</button>
                 <button class="projects__button projects__button--last" data-section="vitrazhi">Витражи</button>
@@ -259,7 +269,7 @@
                         <h3 class="projects__text-title" id="textTitle">СТУДЕНЧЕСКИЙ КАМПУС УРФУ, ЕКАТЕРИНБУРГ</h3>
                         <p class="projects__text-description" id="textDescription">
                             Комплекс работ по проектированию, изготовлению и монтажу противопожарных конструкций
-                            выполнило ООО «УКС ГРУПП». В составе противопожарных конструкций комплекса используются
+                            выполнило ООО «УКС ГРУП». В составе противопожарных конструкций комплекса используются
                             двери и перегородки из профильной системы Alutech и стекла Pyrolut.
                         </p>
                     </div>
@@ -361,7 +371,7 @@
                                 </div>
                                 <div class="form-column form-column--medium">
                                     <label class="form-label" for="formUserEmail">Ваша почта</label>
-                                    <input name="userEmail" id="formUserEmail" type="email" class="form-input">
+                                    <input name="userEmail" id="formUserEmail" type="email" class="form-input" required>
                                 </div>
                             </div>
 
