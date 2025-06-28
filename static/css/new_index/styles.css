@@ -1927,6 +1927,10 @@ li {
         left: 16px;
     }
 
+    .products__item-subtitle {
+        font-size: 14px;
+    }
+
     .global-products {
         display: block;
         position: absolute;
