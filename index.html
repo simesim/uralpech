@@ -287,10 +287,17 @@
                         </p>
                     </div>
                     <div class="projects__action-buttons">
-                        <button class="projects__action-btn projects__action-btn--outline"
-                            onclick="openPopup()">Оставить заявку</button>
-                        <button class="projects__action-btn projects__action-btn--filled" id="learnMoreBtn">Узнать
-                            больше</button>
+                        <div class="projects__action-row">
+                            <button class="projects__action-btn projects__action-btn--outline"
+                                onclick="openPopup()">Оставить заявку</button>
+                            <button class="projects__action-btn projects__action-btn--filled" id="learnMoreBtn">Узнать
+                                больше</button>
+                        </div>
+                        <div class="projects__action-row">
+                            <a href="https://www.uksgroup.ru/proekty"
+                                class="projects__action-btn projects__action-btn--filled projects__action-btn--full-width">Все
+                                проекты</a>
+                        </div>
                     </div>
                 </div>
 
@@ -631,6 +638,16 @@
             <button id="successPopupCloseBtn" class="success-popup__close-btn">Закрыть</button>
         </div>
     </div>
+
+    <!-- Попап сертификата -->
+    <div id="certificatePopup" class="popup-overlay">
+        <div class="popup-content">
+            <button class="popup-close" id="popupClose">&times;</button>
+            <img id="popupImage" class="certificate-popup-img" src="" alt="Сертификат">
+        </div>
+    </div>
+
+
     <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
     <!-- Маска телефона -->
     <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery.mask/1.14.16/jquery.mask.min.js"></script>

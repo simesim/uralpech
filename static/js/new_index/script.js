@@ -103,7 +103,7 @@ function initUKSWebsite() {
   });
 
 
-  
+
   // Проекты
   const sections = {
     'dveri': {
@@ -399,7 +399,7 @@ function initUKSWebsite() {
 
   window.addEventListener('load', updateCertslider);
 
-  
+
 
   //Кнопки в выпада.щем списки для проектов
   document.querySelectorAll('a[data-project]').forEach(link => {
@@ -460,6 +460,61 @@ function initUKSWebsite() {
   const sliderBtn = document.querySelector('.slider__cta-btn');
 
   sliderBtn.addEventListener('click', openPopup);
+
+  // Попап для сертификатов
+  const certImages = document.querySelectorAll('.certificates__slide-img');
+  const certificatePopup = document.getElementById('certificatePopup');
+  const popupImage = document.getElementById('popupImage');
+  const popupClose = document.getElementById('popupClose');
+
+  certImages.forEach(img => {
+    img.addEventListener('click', () => {
+      // Получаем src изображения из picture/source или img
+      const sources = img.parentElement.querySelectorAll('source');
+      let imageUrl = img.src;
+
+      // Проверяем webp поддержку и выбираем соответствующий source
+      checkWebPSupport(function (isSupported) {
+        if (isSupported) {
+          sources.forEach(source => {
+            if (source.type === 'image/webp') {
+              imageUrl = source.srcset;
+            }
+          });
+        } else {
+          sources.forEach(source => {
+            if (source.type === 'image/png' || source.type === 'image/jpg' || source.type === 'image/jpeg') {
+              imageUrl = source.srcset;
+            }
+          });
+        }
+
+        popupImage.src = imageUrl;
+        certificatePopup.style.display = 'flex';
+        document.body.style.overflow = 'hidden';
+      });
+    });
+  });
+
+  popupClose.addEventListener('click', () => {
+    certificatePopup.style.display = 'none';
+    document.body.style.overflow = '';
+  });
+
+  certificatePopup.addEventListener('click', (e) => {
+    if (e.target === certificatePopup) {
+      certificatePopup.style.display = 'none';
+      document.body.style.overflow = '';
+    }
+  });
+
+
+  document.addEventListener('keydown', (e) => {
+    if (e.key === 'Escape') {
+      certificatePopup.style.display = 'none';
+      document.body.style.overflow = '';
+    }
+  });
 
 
   // Данные для попапов
