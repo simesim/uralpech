@@ -627,7 +627,7 @@ li {
     border-radius: 20px 0 0 20px;
 
     background-size: cover;
-    
+
 }
 
 .projects__photo {
@@ -689,6 +689,23 @@ li {
     display: flex;
     flex-direction: column;
     gap: 12px;
+}
+
+.projects__action-row {
+    display: flex;
+    gap: 12px;
+}
+
+.projects__action-btn--full-width {
+    width: 100%;
+    max-width: 294px;
+}
+
+.projects__action-buttons a.projects__action-btn {
+    text-decoration: none;
+    display: flex;
+    align-items: center;
+    justify-content: center;
 }
 
 .projects__action-btn {
@@ -1190,6 +1207,33 @@ li {
 
 .certificates__btn--next {
     right: -60px;
+}
+
+/* Стили для попапа сертификатов */
+.certificate-popup-img {
+    max-width: 100%;
+    max-height: 80vh;
+    display: block;
+    margin: 0 auto;
+    border-radius: 8px;
+    box-shadow: 0 4px 20px rgba(0, 0, 0, 0.2);
+}
+
+#certificatePopup .popup-content {
+    max-width: 90%;
+    width: auto;
+    padding: 30px;
+    text-align: center;
+    background: white;
+}
+
+.certificate-popup-img {
+    max-width: 100%;
+    max-height: 80vh;
+    display: block;
+    margin: 0 auto;
+    border-radius: 8px;
+    box-shadow: 0 4px 20px rgba(0, 0, 0, 0.2);
 }
 
 /* Contact */
@@ -2535,9 +2579,12 @@ li {
         font-size: 17px;
     }
 
-    .projects__action-buttons {
+    .projects__action-row {
         flex-direction: column;
-        align-items: stretch;
+    }
+
+    .projects__action-btn--full-width {
+        max-width: 100%;
     }
 
     .projects__action-btn {
@@ -2922,5 +2969,41 @@ li {
     .contact__icon-img {
         width: 100%;
         height: auto;
+    }
+}
+
+@media screen and (max-width: 768px) {
+    #certificatePopup .popup-content {
+        width: 90%;
+        height: 90%;
+        max-width: none;
+        padding: 60px 20px 30px;
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+    }
+
+    .certificate-popup-img {
+        max-height: 60vh;
+        width: auto;
+        margin: 0 auto;
+    }
+
+    .popup-close {
+        top: 20px;
+        right: 20px;
+        font-size: 24px;
+    }
+}
+
+@media screen and (max-width: 420px) {
+    #certificatePopup .popup-content {
+        width: 100%;
+        height: 100%;
+        padding: 60px 15px 30px;
+    }
+
+    .certificate-popup-img {
+        max-height: 50vh;
     }
 }
