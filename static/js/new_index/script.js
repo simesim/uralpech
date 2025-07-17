@@ -65,28 +65,34 @@ function initUKSWebsite() {
   const navLinks = document.querySelector('.header__links');
   const linkItems = document.querySelectorAll('.header__link');
 
+  const dropDown = document.querySelector('.header__link-dropdown');
+
+
   navBtn.addEventListener('click', () => {
     navLinks.classList.add('active');
     navBtn.classList.add('active');
     closeBtn.classList.add('active');
   });
 
-  closeBtn.addEventListener('click', () => {
+  function closeMobileMenu () {
     navLinks.classList.remove('active');
     navBtn.classList.remove('active');
     closeBtn.classList.remove('active');
     linkItems.forEach(link => link.classList.remove('active'));
-  });
+    dropDown.forEach(link => link.classList.remove('active'));
+  }
 
-  linkItems.forEach(link => {
+  const dropDownList = document.querySelectorAll('.dropdown-list__item a')
+
+  dropDownList.forEach(link => {
     link.addEventListener('click', (e) => {
       if (window.innerWidth <= 768 && navLinks.classList.contains('active')) {
-        e.preventDefault();
-        link.classList.toggle('active');
+        closeMobileMenu();
       }
     });
   });
 
+  closeBtn.addEventListener('click', closeMobileMenu);
 
   const navLinkItems = document.querySelectorAll('.header__link-a-mobile');
   navLinkItems.forEach(link => {
@@ -502,12 +508,14 @@ function initUKSWebsite() {
     }
   });
 
+
   document.addEventListener('keydown', (e) => {
     if (e.key === 'Escape') {
       certificatePopup.style.display = 'none';
       document.body.style.overflow = '';
     }
   });
+
 
   // Данные для попапов
   const projectData = {
@@ -596,8 +604,6 @@ function initUKSWebsite() {
     if (e.target.closest('.aboutus__arrow-btn--left')) showPrev();
     if (e.target.closest('.aboutus__arrow-btn--right')) showNext();
   });
-
-
 
   window.changeSection = function (section, clickedBtn) {
     console.log('Switching to section:', section); // Логируем

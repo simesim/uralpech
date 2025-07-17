@@ -1812,6 +1812,9 @@ li {
         width: 200px;
         text-align: center;
         border-radius: 5px;
+
+        top: 24px;
+        width: max-content;
     }
 
     .header__link.active .header__link-dropdown {
@@ -2391,10 +2394,7 @@ li {
         font-size: 11px;
     }
 
-    .header__link-dropdown {
-        top: 24px;
-        width: max-content;
-    }
+
 
     .header__contact {
         flex-direction: row;
@@ -2683,7 +2683,7 @@ li {
     }
 }
 
-@media screen and (max-width: 420px) {
+@media screen and (max-width: 460px) {
     .header__nav-mobile {
         display: block;
         z-index: 101;
@@ -2700,6 +2700,11 @@ li {
         border-radius: 12px;
         flex-shrink: 0;
         min-width: 280px;
+    }
+
+    .header__link-dropdown {
+        transform: none;
+        top: 38px;
     }
 
     .slider__text {
