@@ -696,6 +696,34 @@ li {
     gap: 12px;
 }
 
+.btn {
+    text-decoration: none;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    
+    width: 294px;
+    height: 54px;
+    border-radius: 50px;
+    border: 1px solid #E3644B;
+    font-size: 15px;
+    font-weight: 600;
+    cursor: pointer;
+}
+
+.btn--filled {
+    background: #E3644B;
+    color: #FFF;
+}
+
+.btn:hover {
+    opacity: .7;
+}
+
+.btn:active {
+    opacity: .4;
+}
+
 .projects__action-btn--full-width {
     width: 100%;
     max-width: 294px;
@@ -1151,8 +1179,13 @@ li {
     margin: 0 auto;
 }
 
+.certificate__btn-wrap {
+    display: flex;
+    justify-content: center;
+    margin-top: 32px;
+}
+
 .cerifacte__img-wrap {
-    width: 260px;
     min-height: 348px;
 }
 
@@ -1173,13 +1206,16 @@ li {
 }
 
 .certificates__slide {
-    min-width: 300px;
-    margin: 0 2rem;
-    text-align: center;
-    min-width: 250px;
+    width: 300px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    
+    margin-right: 32px;
 }
 
 .certificates__slide-img {
+    cursor: zoom-in;
     width: 260px;
     height: 348px;
     box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);

@@ -378,7 +378,7 @@ function initUKSWebsite() {
   let certsliderIndex = 0;
 
   function updateCertslider() {
-    const slideWidth = certsliderSlides[0].offsetWidth + 16;
+    const slideWidth = certsliderSlides[0].offsetWidth + 32;
     const offset = certsliderIndex * slideWidth;
     certsliderTrack.style.transform = `translateX(-${offset}px)`;
     certsliderPrev.disabled = false;
