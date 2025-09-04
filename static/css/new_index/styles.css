@@ -701,7 +701,7 @@ li {
     display: flex;
     align-items: center;
     justify-content: center;
-    
+
     width: 294px;
     height: 54px;
     border-radius: 50px;
@@ -1210,7 +1210,7 @@ li {
     display: flex;
     flex-direction: column;
     align-items: center;
-    
+
     margin-right: 32px;
 }
 
@@ -2731,6 +2731,36 @@ li {
     .news__image {
         width: 100%;
         height: auto;
+    }
+
+    /* Попап серттификата */
+    #certificatePopup .popup-content {
+        width: 95%;
+        height: 95%;
+        max-width: none;
+        padding: 60px 20px 30px;
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        box-sizing: border-box;
+    }
+
+    .certificate-popup-img {
+        max-height: 60vh;
+        width: auto;
+        margin: 0 auto;
+    }
+
+    .certificate-popup-img.zoomed {
+        transform: scale(1.3);
+        max-height: 55vh;
+    }
+
+    .popup-close {
+        top: 20px;
+        right: 20px;
+        font-size: 24px;
+        z-index: 10;
     }
 }
 
