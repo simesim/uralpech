@@ -2732,10 +2732,6 @@ li {
         width: 100%;
         height: auto;
     }
-
-    .certificate-popup-img.zoomed {
-        transform: scale(1.2);
-    }
 }
 
 @media screen and (max-width: 460px) {
