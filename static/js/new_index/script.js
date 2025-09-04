@@ -74,7 +74,7 @@ function initUKSWebsite() {
     closeBtn.classList.add('active');
   });
 
-  function closeMobileMenu () {
+  function closeMobileMenu() {
     navLinks.classList.remove('active');
     navBtn.classList.remove('active');
     closeBtn.classList.remove('active');
@@ -476,12 +476,14 @@ function initUKSWebsite() {
         }
 
         popupImage.src = imageUrl;
+        popupImage.classList.remove('zoomed'); // Сбрасываем состояние увеличения
         certificatePopup.style.display = 'flex';
         document.body.style.overflow = 'hidden';
       });
     });
   });
 
+  // Закрытие попапа
   popupClose.addEventListener('click', () => {
     certificatePopup.style.display = 'none';
     document.body.style.overflow = '';
@@ -494,11 +496,21 @@ function initUKSWebsite() {
     }
   });
 
+  // Увеличение/уменьшение изображения при клике
+  popupImage.addEventListener('click', (e) => {
+    e.stopPropagation(); // Предотвращаем закрытие попапа
+    popupImage.classList.toggle('zoomed');
+  });
 
+  // Закрытие по ESC
   document.addEventListener('keydown', (e) => {
     if (e.key === 'Escape') {
-      certificatePopup.style.display = 'none';
-      document.body.style.overflow = '';
+      if (popupImage.classList.contains('zoomed')) {
+        popupImage.classList.remove('zoomed');
+      } else {
+        certificatePopup.style.display = 'none';
+        document.body.style.overflow = '';
+      }
     }
   });
 

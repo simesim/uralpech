@@ -1774,6 +1774,21 @@ li {
     scrollbar-width: 2px;
 }
 
+/* Увеличеный сертификат */
+.certificate-popup-img.zoomed {
+    transform: scale(1.5);
+    cursor: zoom-out;
+    transition: transform 0.3s ease;
+}
+
+.certificate-popup-img {
+    cursor: zoom-in;
+    transition: transform 0.3s ease;
+    max-width: 90%;
+    max-height: 80vh;
+}
+
+
 /* Адаптивные стили попапа */
 @media screen and (max-width: 768px) {
     .popup-content {
@@ -2716,6 +2731,10 @@ li {
     .news__image {
         width: 100%;
         height: auto;
+    }
+
+    .certificate-popup-img.zoomed {
+        transform: scale(1.2);
     }
 }
 
