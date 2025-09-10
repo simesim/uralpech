@@ -453,13 +453,20 @@ function initUKSWebsite() {
   const popupImage = document.getElementById('popupImage');
   const popupClose = document.getElementById('popupClose');
 
+  // Переменные для drag & drop
+  let isDragging = false;
+  let currentY = 0;
+  let targetY = 0;
+  let isAnimating = false;
+
+  // Добавляем плавные переходы для transform
+  popupImage.style.transition = 'transform 0.2s ease-out';
+
   certImages.forEach(img => {
     img.addEventListener('click', () => {
-      // Получаем src изображения из picture/source или img
       const sources = img.parentElement.querySelectorAll('source');
       let imageUrl = img.src;
 
-      // Проверяем webp поддержку и выбираем соответствующий source
       checkWebPSupport(function (isSupported) {
         if (isSupported) {
           sources.forEach(source => {
@@ -476,7 +483,7 @@ function initUKSWebsite() {
         }
 
         popupImage.src = imageUrl;
-        popupImage.classList.remove('zoomed'); // Сбрасываем состояние увеличения
+        resetImageState();
         certificatePopup.style.display = 'flex';
         document.body.style.overflow = 'hidden';
       });
@@ -487,29 +494,107 @@ function initUKSWebsite() {
   popupClose.addEventListener('click', () => {
     certificatePopup.style.display = 'none';
     document.body.style.overflow = '';
+    resetImageState();
   });
 
   certificatePopup.addEventListener('click', (e) => {
     if (e.target === certificatePopup) {
       certificatePopup.style.display = 'none';
       document.body.style.overflow = '';
+      resetImageState();
     }
   });
 
-  // Увеличение/уменьшение изображения при клике
   popupImage.addEventListener('click', (e) => {
-    e.stopPropagation(); // Предотвращаем закрытие попапа
-    popupImage.classList.toggle('zoomed');
+    e.stopPropagation();
+
+    if (popupImage.classList.contains('zoomed')) {
+      resetImageState();
+    } else {
+      popupImage.classList.add('zoomed');
+      popupImage.style.cursor = 'ns-resize';
+      popupImage.style.transition = 'transform 0.15s ease-out'; 
+      resetPosition();
+      isDragging = true;
+      setTimeout(() => {
+        popupImage.style.transition = 'transform 0.25s ease-out';
+      }, 150);
+    }
   });
+
+  function smoothFollow() {
+    if (!isAnimating) return;
+    currentY += (targetY - currentY) * 0.2;
+    if (Math.abs(targetY - currentY) < 0.5) {
+      currentY = targetY;
+      isAnimating = false;
+    }
+    const maxMoveY = window.innerHeight * 0.5;
+    currentY = Math.max(Math.min(currentY, maxMoveY), -maxMoveY);
+
+    popupImage.style.transform = `scale(1.8) translateY(${currentY}px)`;
+
+    if (isAnimating) {
+      requestAnimationFrame(smoothFollow);
+    }
+  }
+  popupImage.addEventListener('mousemove', (e) => {
+    if (!isDragging || !popupImage.classList.contains('zoomed')) return;
+
+    e.preventDefault();
+    const rect = popupImage.getBoundingClientRect();
+    const centerY = rect.top + rect.height / 2;
+    targetY = (centerY - e.clientY) * 0.4; 
+    if (!isAnimating) {
+      isAnimating = true;
+      smoothFollow();
+    }
+  });
+
+  popupImage.addEventListener('mouseleave', () => {
+    if (isDragging && popupImage.classList.contains('zoomed')) {
+      isDragging = false;
+      popupImage.style.cursor = 'ns-resize';
+      targetY = 0;
+      if (!isAnimating) {
+        isAnimating = true;
+        smoothFollow();
+      }
+    }
+  });
+  popupImage.addEventListener('mouseenter', () => {
+    if (popupImage.classList.contains('zoomed')) {
+      isDragging = true;
+      popupImage.style.cursor = 'ns-resize';
+    }
+  });
+
+  // Сброс состояния изображения
+  function resetImageState() {
+    popupImage.classList.remove('zoomed');
+    popupImage.style.cursor = 'zoom-in';
+    popupImage.style.transform = 'scale(1) translateY(0px)';
+    popupImage.style.transition = 'transform 0.2s ease-out';
+    currentY = 0;
+    targetY = 0;
+    isDragging = false;
+    isAnimating = false;
+  }
+  function resetPosition() {
+    currentY = 0;
+    targetY = 0;
+    popupImage.style.transform = 'scale(1.5) translateY(0px)';
+  }
 
   // Закрытие по ESC
   document.addEventListener('keydown', (e) => {
     if (e.key === 'Escape') {
       if (popupImage.classList.contains('zoomed')) {
-        popupImage.classList.remove('zoomed');
+        resetImageState();
       } else {
         certificatePopup.style.display = 'none';
         document.body.style.overflow = '';
+        resetImageState();
       }
     }
   });
