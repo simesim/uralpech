@@ -497,6 +497,8 @@ function initUKSWebsite() {
     resetImageState();
   });
 
+  const MAX_DRAG_Y = 150;
+
   certificatePopup.addEventListener('click', (e) => {
     if (e.target === certificatePopup) {
       certificatePopup.style.display = 'none';
@@ -545,23 +547,26 @@ function initUKSWebsite() {
     const rect = popupImage.getBoundingClientRect();
     const centerY = rect.top + rect.height / 2;
     targetY = (centerY - e.clientY) * 0.4; 
+    targetY = Math.max(Math.min(targetY, MAX_DRAG_Y), -MAX_DRAG_Y);
+    console.log(targetY);
     if (!isAnimating) {
       isAnimating = true;
       smoothFollow();
     }
   });
 
-  popupImage.addEventListener('mouseleave', () => {
-    if (isDragging && popupImage.classList.contains('zoomed')) {
-      isDragging = false;
-      popupImage.style.cursor = 'ns-resize';
-      targetY = 0;
-      if (!isAnimating) {
-        isAnimating = true;
-        smoothFollow();
-      }
-    }
-  });
+  // popupImage.addEventListener('mouseleave', () => {
+  //   if (isDragging && popupImage.classList.contains('zoomed')) {
+  //     isDragging = false;
+  //     popupImage.style.cursor = 'ns-resize';
+  //     targetY = 0;
+  //     if (!isAnimating) {
+  //       isAnimating = true;
+  //       smoothFollow();
+  //     }
+  //   }
+  // });
+  
   popupImage.addEventListener('mouseenter', () => {
     if (popupImage.classList.contains('zoomed')) {
       isDragging = true;
@@ -689,7 +694,6 @@ function initUKSWebsite() {
   });
 
   window.changeSection = function (section, clickedBtn) {
-    console.log('Switching to section:', section); // Логируем
     currentSection = section;
     currentImageIndex = 0;
 

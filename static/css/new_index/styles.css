@@ -1791,6 +1791,29 @@ li {
 
 /* Адаптивные стили попапа */
 @media screen and (max-width: 768px) {
+
+    #certificatePopup .popup-content {
+        width: 90%;
+        height: 90%;
+        max-width: none;
+        padding: 60px 20px 30px;
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+    }
+
+    .certificate-popup-img {
+        max-height: 60vh;
+        width: auto;
+        margin: 0 auto;
+    }
+
+    .popup-close {
+        top: 20px;
+        right: 20px;
+        font-size: 24px;
+    }
+
     .popup-content {
         max-width: none;
         height: 100%;
@@ -3076,29 +3099,5 @@ li {
         transform: scale(1.2);
         max-height: 45vh;
         max-width: 90vw;
-    }
-}
-
-@media screen and (max-width: 768px) {
-    #certificatePopup .popup-content {
-        width: 90%;
-        height: 90%;
-        max-width: none;
-        padding: 60px 20px 30px;
-        display: flex;
-        flex-direction: column;
-        justify-content: center;
-    }
-
-    .certificate-popup-img {
-        max-height: 60vh;
-        width: auto;
-        margin: 0 auto;
-    }
-
-    .popup-close {
-        top: 20px;
-        right: 20px;
-        font-size: 24px;
     }
 }
