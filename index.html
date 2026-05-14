@@ -11,10 +11,65 @@
     <meta name="keywords" content="{$globals.site_keywords}" />{/if}
     <link rel="stylesheet" href="./static/css/new_index/styles.css">
     <link rel="shortcut icon" href="/static/img/favicon.png" type="image/x-icon">
+    {literal}
+    <script>
+
+        const METRIKA_ID = '33675014';
+        
+        function sendMetrikaEvent(email) {
+            if (window.ym) {
+              console.log('Отправка события в Яндекс Метрику:', email);
+              window.ym(METRIKA_ID, 'reachGoal', 'emailCopied', { email });
+            } else {
+              console.log('Яндекс Метрика не инициализирована');
+            }
+        }
+ 
+        function handleCopyEvent(event) {
+            const copiedText = window.getSelection().toString();
+            
+            console.log('Скопированный текст:', copiedText);
+         
+            const hasAtSymbol = copiedText.includes('@');
+            const hasRussianLetters = /[А-Яа-яЁё]/.test(copiedText);
+         
+            console.log('Содержит символ "@":', hasAtSymbol);
+            console.log('Содержит русские буквы:', hasRussianLetters);
+         
+            if (hasAtSymbol && !hasRussianLetters) {
+              sendMetrikaEvent(copiedText);
+            }
+        }
+ 
+        document.addEventListener('copy', handleCopyEvent);
+ 
+        function handleMailtoRightClick(event) {
+            const target = event.target;
+            if (event.button === 2 && target.tagName === 'A' && target.getAttribute('href') && target.getAttribute('href').startsWith('mailto:')) {
+                const email = target.getAttribute('href').substring(7);
+             
+                console.log('Клик правой кнопкой на mailto:', email);
+             
+                const hasRussianLetters = /[А-Яа-яЁё]/.test(email);
+                console.log('Содержит русские буквы:', hasRussianLetters);
+             
+                if (!hasRussianLetters) {
+                    sendMetrikaEvent(email);
+                }
+            }
+        }
+ 
+        document.addEventListener('contextmenu', handleMailtoRightClick);
+    </script>  
+    {/literal}
+      
+    
 </head>
 
 <body class="body">
     <header class="header">
+    <div class="header__inner">
+
         <div class="header__logo">
             <img src="./static/img/new_index/header/Logo.png"
                 alt="УКС Груп – завод огнестойких, сверхпрочных конструкций" loading="lazy">
@@ -30,9 +85,6 @@
                             </li>
                             <li class="dropdown-list__item">
                                 <a href="https://www.uksgroup.ru/o_zavode/reputaziya">Преимущества</a>
-                            </li>
-                            <li class="dropdown-list__item">
-                                <a href="#certificates">Сертификаты</a>
                             </li>
                             <li class="dropdown-list__item">
                                 <a href="#news">Новости</a>
@@ -61,24 +113,29 @@
                     </div>
                 </li>
                 <li class="header__link">
-                    <a href="#" class="header__link-a">ПРОЕКТЫ <span class="header__link-triangle"></span>
-                    </a>
-                    <div class="header__link-dropdown">
+                <a href="#" class="header__link-a">ПОРТФОЛИО
+                    <span class="header__link-triangle"></span>
+                </a>
+                <div class="header__link-dropdown">
                         <ul class="dropdown__list">
                             <li class="dropdown-list__item">
-                                <a href="#projects">Проекты</a>
-                            </li>
-                            <li class="dropdown-list__item">
-                                <a href="https://www.uksgroup.ru/proekty/blog">Блок</a>
-                            </li>
-                            <li class="dropdown-list__item">
-                                <a href="https://www.uksgroup.ru/proekty/istoriya_kompanii">История<br>компании</a>
+                                <a href="/proekty/blog">Блог</a>
                             </li>
                             <li class="dropdown-list__item">
                                 <a href="https://www.uksgroup.ru/proekty/ohrana_truda">Охрана труда</a>
                             </li>
+                            <li class="dropdown-list__item">
+                                <a href="/catalog">Каталог</a>
+                            </li>
+                            <li class="dropdown-list__item">
+                                <a href="#certificates">Сертификаты</a>
+                            </li>
                         </ul>
                     </div>
+                </li>
+                <li class="header__link">
+                    <a href="#projects" class="header__link-a">ПРОЕКТЫ
+                    </a>
                 </li>
                 <li class="header__link">
                     <a href="#" class="header__link-a">КОНТАКТЫ
@@ -96,12 +153,8 @@
                     </div>
                 </li>
             </ul>
-            <button class="header__nav-mobile" id="headerNavBtn">
-                <img src="./static/img/new_index/header/menu-icon.png" loading="lazy" alt="Menu"
-                    style="width: 24px; height: 24px;">
-            </button>
-            <button class="header__close-btn" id="headerCloseBtn">✖</button>
         </nav>
+
         <div class="header__contact">
             <a href="tel:+73433850951" class="header__contact-link phone">
                 <span class="header__phone-icon">
@@ -110,16 +163,83 @@
                 +7 (343) 385-09-51
             </a>
             <div>
-                <a href="mailto:info@uksgroup.ru" class="header__contact-link email">info@uksgroup.ru</a>
                 <a href="mailto:sales@uksgroup.ru" class="header__contact-link email">sales@uksgroup.ru</a>
-                <span class="header__email-description">(почта для заявок и расчета)</span>
             </div>
-            <a href="https://api.whatsapp.com/send/?phone=79120449777&text=Привет%21++Меня+интересует...&type=phone_number&app_absent=0"
+<!--            <a href=""
                 class="header__whatsapp-btn">
-                <img src="./static/img/new_index/header/header_wa.png" loading="lazy" alt="WhatsApp">
+                <img src="./static/img/new_index/header_max.png" loading="lazy" alt="Max">
+            </a> -->
+            <a href="https://t.me/+79120449777"
+                class="header__whatsapp-btn">
+                <img src="./static/img/new_index/header_tg.png" loading="lazy" alt="telegram">
             </a>
         </div>
-    </header>
+
+        <button class="header__nav-mobile" id="headerNavBtn">
+            <img src="./static/img/new_index/header/menu-icon.png" loading="lazy" alt="Menu"
+                style="width: 24px; height: 24px;">
+        </button>
+        
+    </div>
+    
+    <div class="mobile-menu" id="mobileMenu">
+    <button class="header__close-btn" id="headerCloseBtn">✖</button>
+        <div class="mobile-menu__content">
+
+            <ul class="mobile-menu__list">
+                <li class="mobile-menu__item">
+                    <button class="mobile-menu__link toggle">
+                        О НАС
+                    </button>
+                    <ul class="mobile-submenu">
+                        <li><a href="#aboutus">О компании</a></li>
+                        <li><a href="https://www.uksgroup.ru/o_zavode/reputaziya">Преимущества</a></li>
+                        <li><a href="#certificates">Сертификаты</a></li>
+                        <li><a href="#news">Новости</a></li>
+                    </ul>
+                </li>
+
+                <li class="mobile-menu__item">
+                    <button class="mobile-menu__link toggle">
+                        НАША ПРОДУКЦИЯ
+                    </button>
+                    <ul class="mobile-submenu">
+                        <li><a href="https://www.uksgroup.ru/catalog/dveri">Двери</a></li>
+                        <li><a href="https://www.uksgroup.ru/catalog/okna">Окна</a></li>
+                        <li><a href="https://www.uksgroup.ru/catalog/peregorodki">Перегородки</a></li>
+                        <li><a href="#">Фасадные решения</a></li>
+                    </ul>
+                </li>
+
+                <li class="mobile-menu__item">
+                    <button class="mobile-menu__link toggle">
+                        ПРОЕКТЫ
+                    </button>
+                    <ul class="mobile-submenu">
+                        <li><a href="#projects">Проекты</a></li>
+                        <li><a href="https://www.uksgroup.ru/proekty/blog">Блог</a></li>
+                        <li><a href="https://www.uksgroup.ru/proekty/istoriya_kompanii">История</a></li>
+                        <li><a href="https://www.uksgroup.ru/proekty/ohrana_truda">Охрана труда</a></li>
+                    </ul>
+                </li>
+
+                <li class="mobile-menu__item">
+                    <div class="mobile-menu__contacts">
+                        <p>620063, Екатеринбург</p>
+                        <p>Пн-Пт 09:00–18:00</p>
+                        <div class="mobile-menu__links">
+                            <a href="tel:+73433850951">+7 (343) 385-09-51</a>
+                            <a href="mailto:info@uksgroup.ru">info@uksgroup.ru</a>
+                        </div>
+                    </div>
+                </li>
+            </ul>
+
+        </div>
+    </div>
+        
+</header>
+
     <section class="slider">
         <div class="slider__overlay"></div>
         <div class="slider__slides">
@@ -168,12 +288,49 @@
         </div>
     </section>
 
-    <div class="black-strip">
-        <div class="black-strip__container">
-            <div class="black-strip__text first">ПРОЕКТИРОВАНИЕ</div>
-            <div class="black-strip__text">ПРОИЗВОДСТВО</div>
-            <div class="black-strip__text">ДОСТАВКА</div>
-            <div class="black-strip__text">МОНТАЖ</div>
+    <div class="services-drop__wrap">
+        <div class="services">
+            <div class="container">
+                <div class="services__wrap">
+                    <h3 class="services__headline">Наши услуги</h3>
+                    <ul class="services__list">
+                        <li class="services-list__item">
+                            <div class="services__img-wrap">
+                                <img src="./static/img/new_index/design.png" alt="Проектирование">
+                            </div>
+                            <h3 class="service_name">Проектирование</h3>
+                        </li>
+                        <div class="services__divider"></div>
+                        <li class="services-list__item">
+                            <div class="services__img-wrap">
+                                <img src="./static/img/new_index/factory.png" alt="Производство">
+                            </div>
+                            <h3 class="service_name">Производство</h3>
+                        </li>
+                        <div class="services__divider"></div>
+                        <li class="services-list__item">
+                            <div class="services__img-wrap">
+                                <img src="./static/img/new_index/delivery.png" alt="Доставка">
+                            </div>
+                            <h3 class="service_name">Доставка</h3>
+                        </li>
+                        <div class="services__divider"></div>
+                        <li class="services-list__item">
+                            <div class="services__img-wrap">
+                                <img src="./static/img/new_index/montazh.png" alt="Монтаж">
+                            </div>
+                            <h3 class="service_name">Монтаж</h3>
+                        </li>
+                        <div class="services__divider"></div>
+                        <li class="services-list__item">
+                            <div class="services__img-wrap">
+                                <img src="./static/img/new_index/sheld.png" alt="Гарантия">
+                            </div>
+                            <h3 class="service_name">Гарантия</h3>
+                        </li>
+                    </ul>
+                </div>
+            </div>
         </div>
     </div>
 
@@ -494,6 +651,9 @@
                                 <p class="certificates__slide-text">Перегородка EIW60 ALT F50. До 18.02.2029 г.
                                 </p>
                             </div>
+                            <div class="certificates__slide certificats-slide__button">
+                                <a class="btn btn--filled" target="_blank" rel="noopener" href="/o_zavode/sertifikaty">Все сертификаты</a>
+                            </div>
                         </div>
                     </div>
                     <picture>
@@ -552,9 +712,9 @@
                                             src="./static/img/new_index/w.svg" alt="Icon 1"
                                             class="contact__icon-img"></a>
                                 </div>
-                                <div class="contact__icon-wrap">
+                                <a href="mailto:sales@uksgroup.ru" class="contact__icon-wrap">
                                     <img src="./static/img/new_index/mail.svg" alt="Icon 2" class="contact__icon-img">
-                                </div>
+                                </a>
                             </div>
                         </div>
                     </div>
@@ -578,6 +738,53 @@
                     </a>
                     {/foreach}
                 </div>
+            </div>
+        </div>
+    </section>
+    <section id="contacts" class="container">
+        <div class="contacts__wrap">
+            <div class="contacts__list contacts__column">
+                <a href="tel:+73433850951" class="contacts__phone">+7 (343) 385-09-51</a>
+                <p class="conatcts__adress">
+                  620063, г. Екатеринбург, ул. Чапаева, 1а, 3 этаж  
+                </p>
+                <div class="contats__email-wrap">
+                    <h3>ПОЧТА ДЛЯ ЗАЯВОК И РАСЧЕТА</h3>
+                    <a href="mailto:info@uksgroup.ru">info@uksgroup.ru</a>
+                    <a href="mailto:sales@uksgroup.ru">sales@uksgroup.ru</a>
+                </div>
+                <div class="contacts__divider"></div>
+                <div class="contacts__messangers">
+                    <h3>Мы в мессенджерах</h3>
+                    <div>
+                        <a href=""
+                            class="header__whatsapp-btn">
+                            <img src="./static/img/new_index/header_max.png" loading="lazy" alt="Max">
+                        </a>
+                        <a href="https://t.me/+79120449777"
+                            class="header__whatsapp-btn">
+                            <img src="./static/img/new_index/header_tg.png" loading="lazy" alt="telegram">
+                        </a>
+                    </div>
+                </div>
+            </div>
+            <div class="contacts__column contacts__column--form">
+                <h2>Заказать обратный звонок</h2>
+                <form class="contacts__form">
+                    <div class="contacts-form__inputs-wrap">
+                        <div class="contacts-form__phone-wrap">
+                            <label for="phone">Номер телефона</label>
+                            <input type="phone" placeholder="+7 (000) 000-00-00" required>
+                        </div>
+                        <div class="contacts-form__city-wrap">
+                            <label for="phone">Напишите Ваш город</label>
+                            <input type="text" required>
+                        </div>
+                    </div>
+                    <input name="policy" type="checkbox">
+                    <label for="policy">Нажимая на кнопку Отправить вы соглашаетесь с политикой конфиденциальности компании</label>
+                </form>
+                <button type="submit">Оставить заявку</button>
             </div>
         </div>
     </section>
