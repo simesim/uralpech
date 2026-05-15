@@ -2391,7 +2391,7 @@ li {
 
     z-index: 1;
 
-    filter: blur(90px);
+    filter: blur(500px);
 
     animation-timing-function: ease-in-out;
     animation-iteration-count: infinite;
@@ -2406,7 +2406,7 @@ li {
             transparent 100%);
 
     mix-blend-mode: screen;
-    opacity: 0.95;
+    opacity: 0.65;
 }
 
 .bg-particle {
@@ -2503,8 +2503,33 @@ li {
 .contacts__wrap {
     display: grid;
     grid-template-columns: 1fr 1fr;
+    position: relative;
+    z-index: 2;
 }
 
+#contacts {
+    position: relative;
+    overflow: hidden;
+}
+
+.contacts__bg {
+    position: absolute;
+
+    inset: 0;
+    z-index: 0;
+
+    background:
+        linear-gradient(90deg,
+            transparent 0%,
+            transparent 42%,
+            rgba(54, 54, 54, 0.485) 48%,
+            rgba(54, 54, 54, 0.75) 56%,
+            rgba(54, 54, 54, 1) 65%,
+            rgba(71, 57, 57, 0.96) 100%);
+}
+.contacts__column--form .bg-particle {
+    opacity: 0.5;
+}
 .contacts__column {
     padding-top: 100px;
     padding-bottom: 85px;
@@ -3530,7 +3555,7 @@ li {
     }
 
     .bg-particle {
-        filter: blur(60px);
+        filter: blur(140px);
     }
 
     .particle-1 {
