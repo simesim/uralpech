@@ -2391,12 +2391,13 @@ li {
 
     z-index: 1;
 
-    filter: blur(100px);
+    filter: blur(90px);
 
     animation-timing-function: ease-in-out;
     animation-iteration-count: infinite;
     animation-direction: alternate;
 }
+
 
 .ask-question .bg-particle {
     background: radial-gradient(circle,
@@ -2517,44 +2518,64 @@ li {
 
     inset: 0;
     z-index: 0;
+}
+.contacts__bg::after {
+    content: '';
+
+    position: absolute;
+
+    top: 0;
+    right: 0;
+
+    width: 55%;
+    height: 100%;
+
+    background: linear-gradient(
+        0turn,
+        rgba(54, 54, 54, 1) 0%,
+        rgba(71, 57, 57, 0.96) 100%
+    );
+}
+
+.contacts__bg::before {
+    content: '';
+
+    position: absolute;
+
+    top: 0;
+    right: 50%;
+
+    width: 240px;
+    height: 100%;
+
+    transform: translateX(50%);
 
     background:
-        linear-gradient(90deg,
-            transparent 0%,
-            transparent 42%,
-            rgba(54, 54, 54, 0.485) 48%,
-            rgba(54, 54, 54, 0.75) 56%,
-            rgba(54, 54, 54, 1) 65%,
-            rgba(71, 57, 57, 0.96) 100%);
+        linear-gradient(
+            90deg,
+            rgba(54,54,54,0) 0%,
+            rgba(54,54,54,0.15) 20%,
+            rgba(54,54,54,0.35) 45%,
+            rgba(54,54,54,0.65) 70%,
+            rgba(54,54,54,0.9) 100%
+        );
+
+    filter: blur(60px);
+
+    opacity: 1;
 }
+
 .contacts__column--form .bg-particle {
     opacity: 0.5;
 }
+
 .contacts__column {
     padding-top: 100px;
     padding-bottom: 85px;
 }
 
 .contacts__column--form {
-    color: #fff;
     position: relative;
-}
-
-.contacts__column--form::before {
-    content: '';
-
-    position: absolute;
-    top: 0;
-    left: 0;
-
-    width: 100vw;
-    height: 100%;
-
-    background-image: linear-gradient(0turn,
-            rgba(54, 54, 54, 1) 0%,
-            rgba(71, 57, 57, 0.91) 100%);
-
-    z-index: -1;
 }
 
 /* Адаптивные стили попапа */
