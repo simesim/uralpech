@@ -439,7 +439,7 @@ li {
 
     margin: 0;
 
-    border: 1.5px solid rgba(255,255,255,.7);
+    border: 1.5px solid rgba(255, 255, 255, .7);
     border-radius: 4px;
 
     background: transparent;
@@ -490,7 +490,7 @@ li {
 }
 
 .ask-question__checkbox:checked {
-    background: rgba(255,255,255,.08);
+    background: rgba(255, 255, 255, .08);
     border-color: #fff;
 }
 
@@ -2353,6 +2353,153 @@ li {
     max-height: 80vh;
 }
 
+/* Анимация  */
+
+@media (max-width: 768px) {
+    .contacts__column {
+        padding: 24px 0;
+    }
+
+    .contacts__column--form {
+        margin-top: 24px;
+    }
+
+    .contacts__column--form::before {
+        left: 50%;
+        width: 100vw;
+
+        transform: translateX(-50%);
+    }
+}
+
+.animated-bg {
+    position: relative;
+    isolation: isolate;
+    overflow: hidden;
+}
+
+.animated-bg>*:not(.bg-particle),
+.animated-bg .container {
+    position: relative;
+    z-index: 2;
+}
+
+.bg-particle {
+    position: absolute;
+    border-radius: 50%;
+    pointer-events: none;
+
+    z-index: 1;
+
+    filter: blur(90px);
+
+    animation-timing-function: ease-in-out;
+    animation-iteration-count: infinite;
+    animation-direction: alternate;
+}
+
+.ask-question .bg-particle {
+    background: radial-gradient(circle,
+            rgba(255, 255, 255, 0.95) 0%,
+            rgba(255, 255, 255, 0.55) 35%,
+            rgba(255, 255, 255, 0.15) 70%,
+            transparent 100%);
+
+    mix-blend-mode: screen;
+    opacity: 0.95;
+}
+
+.bg-particle {
+    background: radial-gradient(circle,
+            rgba(255, 170, 70, 0.95) 0%,
+            rgba(255, 140, 0, 0.55) 35%,
+            rgba(255, 140, 0, 0.15) 70%,
+            transparent 100%);
+
+    mix-blend-mode: screen;
+    opacity: 0.9;
+}
+
+.particle-1 {
+    width: 340px;
+    height: 340px;
+
+    top: -100px;
+    left: -80px;
+
+    animation: float-1 16s infinite alternate;
+}
+
+.particle-2 {
+    width: 260px;
+    height: 260px;
+
+    top: 35%;
+    right: -100px;
+
+    animation: float-2 20s infinite alternate;
+}
+
+.particle-3 {
+    width: 200px;
+    height: 200px;
+
+    bottom: -60px;
+    left: 25%;
+
+    animation: float-3 18s infinite alternate;
+}
+
+.particle-4 {
+    width: 280px;
+    height: 280px;
+
+    bottom: -120px;
+    right: 15%;
+
+    animation: float-4 22s infinite alternate;
+}
+
+@keyframes float-1 {
+    from {
+        transform: translate(0, 0) scale(1);
+    }
+
+    to {
+        transform: translate(80px, 60px) scale(1.18);
+    }
+}
+
+@keyframes float-2 {
+    from {
+        transform: translate(0, 0) scale(1);
+    }
+
+    to {
+        transform: translate(-70px, -50px) scale(1.12);
+    }
+}
+
+@keyframes float-3 {
+    from {
+        transform: translate(0, 0) scale(1);
+    }
+
+    to {
+        transform: translate(60px, -70px) scale(1.14);
+    }
+}
+
+@keyframes float-4 {
+    from {
+        transform: translate(0, 0) scale(1);
+    }
+
+    to {
+        transform: translate(-90px, 40px) scale(1.2);
+    }
+}
+
 .contacts__wrap {
     display: grid;
     grid-template-columns: 1fr 1fr;
@@ -2378,11 +2525,9 @@ li {
     width: 100vw;
     height: 100%;
 
-    background-image: linear-gradient(
-        0turn,
-        rgba(54, 54, 54, 1) 0%,
-        rgba(71, 57, 57, 0.91) 100%
-    );
+    background-image: linear-gradient(0turn,
+            rgba(54, 54, 54, 1) 0%,
+            rgba(71, 57, 57, 0.91) 100%);
 
     z-index: -1;
 }
@@ -3384,6 +3529,29 @@ li {
         max-width: 85vw;
     }
 
+    .bg-particle {
+        filter: blur(60px);
+    }
+
+    .particle-1 {
+        width: 220px;
+        height: 220px;
+    }
+
+    .particle-2 {
+        width: 180px;
+        height: 180px;
+    }
+
+    .particle-3 {
+        width: 140px;
+        height: 140px;
+    }
+
+    .particle-4 {
+        width: 200px;
+        height: 200px;
+    }
 
 }
 
@@ -3713,22 +3881,5 @@ li {
 
     .ask-question__submit-btn {
         width: 100%;
-    }
-}
-
-@media (max-width: 768px) {
-    .contacts__column {
-        padding: 24px 0;
-    }
-
-    .contacts__column--form {
-        margin-top: 24px;
-    }
-
-    .contacts__column--form::before {
-        left: 50%;
-        width: 100vw;
-
-        transform: translateX(-50%);
     }
 }
