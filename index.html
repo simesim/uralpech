@@ -740,7 +740,7 @@
             </div>
         </div>
     </section>
-    <!-- ОРАНЖЕВАЯ СЕКЦИЯ-->
+    <!-- ОРАНЖЕВАЯ СЕКЦИЯ (только телефон изменён) -->
     <section class="ask-question animated-bg">
         <div class="bg-particle particle-1"></div>
         <div class="bg-particle particle-2"></div>
@@ -748,120 +748,116 @@
         <div class="bg-particle particle-4"></div>
         <div class="container">
             <div class="ask-question__content">
-                <h2 class="ask-question__title">Задайте нам вопрос</h2>
-                <p class="ask-question__subtitle">Мы перезвоним и узнаем все, что потребуется для расчетов</p>
+                <div class="ask-question__content">
+                    <h2 class="ask-question__title">Задайте нам вопрос</h2>
+                    <p class="ask-question__subtitle">Мы перезвоним и узнаем все, что потребуется для расчетов</p>
 
-                <form id="questionForm" class="ask-question__form">
-                    <div class="form-row ask-question__row--first">
-                        <div class="form-column">
-                            <label class="form-label" for="company">Название компании</label>
-                            <input type="text" id="company" name="company" class="form-input ask-question__input"
-                                required>
-                        </div>
-                        <div class="form-column">
-                            <label class="form-label" for="email">Ваша почта</label>
-                            <input type="email" id="email" name="email" class="form-input ask-question__input" required>
-                        </div>
-                        <div class="form-column">
-                            <label class="form-label" for="phone">Номер телефона</label>
-                            <input type="tel" id="phone" name="phone" class="form-input ask-question__input"
-                                placeholder="+7 (___) ___-__-__" required>
-                        </div>
-                    </div>
-
-                    <div class="form-row ask-question__row--second">
-                        <div class="form-column">
-                            <label class="form-label" for="city">Напишите Ваш город</label>
-                            <input type="text" id="city" name="city" class="form-input ask-question__input" required>
-                        </div>
-                        <div class="form-column ask-question__field--message">
-                            <label class="form-label" for="message">Текст сообщения</label>
-                            <textarea id="message" name="message"
-                                class="form-input ask-question__input ask-question__textarea" rows="1"
-                                placeholder="Текст сообщения"></textarea>
-                        </div>
-                    </div>
-
-                    <div class="ask-question__footer">
-                        <label class="ask-question__checkbox-label">
-                            <input type="checkbox" id="policy" name="policy" class="ask-question__checkbox" required>
-                            <span class="ask-question__checkbox-text">Нажимая на кнопку Отправить вы соглашаетесь с
-                                политикой конфиденциальности компании</span>
-                        </label>
-                        <button type="submit" class="ask-question__submit-btn">Задать вопрос</button>
-                    </div>
-                </form>
-            </div>
-        </div>
-    </section>
-    <!-- КОНТАКТЫ + ОБРАТНЫЙ ЗВОНОК -->
-    <section id="contacts">
-
-        <div class="contacts__bg"></div>
-
-        <div class="container">
-            <div class="contacts__wrap">
-
-                <!-- Левая белая колонка -->
-                <div class="contacts__column contacts__list">
-                    <a href="tel:+73433850951" class="contacts__phone">+7 (343) 385-09-51</a>
-                    <p class="contacts__address">620063, г. Екатеринбург, ул. Чапаева, 1а, 3 этаж</p>
-
-                    <div class="contacts__email-wrap">
-                        <h3>ПОЧТА ДЛЯ ЗАЯВОК И РАСЧЕТА</h3>
-                        <a href="mailto:info@uksgroup.ru" class="contacts__email">info@uksgroup.ru</a>
-                        <a href="mailto:sales@uksgroup.ru" class="contacts__email">sales@uksgroup.ru</a>
-                    </div>
-
-                    <!-- Горизонтальная линия-разделитель -->
-                    <div class="contacts__divider"></div>
-
-                    <div class="contacts__messangers">
-                        <h3>МЫ В МЕССЕНДЖЕРАХ :</h3>
-                        <a href="https://t.me/+79120449777" class="header__whatsapp-btn">
-                            <img src="./static/img/new_index/header_tg.png" loading="lazy" alt="telegram">
-                        </a>
-                        <a href="https://max.ru/join/mmZh3-APvZJ2GTFzwM1W6zA3pX0g8KTTgBQvPyCMB30"
-                            class="header__whatsapp-btn">
-                            <img src="./static/img/new_index/header_max.png" loading="lazy" alt="Max">
-                        </a>
-                    </div>
-                </div>
-
-                <!-- Правая чёрная колонка -->
-                <div class="contacts__column contacts__column--form animated-bg">
-                    <div class="bg-particle particle-1"></div>
-                    <div class="bg-particle particle-2"></div>
-                    <div class="bg-particle particle-3"></div>
-                    <div class="bg-particle particle-4"></div>
-                    <h2 class="contacts__form-title">Заказать обратный звонок</h2>
-
-                    <form id="callbackForm" class="contacts__form">
+                    <form id="questionForm" class="ask-question__form">
                         <div class="form-row ask-question__row--first">
                             <div class="form-column">
-                                <label class="form-label" for="callbackPhone">Номер телефона</label>
-                                <input type="tel" id="callbackPhone" name="phone" class="form-input ask-question__input"
-                                    placeholder="+7 (___) ___-__-__" required>
+                                <label class="form-label" for="company">Название компании</label>
+                                <input type="text" id="company" name="company" class="form-input ask-question__input"
+                                    required>
                             </div>
                             <div class="form-column">
-                                <label class="form-label" for="callbackCity">Напишите Ваш город</label>
-                                <input type="text" id="callbackCity" name="city" class="form-input ask-question__input"
+                                <label class="form-label" for="email">Ваша почта</label>
+                                <input type="email" id="email" name="email" class="form-input ask-question__input"
                                     required>
+                            </div>
+                            <div class="form-column">
+                                <label class="form-label" for="phone">Номер телефона</label>
+                                <input type="tel" id="phone" name="phone" class="form-input ask-question__input"
+                                    placeholder="+7 (___) ___-__-__" required>
+                            </div>
+                        </div>
+
+                        <div class="form-row ask-question__row--second">
+                            <div class="form-column">
+                                <label class="form-label" for="city">Напишите Ваш город</label>
+                                <input type="text" id="city" name="city" class="form-input ask-question__input"
+                                    required>
+                            </div>
+                            <div class="form-column ask-question__field--message">
+                                <label class="form-label" for="message">Текст сообщения</label>
+                                <textarea id="message" name="message"
+                                    class="form-input ask-question__input ask-question__textarea" rows="1"
+                                    placeholder="Текст сообщения"></textarea>
                             </div>
                         </div>
 
                         <div class="ask-question__footer">
                             <label class="ask-question__checkbox-label">
-                                <input type="checkbox" id="callbackPolicy" name="policy" class="ask-question__checkbox"
+                                <input type="checkbox" id="policy" name="policy" class="ask-question__checkbox"
                                     required>
                                 <span class="ask-question__checkbox-text">Нажимая на кнопку Отправить вы соглашаетесь с
                                     политикой конфиденциальности компании</span>
                             </label>
-                            <button type="submit" class="ask-question__submit-btn">Оставить заявку</button>
+                            <button type="submit" class="ask-question__submit-btn">Задать вопрос</button>
                         </div>
                     </form>
                 </div>
             </div>
+    </section>
+    <!-- КОНТАКТЫ + ОБРАТНЫЙ ЗВОНОК -->
+    <section id="contacts" class="container">
+        <div class="contacts__wrap">
+
+            <!-- Левая белая колонка -->
+            <div class="contacts__column contacts__list">
+                <a href="tel:+73433850951" class="contacts__phone">+7 (343) 385-09-51</a>
+                <p class="contacts__address">620063, г. Екатеринбург, ул. Чапаева, 1а, 3 этаж</p>
+
+                <div class="contacts__email-wrap">
+                    <h3>ПОЧТА ДЛЯ ЗАЯВОК И РАСЧЕТА</h3>
+                    <a href="mailto:info@uksgroup.ru" class="contacts__email">info@uksgroup.ru</a>
+                    <a href="mailto:sales@uksgroup.ru" class="contacts__email">sales@uksgroup.ru</a>
+                </div>
+
+                <!-- Горизонтальная линия-разделитель -->
+                <div class="contacts__divider"></div>
+
+                <div class="contacts__messangers">
+                    <h3>МЫ В МЕССЕНДЖЕРАХ :</h3>
+                    <a href="https://t.me/+79120449777" class="header__whatsapp-btn">
+                        <img src="./static/img/new_index/header_tg.png" loading="lazy" alt="telegram">
+                    </a>
+                    <a href="https://max.ru/join/mmZh3-APvZJ2GTFzwM1W6zA3pX0g8KTTgBQvPyCMB30"
+                        class="header__whatsapp-btn">
+                        <img src="./static/img/new_index/header_max.png" loading="lazy" alt="Max">
+                    </a>
+                </div>
+            </div>
+
+            <!-- Правая чёрная колонка -->
+            <div class="contacts__column contacts__column--form">
+                <h2 class="contacts__form-title">Заказать обратный звонок</h2>
+
+                <form id="callbackForm" class="contacts__form">
+                    <div class="form-row ask-question__row--first">
+                        <div class="form-column">
+                            <label class="form-label" for="callbackPhone">Номер телефона</label>
+                            <input type="tel" id="callbackPhone" name="phone" class="form-input ask-question__input"
+                                placeholder="+7 (___) ___-__-__" required>
+                        </div>
+                        <div class="form-column">
+                            <label class="form-label" for="callbackCity">Напишите Ваш город</label>
+                            <input type="text" id="callbackCity" name="city" class="form-input ask-question__input"
+                                required>
+                        </div>
+                    </div>
+
+                    <div class="ask-question__footer">
+                        <label class="ask-question__checkbox-label">
+                            <input type="checkbox" id="callbackPolicy" name="policy" class="ask-question__checkbox"
+                                required>
+                            <span class="ask-question__checkbox-text">Нажимая на кнопку Отправить вы соглашаетесь с
+                                политикой конфиденциальности компании</span>
+                        </label>
+                        <button type="submit" class="ask-question__submit-btn">Оставить заявку</button>
+                    </div>
+                </form>
+            </div>
+        </div>
     </section>
     <!-- Попап заявка -->
     <div id="requestPopup" class="popup-overlay">
