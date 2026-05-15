@@ -15,230 +15,229 @@
     <script>
 
         const METRIKA_ID = '33675014';
-        
+
         function sendMetrikaEvent(email) {
             if (window.ym) {
-              console.log('Отправка события в Яндекс Метрику:', email);
-              window.ym(METRIKA_ID, 'reachGoal', 'emailCopied', { email });
+                console.log('Отправка события в Яндекс Метрику:', email);
+                window.ym(METRIKA_ID, 'reachGoal', 'emailCopied', { email });
             } else {
-              console.log('Яндекс Метрика не инициализирована');
+                console.log('Яндекс Метрика не инициализирована');
             }
         }
- 
+
         function handleCopyEvent(event) {
             const copiedText = window.getSelection().toString();
-            
+
             console.log('Скопированный текст:', copiedText);
-         
+
             const hasAtSymbol = copiedText.includes('@');
             const hasRussianLetters = /[А-Яа-яЁё]/.test(copiedText);
-         
+
             console.log('Содержит символ "@":', hasAtSymbol);
             console.log('Содержит русские буквы:', hasRussianLetters);
-         
+
             if (hasAtSymbol && !hasRussianLetters) {
-              sendMetrikaEvent(copiedText);
+                sendMetrikaEvent(copiedText);
             }
         }
- 
+
         document.addEventListener('copy', handleCopyEvent);
- 
+
         function handleMailtoRightClick(event) {
             const target = event.target;
             if (event.button === 2 && target.tagName === 'A' && target.getAttribute('href') && target.getAttribute('href').startsWith('mailto:')) {
                 const email = target.getAttribute('href').substring(7);
-             
+
                 console.log('Клик правой кнопкой на mailto:', email);
-             
+
                 const hasRussianLetters = /[А-Яа-яЁё]/.test(email);
                 console.log('Содержит русские буквы:', hasRussianLetters);
-             
+
                 if (!hasRussianLetters) {
                     sendMetrikaEvent(email);
                 }
             }
         }
- 
+
         document.addEventListener('contextmenu', handleMailtoRightClick);
-    </script>  
+    </script>
     {/literal}
-      
-    
+
+
 </head>
 
 <body class="body">
     <header class="header">
-    <div class="header__inner">
+        <div class="header__inner">
 
-        <div class="header__logo">
-            <img src="./static/img/new_index/header/Logo.png"
-                alt="УКС Груп – завод огнестойких, сверхпрочных конструкций" loading="lazy">
-        </div>
-        <nav class="header__nav">
-            <ul class="header__links">
-                <li class="header__link">
-                    <a href="#" class="header__link-a">О НАС <span class="header__link-triangle"></span></a>
-                    <div class="header__link-dropdown">
-                        <ul class="dropdown__list">
-                            <li class="dropdown-list__item">
-                                <a href="#aboutus">О компании</a>
-                            </li>
-                            <li class="dropdown-list__item">
-                                <a href="https://www.uksgroup.ru/o_zavode/reputaziya">Преимущества</a>
-                            </li>
-                            <li class="dropdown-list__item">
-                                <a href="#news">Новости</a>
-                            </li>
-                        </ul>
-                    </div>
-                </li>
-                <li class="header__link">
-                    <a href="#" class="header__link-a">НАША ПРОДУКЦИЯ <span class="header__link-triangle"></span>
-                    </a>
-                    <div class="header__link-dropdown">
-                        <ul class="dropdown__list">
-                            <li class="dropdown-list__item">
-                                <a href="https://www.uksgroup.ru/catalog/dveri">Двери</a>
-                            </li>
-                            <li class="dropdown-list__item">
-                                <a href="https://www.uksgroup.ru/catalog/okna">Окна</a>
-                            </li>
-                            <li class="dropdown-list__item">
-                                <a href="https://www.uksgroup.ru/catalog/peregorodki">Перегородки</a>
-                            </li>
-                            <li class="dropdown-list__item">
-                                <a href="https://www.uksgroup.ru/catalog/peregorodki">Фасадные<br>решения</a>
-                            </li>
-                        </ul>
-                    </div>
-                </li>
-                <li class="header__link">
-                <a href="#" class="header__link-a">ПОРТФОЛИО
-                    <span class="header__link-triangle"></span>
-                </a>
-                <div class="header__link-dropdown">
-                        <ul class="dropdown__list">
-                            <li class="dropdown-list__item">
-                                <a href="/proekty/blog">Блог</a>
-                            </li>
-                            <li class="dropdown-list__item">
-                                <a href="https://www.uksgroup.ru/proekty/ohrana_truda">Охрана труда</a>
-                            </li>
-                            <li class="dropdown-list__item">
-                                <a href="/catalog">Каталог</a>
-                            </li>
-                            <li class="dropdown-list__item">
-                                <a href="#certificates">Сертификаты</a>
-                            </li>
-                        </ul>
-                    </div>
-                </li>
-                <li class="header__link">
-                    <a href="#projects" class="header__link-a">ПРОЕКТЫ
-                    </a>
-                </li>
-                <li class="header__link">
-                    <a href="#" class="header__link-a">КОНТАКТЫ
-                        <span class="header__link-triangle"></span>
-                    </a>
-                    <div class="header__link-dropdown">
-                        <ul>
-                            <li class="dropdown-list__item">
-                                <a href="#">620063, г. <br> Екатеринбург, <br> ул.Чапаева <br>1а, 3 этаж</a>
-                            </li>
-                            <li class="dropdown-list__item">
-                                <a href="#">Пн-Пт / 09:00- <br>18:00</a>
-                            </li>
-                        </ul>
-                    </div>
-                </li>
-            </ul>
-        </nav>
-
-        <div class="header__contact">
-            <a href="tel:+73433850951" class="header__contact-link phone">
-                <span class="header__phone-icon">
-                    <img src="./static/img/new_index/header/phone.png" alt="Телефон">
-                </span>
-                +7 (343) 385-09-51
-            </a>
-            <div>
-                <a href="mailto:sales@uksgroup.ru" class="header__contact-link email">sales@uksgroup.ru</a>
+            <div class="header__logo">
+                <img src="./static/img/new_index/header/Logo.png"
+                    alt="УКС Груп – завод огнестойких, сверхпрочных конструкций" loading="lazy">
             </div>
-<!--            <a href=""
+            <nav class="header__nav">
+                <ul class="header__links">
+                    <li class="header__link">
+                        <a href="#" class="header__link-a">О НАС <span class="header__link-triangle"></span></a>
+                        <div class="header__link-dropdown">
+                            <ul class="dropdown__list">
+                                <li class="dropdown-list__item">
+                                    <a href="#aboutus">О компании</a>
+                                </li>
+                                <li class="dropdown-list__item">
+                                    <a href="https://www.uksgroup.ru/o_zavode/reputaziya">Преимущества</a>
+                                </li>
+                                <li class="dropdown-list__item">
+                                    <a href="#news">Новости</a>
+                                </li>
+                            </ul>
+                        </div>
+                    </li>
+                    <li class="header__link">
+                        <a href="#" class="header__link-a">НАША ПРОДУКЦИЯ <span class="header__link-triangle"></span>
+                        </a>
+                        <div class="header__link-dropdown">
+                            <ul class="dropdown__list">
+                                <li class="dropdown-list__item">
+                                    <a href="https://www.uksgroup.ru/catalog/dveri">Двери</a>
+                                </li>
+                                <li class="dropdown-list__item">
+                                    <a href="https://www.uksgroup.ru/catalog/okna">Окна</a>
+                                </li>
+                                <li class="dropdown-list__item">
+                                    <a href="https://www.uksgroup.ru/catalog/peregorodki">Перегородки</a>
+                                </li>
+                                <li class="dropdown-list__item">
+                                    <a href="https://www.uksgroup.ru/catalog/peregorodki">Фасадные<br>решения</a>
+                                </li>
+                            </ul>
+                        </div>
+                    </li>
+                    <li class="header__link">
+                        <a href="#" class="header__link-a">ПОРТФОЛИО
+                            <span class="header__link-triangle"></span>
+                        </a>
+                        <div class="header__link-dropdown">
+                            <ul class="dropdown__list">
+                                <li class="dropdown-list__item">
+                                    <a href="/proekty/blog">Блог</a>
+                                </li>
+                                <li class="dropdown-list__item">
+                                    <a href="https://www.uksgroup.ru/proekty/ohrana_truda">Охрана труда</a>
+                                </li>
+                                <li class="dropdown-list__item">
+                                    <a href="/catalog">Каталог</a>
+                                </li>
+                                <li class="dropdown-list__item">
+                                    <a href="#certificates">Сертификаты</a>
+                                </li>
+                            </ul>
+                        </div>
+                    </li>
+                    <li class="header__link">
+                        <a href="#projects" class="header__link-a">ПРОЕКТЫ
+                        </a>
+                    </li>
+                    <li class="header__link">
+                        <a href="#" class="header__link-a">КОНТАКТЫ
+                            <span class="header__link-triangle"></span>
+                        </a>
+                        <div class="header__link-dropdown">
+                            <ul>
+                                <li class="dropdown-list__item">
+                                    <a href="#">620063, г. <br> Екатеринбург, <br> ул.Чапаева <br>1а, 3 этаж</a>
+                                </li>
+                                <li class="dropdown-list__item">
+                                    <a href="#">Пн-Пт / 09:00- <br>18:00</a>
+                                </li>
+                            </ul>
+                        </div>
+                    </li>
+                </ul>
+            </nav>
+
+            <div class="header__contact">
+                <a href="tel:+73433850951" class="header__contact-link phone">
+                    <span class="header__phone-icon">
+                        <img src="./static/img/new_index/header/phone.png" alt="Телефон">
+                    </span>
+                    +7 (343) 385-09-51
+                </a>
+                <div>
+                    <a href="mailto:sales@uksgroup.ru" class="header__contact-link email">sales@uksgroup.ru</a>
+                </div>
+                <!--            <a href=""
                 class="header__whatsapp-btn">
                 <img src="./static/img/new_index/header_max.png" loading="lazy" alt="Max">
             </a> -->
-            <a href="https://t.me/+79120449777"
-                class="header__whatsapp-btn">
-                <img src="./static/img/new_index/header_tg.png" loading="lazy" alt="telegram">
-            </a>
+                <a href="https://t.me/+79120449777" class="header__whatsapp-btn">
+                    <img src="./static/img/new_index/header_tg.png" loading="lazy" alt="telegram">
+                </a>
+            </div>
+
+            <button class="header__nav-mobile" id="headerNavBtn">
+                <img src="./static/img/new_index/header/menu-icon.png" loading="lazy" alt="Menu"
+                    style="width: 24px; height: 24px;">
+            </button>
+
         </div>
 
-        <button class="header__nav-mobile" id="headerNavBtn">
-            <img src="./static/img/new_index/header/menu-icon.png" loading="lazy" alt="Menu"
-                style="width: 24px; height: 24px;">
-        </button>
-        
-    </div>
-    
-    <div class="mobile-menu" id="mobileMenu">
-    <button class="header__close-btn" id="headerCloseBtn">✖</button>
-        <div class="mobile-menu__content">
+        <div class="mobile-menu" id="mobileMenu">
+            <button class="header__close-btn" id="headerCloseBtn">✖</button>
+            <div class="mobile-menu__content">
 
-            <ul class="mobile-menu__list">
-                <li class="mobile-menu__item">
-                    <button class="mobile-menu__link toggle">
-                        О НАС
-                    </button>
-                    <ul class="mobile-submenu">
-                        <li><a href="#aboutus">О компании</a></li>
-                        <li><a href="https://www.uksgroup.ru/o_zavode/reputaziya">Преимущества</a></li>
-                        <li><a href="#certificates">Сертификаты</a></li>
-                        <li><a href="#news">Новости</a></li>
-                    </ul>
-                </li>
+                <ul class="mobile-menu__list">
+                    <li class="mobile-menu__item">
+                        <button class="mobile-menu__link toggle">
+                            О НАС
+                        </button>
+                        <ul class="mobile-submenu">
+                            <li><a href="#aboutus">О компании</a></li>
+                            <li><a href="https://www.uksgroup.ru/o_zavode/reputaziya">Преимущества</a></li>
+                            <li><a href="#certificates">Сертификаты</a></li>
+                            <li><a href="#news">Новости</a></li>
+                        </ul>
+                    </li>
 
-                <li class="mobile-menu__item">
-                    <button class="mobile-menu__link toggle">
-                        НАША ПРОДУКЦИЯ
-                    </button>
-                    <ul class="mobile-submenu">
-                        <li><a href="https://www.uksgroup.ru/catalog/dveri">Двери</a></li>
-                        <li><a href="https://www.uksgroup.ru/catalog/okna">Окна</a></li>
-                        <li><a href="https://www.uksgroup.ru/catalog/peregorodki">Перегородки</a></li>
-                        <li><a href="#">Фасадные решения</a></li>
-                    </ul>
-                </li>
+                    <li class="mobile-menu__item">
+                        <button class="mobile-menu__link toggle">
+                            НАША ПРОДУКЦИЯ
+                        </button>
+                        <ul class="mobile-submenu">
+                            <li><a href="https://www.uksgroup.ru/catalog/dveri">Двери</a></li>
+                            <li><a href="https://www.uksgroup.ru/catalog/okna">Окна</a></li>
+                            <li><a href="https://www.uksgroup.ru/catalog/peregorodki">Перегородки</a></li>
+                            <li><a href="#">Фасадные решения</a></li>
+                        </ul>
+                    </li>
 
-                <li class="mobile-menu__item">
-                    <button class="mobile-menu__link toggle">
-                        ПРОЕКТЫ
-                    </button>
-                    <ul class="mobile-submenu">
-                        <li><a href="#projects">Проекты</a></li>
-                        <li><a href="https://www.uksgroup.ru/proekty/blog">Блог</a></li>
-                        <li><a href="https://www.uksgroup.ru/proekty/istoriya_kompanii">История</a></li>
-                        <li><a href="https://www.uksgroup.ru/proekty/ohrana_truda">Охрана труда</a></li>
-                    </ul>
-                </li>
+                    <li class="mobile-menu__item">
+                        <button class="mobile-menu__link toggle">
+                            ПРОЕКТЫ
+                        </button>
+                        <ul class="mobile-submenu">
+                            <li><a href="#projects">Проекты</a></li>
+                            <li><a href="https://www.uksgroup.ru/proekty/blog">Блог</a></li>
+                            <li><a href="https://www.uksgroup.ru/proekty/istoriya_kompanii">История</a></li>
+                            <li><a href="https://www.uksgroup.ru/proekty/ohrana_truda">Охрана труда</a></li>
+                        </ul>
+                    </li>
 
-                <li class="mobile-menu__item">
-                    <div class="mobile-menu__contacts">
-                        <p>620063, Екатеринбург</p>
-                        <p>Пн-Пт 09:00–18:00</p>
-                        <div class="mobile-menu__links">
-                            <a href="tel:+73433850951">+7 (343) 385-09-51</a>
-                            <a href="mailto:info@uksgroup.ru">info@uksgroup.ru</a>
+                    <li class="mobile-menu__item">
+                        <div class="mobile-menu__contacts">
+                            <p>620063, Екатеринбург</p>
+                            <p>Пн-Пт 09:00–18:00</p>
+                            <div class="mobile-menu__links">
+                                <a href="tel:+73433850951">+7 (343) 385-09-51</a>
+                                <a href="mailto:info@uksgroup.ru">info@uksgroup.ru</a>
+                            </div>
                         </div>
-                    </div>
-                </li>
-            </ul>
+                    </li>
+                </ul>
 
+            </div>
         </div>
-    </div>
-        
-</header>
+
+    </header>
 
     <section class="slider">
         <div class="slider__overlay"></div>
@@ -652,7 +651,8 @@
                                 </p>
                             </div>
                             <div class="certificates__slide certificats-slide__button">
-                                <a class="btn btn--filled" target="_blank" rel="noopener" href="/o_zavode/sertifikaty">Все сертификаты</a>
+                                <a class="btn btn--filled" target="_blank" rel="noopener"
+                                    href="/o_zavode/sertifikaty">Все сертификаты</a>
                             </div>
                         </div>
                     </div>
@@ -741,54 +741,113 @@
             </div>
         </div>
     </section>
-    <section id="contacts" class="container">
-        <div class="contacts__wrap">
-            <div class="contacts__list contacts__column">
-                <a href="tel:+73433850951" class="contacts__phone">+7 (343) 385-09-51</a>
-                <p class="conatcts__adress">
-                  620063, г. Екатеринбург, ул. Чапаева, 1а, 3 этаж  
-                </p>
-                <div class="contats__email-wrap">
-                    <h3>ПОЧТА ДЛЯ ЗАЯВОК И РАСЧЕТА</h3>
-                    <a href="mailto:info@uksgroup.ru">info@uksgroup.ru</a>
-                    <a href="mailto:sales@uksgroup.ru">sales@uksgroup.ru</a>
-                </div>
-                <div class="contacts__divider"></div>
-                <div class="contacts__messangers">
-                    <h3>Мы в мессенджерах</h3>
-                    <div>
-                        <a href=""
-                            class="header__whatsapp-btn">
-                            <img src="./static/img/new_index/header_max.png" loading="lazy" alt="Max">
-                        </a>
-                        <a href="https://t.me/+79120449777"
-                            class="header__whatsapp-btn">
-                            <img src="./static/img/new_index/header_tg.png" loading="lazy" alt="telegram">
-                        </a>
-                    </div>
-                </div>
-            </div>
-            <div class="contacts__column contacts__column--form">
-                <h2>Заказать обратный звонок</h2>
-                <form class="contacts__form">
-                    <div class="contacts-form__inputs-wrap">
-                        <div class="contacts-form__phone-wrap">
-                            <label for="phone">Номер телефона</label>
-                            <input type="phone" placeholder="+7 (000) 000-00-00" required>
+    <!-- ОРАНЖЕВАЯ СЕКЦИЯ (только телефон изменён) -->
+    <section class="ask-question">
+        <div class="container">
+            <div class="ask-question__content">
+                <h2 class="ask-question__title">Задайте нам вопрос</h2>
+                <p class="ask-question__subtitle">Мы перезвоним и узнаем все, что потребуется для расчетов</p>
+
+                <form id="questionForm" class="ask-question__form">
+                    <div class="form-row ask-question__row--first">
+                        <div class="form-column">
+                            <label class="form-label" for="company">Название компании</label>
+                            <input type="text" id="company" name="company" class="form-input ask-question__input"
+                                required>
                         </div>
-                        <div class="contacts-form__city-wrap">
-                            <label for="phone">Напишите Ваш город</label>
-                            <input type="text" required>
+                        <div class="form-column">
+                            <label class="form-label" for="email">Ваша почта</label>
+                            <input type="email" id="email" name="email" class="form-input ask-question__input" required>
+                        </div>
+                        <div class="form-column">
+                            <label class="form-label" for="phone">Номер телефона</label>
+                            <input type="tel" id="phone" name="phone" class="form-input ask-question__input"
+                                placeholder="+7 (___) ___-__-__" required>
                         </div>
                     </div>
-                    <input name="policy" type="checkbox">
-                    <label for="policy">Нажимая на кнопку Отправить вы соглашаетесь с политикой конфиденциальности компании</label>
+
+                    <div class="form-row ask-question__row--second">
+                        <div class="form-column">
+                            <label class="form-label" for="city">Напишите Ваш город</label>
+                            <input type="text" id="city" name="city" class="form-input ask-question__input" required>
+                        </div>
+                        <div class="form-column ask-question__field--message">
+                            <label class="form-label" for="message">Текст сообщения</label>
+                            <textarea id="message" name="message"
+                                class="form-input ask-question__input ask-question__textarea" rows="1"
+                                placeholder="Текст сообщения"></textarea>
+                        </div>
+                    </div>
+
+                    <div class="ask-question__footer">
+                        <label class="ask-question__checkbox-label">
+                            <input type="checkbox" id="policy" name="policy" class="ask-question__checkbox" required>
+                            <span class="ask-question__checkbox-text">Нажимая на кнопку Отправить вы соглашаетесь с
+                                политикой конфиденциальности компании</span>
+                        </label>
+                        <button type="submit" class="ask-question__submit-btn">Задать вопрос</button>
+                    </div>
                 </form>
-                <button type="submit">Оставить заявку</button>
             </div>
         </div>
     </section>
+    <!-- КОНТАКТЫ + ОБРАТНЫЙ ЗВОНОК -->
+    <section id="contacts" class="container">
+        <div class="contacts__wrap">
 
+            <!-- Левая белая колонка -->
+            <div class="contacts__column contacts__list">
+                <a href="tel:+73433850951" class="contacts__phone">+7 (343) 385-09-51</a>
+                <p class="contacts__address">620063, г. Екатеринбург, ул. Чапаева, 1а, 3 этаж</p>
+
+                <div class="contacts__email-wrap">
+                    <h3>ПОЧТА ДЛЯ ЗАЯВОК И РАСЧЕТА</h3>
+                    <a href="mailto:info@uksgroup.ru" class="contacts__email">info@uksgroup.ru</a>
+                    <a href="mailto:sales@uksgroup.ru" class="contacts__email">sales@uksgroup.ru</a>
+                </div>
+
+                <!-- Горизонтальная линия-разделитель -->
+                <div class="contacts__divider"></div>
+
+                <div class="contacts__messangers">
+                    <h3>МЫ В МЕССЕНДЖЕРАХ :</h3>
+                    <a href="https://t.me/+79120449777" class="header__whatsapp-btn">
+                        <img src="./static/img/new_index/header_tg.png" loading="lazy" alt="telegram">
+                    </a>
+                </div>
+            </div>
+
+            <!-- Правая чёрная колонка -->
+            <div class="contacts__column contacts__column--form">
+                <h2 class="contacts__form-title">Заказать обратный звонок</h2>
+
+                <form id="callbackForm" class="contacts__form">
+                    <div class="form-row ask-question__row--first">
+                        <div class="form-column">
+                            <label class="form-label" for="callbackPhone">Номер телефона</label>
+                            <input type="tel" id="callbackPhone" name="phone" class="form-input ask-question__input"
+                                placeholder="+7 (___) ___-__-__" required>
+                        </div>
+                        <div class="form-column">
+                            <label class="form-label" for="callbackCity">Напишите Ваш город</label>
+                            <input type="text" id="callbackCity" name="city" class="form-input ask-question__input"
+                                required>
+                        </div>
+                    </div>
+
+                    <div class="ask-question__footer">
+                        <label class="ask-question__checkbox-label">
+                            <input type="checkbox" id="callbackPolicy" name="policy" class="ask-question__checkbox"
+                                required>
+                            <span class="ask-question__checkbox-text">Нажимая на кнопку Отправить вы соглашаетесь с
+                                политикой конфиденциальности компании</span>
+                        </label>
+                        <button type="submit" class="ask-question__submit-btn">Оставить заявку</button>
+                    </div>
+                </form>
+            </div>
+        </div>
+    </section>
     <!-- Попап заявка -->
     <div id="requestPopup" class="popup-overlay">
         <div class="popup-content">
